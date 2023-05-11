@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="Script" href="jscript.js">
 </head>
 
 <body>
@@ -14,17 +15,21 @@
 
     <h1 class="Tester">This is cat!</h1> -->
 
+    <audio id="Sound" src="CatSound.mp3"></audio>
 
-    <div class="IconImage">
+    <button class="IconImage" onclick="playSOund()">
 
-    </div>
+    </button>
 
-    <div class="CenteredText">
-        <h1>Click me!</h1>
-
-    </div>
+    <h1>Click me!</h1>
 
 
 </body>
+<script>
+    function playSOund() {
+        var sound = document.getElementById("Sound");
+        sound.play();
+    }
+</script>
 
 </html>

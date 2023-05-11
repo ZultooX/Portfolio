@@ -129,10 +129,11 @@ body {
     left: 95px;
 
     animation-name: move;
-    animation-duration: 3s;
+    animation-duration: 0.3s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-direction: alternate;
+    
 }
 
 .CenteredText {
