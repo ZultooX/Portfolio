@@ -1,0 +1,82 @@
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    transform: rotate(90deg);
+}
+
+.Text:hover {
+    color: #659b87;
+}
+
+.Text:active {
+    color: red;
+}
+
+.example {
+    background-color: rgb(255, 122, 89);
+}
+
+.CatImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+
+    background-image: url("image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation-name: move;
+    animation-duration: 0.01s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    margin-left: 20px;
+    margin-right: 200px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to left top, rgba(0, 255, 255, 1) 0%
+            /*bottom-right color*/
+            , rgba(255, 0, 255, 0.5) 50%
+            /*middle color*/
+            , rgba(255, 255, 0, 1) 100%
+            /*top-left color*/
+        ),
+        linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1))
+        /*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/
+    ;
+}
+
+@keyframes move {
+    from {
+        transform: rotate(-25deg);
+    }
+
+    to {
+        transform: rotate(-20deg);
+    }
+}
