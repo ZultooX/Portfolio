@@ -1,167 +1,46 @@
-.button {
-    padding: 15px 25px;
-    font-size: 24px;
+.parent-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+.center-div {
+    width: 35%;
+    border: 1px solid black;
+    /* Add border styling */
+    padding: 10px;
+    /* Add padding to create space between the content and the border */
+}
+
+.title {
     text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #04AA6D;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
+    font-size: 40px;
+
 }
 
-.button:hover {
-    background-color: #3e8e41
+.article {
+    border-radius: 3px;
+    border: 3px;
 }
 
-.button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-    transform: rotate(90deg);
+.others {
+    width: 30%;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    padding-top: 5%;
 }
 
-.Text:hover {
-    color: #659b87;
-}
-
-.Text:active {
-    color: red;
-}
-
-.Tester {
-    position: relative;
-    left: 0px;
-    top: -225px;
-
-    /* font: url("Amagro.ttf"); */
-}
-
-h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.example {
-    background-color: rgb(255, 122, 89);
-}
-
-.CatImage {
-    width: 200px;
-    height: 200px;
-    border-radius: 50px;
-
-    background-image: url("image.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    animation-name: move;
-    animation-duration: 0.01s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
-    margin-left: 20px;
-    margin-right: 200px;
-}
-
-html {
-    height: 100%;
+@font-face {
+    font-family: 'CustomFont';
+    /* Provide a name for your custom font */
+    src: url('Amagro.ttf') format('ttf'),
+        /* Specify the path to your font file */
+        url('Amagro.ttf') format('ttf');
+    /* Add additional font formats if available */
+    /* Add more font-face properties if needed, such as font-weight and font-style */
 }
 
 body {
-    background-image: linear-gradient(to left top, rgba(0, 255, 255, 1) 0%
-            /*bottom-right color*/
-            , rgba(255, 0, 255, 0.5) 50%
-            /*middle color*/
-            , rgba(255, 255, 0, 1) 100%
-            /*top-left color*/
-        ),
-        linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1))
-        /*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/
-    ;
-}
-
-
-
-.IconImage {
-    background-image: url("image.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 250px;
-    height: 250px;
-    border-radius: 5px;
-
-    left: 0px;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.IconImage:hover {
-    background-image: url("image.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 500px;
-    height: 500px;
-    border-radius: 50px;
-
-    left: 95px;
-}
-
-.IconImage:active {
-    background-image: url("image.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    width: 500px;
-    height: 500px;
-    border-radius: 50px;
-
-    left: 95px;
-
-    animation-name: move;
-    animation-duration: 0.3s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    
-}
-
-.CenteredText {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-
-
-@keyframes move {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-45deg);
-    }
-
-    50% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(45deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+    font-family: 'CustomFont', Arial, Helvetica;
 }

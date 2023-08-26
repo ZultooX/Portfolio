@@ -2,34 +2,50 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <link rel="Script" href="jscript.js">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                "HTML-CSS": {
+                    preferredFont: "TeX",
+                    availableFonts: ["TeX"],
+                    linebreaks: { automatic: true }
+                },
+                showMathMenu: false
+            });
+        </script>
 </head>
 
 <body>
+    <div class="parent-container">
+        <div class="center-div">
+            <h1 class=" title">
+                Bezier Curves
+            </h1>
 
-    <!-- <div class="CatImage">
-
+            <div class="article">
+                <p style="text-align: justify;">
+                    There are two main methods to generate a bezier curve, the first one De Casteljau’s Algorithm which
+                    uses linear
+                    interpolation (lerp) between points to create the curve. The second one is called Bernstein
+                    Polynomial Form and it uses
+                    an advanced formula instead of a bunch of lerps.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <h1 class="Tester">This is cat!</h1> -->
-
-    <audio id="Sound" src="CatSound.mp3"></audio>
-
-    <button class="IconImage" onclick="playSOund()">
-
-    </button>
-
-    <h1>Click me!</h1>
-
-
+    <div class="others">
+        <a href="OtherIndex.html" class="blue-link">Blue Link</a>
+    </div>
 </body>
-<script>
-    function playSOund() {
-        var sound = document.getElementById("Sound");
-        sound.play();
-    }
-</script>
 
 </html>
