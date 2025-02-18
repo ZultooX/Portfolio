@@ -1,51 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Christopher Vedlund Game Programmer</title>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [['$', '$'], ['\\(', '\\)']],
-                    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                    processEscapes: true,
-                    processEnvironments: true
-                },
-                "HTML-CSS": {
-                    preferredFont: "TeX",
-                    availableFonts: ["TeX"],
-                    linebreaks: { automatic: true }
-                },
-                showMathMenu: false
-            });
-        </script>
+	<link rel="stylesheet" href="styles.CSS">
 </head>
 
 <body>
-    <div class="parent-container">
-        <div class="center-div">
-            <h1 class=" title">
-                Bezier Curves
-            </h1>
+		<!-- <div class="thingie" style="left: 5%"></div>
+		<div class="thingie" style="left: 95%"></div> -->
+	
+	<div class="top-menu">
+		<a class="menu-item" href="#about" onmouseover="onHover_MenuEffect(0)" onmouseout="resetMenuEffect(0)">
+			About
+		</a>
+		<a class="menu-item" href="#games" onmouseover="onHover_MenuEffect(1)" onmouseout="resetMenuEffect(1)">
+			Games
+		</a>
+		<a class="menu-item" href="#specialization" onmouseover="onHover_MenuEffect(2)" onmouseout="resetMenuEffect(2)">
+			Specialization
+		</a>
+		<a class="menu-item" href="#gamejams" onmouseover="onHover_MenuEffect(3)" onmouseout="resetMenuEffect(3)">
+			Game Jams
+		</a>
+		<a class="menu-item" href="#zengine" onmouseover="onHover_MenuEffect(4)" onmouseout="resetMenuEffect(4)">
+			Zengine
+		</a>
+	</div>
 
-            <div class="article">
-                <p style="text-align: justify;">
-                    There are two main methods to generate a bezier curve, the first one De Casteljau’s Algorithm which
-                    uses linear
-                    interpolation (lerp) between points to create the curve. The second one is called Bernstein
-                    Polynomial Form and it uses
-                    an advanced formula instead of a bunch of lerps.
-                </p>
-            </div>
-        </div>
-    </div>
+	
+	
+	<div class="about-page">
+		<img id="fk_Active" src="Images/FindersKeepers_1.png" class="presentation-window" width="80%" height="80%">
+	</div>
+	<img id="fk_Next" src="Images/FindersKeepers_2.png" class="presentation-window" width="80%" height="80%">
 
-    <div class="others">
-        <a href="OtherIndex.html" class="blue-link">Blue Link</a>
-    </div>
+	<script src="base.js"></script>
 </body>
 
 </html>
