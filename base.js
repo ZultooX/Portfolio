@@ -1,5 +1,5 @@
 function onHover_MenuEffect(menuIndex) {
-	var menuItems = document.getElementsByClassName("menu-item");
+	var menuItems = document.getElementsByClassName("navbar-item");
 	var hoveredItem = menuItems[menuIndex];
 
 	hoveredItem.style.transform = "scale(1.5)";
@@ -15,7 +15,7 @@ function onHover_MenuEffect(menuIndex) {
 }
 
 function resetMenuEffect(menuIndex) {
-	var menuItems = document.getElementsByClassName("menu-item");
+	var menuItems = document.getElementsByClassName("navbar-item");
 
 	for (let i = 0; i < menuItems.length; i++) {
 		menuItems[i].style.transform = "scale(1) translateX(0)";
@@ -39,6 +39,3 @@ function nextImage(totalImages, imageId) {
 	
 
 // }, 1);
-
-
-
