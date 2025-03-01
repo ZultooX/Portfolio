@@ -8,7 +8,9 @@
 
 	<link rel="stylesheet" href="base_styles.css">
 	<link rel="stylesheet" href="game_styles.css">
+</head>
 
+<body>
 	<div class="navbar">
 		<a class="navbar-item" href="#about" onmouseover="onHover_MenuEffect(0)" onmouseout="resetMenuEffect(0)">
 			About
@@ -26,77 +28,168 @@
 			Zengine
 		</a>
 	</div>
-</head>
 
-<body>
-	<div class="main">
-		<div id="specialization" class="games">
-			<div class="game">
-				<img src="Images/specialization/thumbnail.png" class="game-trailer">
+	<div id="specialization" class="games">
+		<a class="games-title">Specialization Project</a>
+
+		<div class="game" role="button" onclick="toggleGameInfo(this)">
+
+			<div class="game-showcase">
+				<img src="Images/specialization/thumbnail.png" class="game-thumbnail">
 
 				<div class="game-info">
 					<h2 class="game-title">Specialization: Procedural Animations</h2>
 					<p class="game-description">
-						Procedural animations using FABRIK inverse kinematics.
-						I made feet correction and hand placement on walls when the player walks nearby.
+						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et
+						vestibulum;
+						condimentum leo ut. Aliquet
+						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula
+						montes
+						dui
+						diam. Cursus inceptos
+						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat
+						ullamcorper
+						class neque suspendisse
 					</p>
 				</div>
 			</div>
+
+			<div class="additional-info" style="display: none;">
+				<p>New game-related information goes here...</p>
+				<p>More details about the game, trailers, ratings, etc.</p>
+			</div>
 		</div>
+	</div>
 
 
 
+	<div id="games" class="games">
+		<a class="games-title">Group Projects</a>
 
+		<!-- PROJECT 1: FINDERS KEEPERS -->
+		<div class="game" role="button" onclick="toggleGameInfo(this)">
 
-
-
-
-
-
-
-
-
-
-
-
-		<div id="games" class="games">
-
-			<!-- PROJECT 1: FINDERS KEEPERS -->
-			<div class="game" role="button" tabindex="1" onclick="window.location.href='/ghost-in-the-shield.html'">
-				<img src="Images/p1/thumbnail.png" class="game-trailer">
+			<div class="game-showcase">
+				<img src="Images/p1/thumbnail.png" class="game-thumbnail">
 
 				<div class="game-info">
 					<h2 class="game-title">Finders Keepers</h2>
 					<p class="game-description">
-						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et vestibulum;
+						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et
+						vestibulum;
 						condimentum leo ut. Aliquet
-						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula montes dui
+						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula
+						montes
+						dui
 						diam. Cursus inceptos
-						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat ullamcorper
+						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat
+						ullamcorper
 						class neque suspendisse
 					</p>
 				</div>
 			</div>
 
-			<!-- PROJECT 3: GHOST IN THE SHIELD -->
-			<div id="games" class="game">
-				<img src="Images/p3/screenshot-01.png" class="game-trailer">
+			<div class="additional-info" style="display: none;">
+				<p>New game-related information goes here...</p>
+				<p>More details about the game, trailers, ratings, etc.</p>
+			</div>
+		</div>
+
+
+		<div class="game" role="button" onclick="toggleGameInfo(this)">
+
+			<div class="game-showcase">
+				<img src="Images/p3/screenshot-01.png" class="game-thumbnail">
 
 				<div class="game-info">
 					<h2 class="game-title">Ghost in the Shield</h2>
 					<p class="game-description">
-						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et vestibulum;
+						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et
+						vestibulum;
 						condimentum leo ut. Aliquet
-						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula montes dui
+						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula
+						montes
+						dui
 						diam. Cursus inceptos
-						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat ullamcorper
+						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat
+						ullamcorper
 						class neque suspendisse
-						mi varius aliquet iaculis litora.
 					</p>
 				</div>
 			</div>
+
+			<div class="additional-info" style="display: none;">
+				<p>New game-related information goes here...</p>
+				<p>More details about the game, trailers, ratings, etc.</p>
+			</div>
+		</div>
+
+		<div class="game" role="button" onclick="toggleGameInfo(this)">
+
+			<div class="game-showcase">
+				<img src="Images/p7/thumbnail.png" class="game-thumbnail">
+
+				<div class="game-info">
+					<h2 class="game-title">B.O.O.M</h2>
+					<p class="game-description">
+						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et
+						vestibulum;
+						condimentum leo ut. Aliquet
+						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula
+						montes
+						dui
+						diam. Cursus inceptos
+						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat
+						ullamcorper
+						class neque suspendisse
+					</p>
+				</div>
+			</div>
+
+			<div class="additional-info" style="display: none;">
+				<p>New game-related information goes here...</p>
+				<p>More details about the game, trailers, ratings, etc.</p>
+			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+	<div id="gamejams" class="games">
+		<a class="games-title">Game Jam</a>
+		<div class="game" role="button" onclick="toggleGameInfo(this)">
+
+			<div class="game-showcase">
+				<img src="Images/grapple/thumbnail.png" class="game-thumbnail">
+
+				<div class="game-info">
+					<h2 class="game-title">GMTK 2024: Grapple Ascent</h2>
+					<p class="game-description">
+						Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia sapien vivamus et
+						vestibulum;
+						condimentum leo ut. Aliquet
+						ultricies lobortis vel; accumsan vestibulum ornare. Consequat nascetur fames vehicula
+						montes
+						dui
+						diam. Cursus inceptos
+						per est euismod eget. Fermentum facilisi neque dignissim consectetur hac. Consequat
+						ullamcorper
+						class neque suspendisse
+					</p>
+				</div>
+			</div>
+
+			<div class="additional-info" style="display: none;">
+				<p>New game-related information goes here...</p>
+				<p>More details about the game, trailers, ratings, etc.</p>
+			</div>
+		</div>
+	</div>
+
 
 
 	<script src="base.js"></script>

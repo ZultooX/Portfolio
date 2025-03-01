@@ -39,3 +39,15 @@ function nextImage(totalImages, imageId) {
 	
 
 // }, 1);
+function toggleGameInfo(gameElement) {
+	// Toggle the expansion of the game div
+	gameElement.classList.toggle('expanded');
+
+	// Toggle the visibility of additional information
+	const additionalInfo = gameElement.querySelector('.additional-info');
+	if (additionalInfo.style.display === 'none' || additionalInfo.style.display === '') {
+		additionalInfo.style.display = 'block'; // Show the additional info
+	} else {
+		additionalInfo.style.display = 'none'; // Hide the additional info
+	}
+}
