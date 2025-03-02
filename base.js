@@ -46,3 +46,12 @@ function toggleGameInfo(gameElement) {
 		infoDiv.classList.toggle('visible'); // Toggle visibility
 	}
 }
+
+
+function downloadFile() {
+	const element = document.createElement('a');
+	const file = new Blob(["This is your file content."], { type: 'text/plain' });
+	element.href = URL.createObjectURL(file);
+	element.download = "custom_filename.txt"; // Name of the file to download
+	element.click();
+}

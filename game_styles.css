@@ -10,7 +10,6 @@
 
 
 .game-showcase {
-
 	z-index: 1;
 	cursor: pointer;
 	position: relative;
@@ -39,6 +38,7 @@
 	position: relative;
 	width: 50%;
 	object-fit: cover;
+	border-top-left-radius: 20px;
 }
 
 @media (min-width:1000px) {
@@ -56,7 +56,7 @@
 }
 
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 	.showcases {
 		display: flex;
 		flex-direction: column;
@@ -122,22 +122,51 @@
 	font-size: 2.2rem;
 }
 
+.game-description-specification-title,
+.showcase-specification-text {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.game-description-specification-title {
+	font-size: 1.2rem;
+	padding-left: 20px;
+	font-weight: bold;
+	color: rgb(255, 255, 255);
+}
+
+.showcase-specification-text {
+	font-size: 1.2rem;
+	font-style: italic;
+	color: rgb(148, 148, 148);
+}
+
+
+
+.link-container {
+	width: 100%;
+	display: flex;
+	/* Use flexbox for alignment */
+	justify-content: flex-end;
+	/* Align content to the right */
+	align-items: center;
+}
+
 .game-link {
 	color: rgb(255, 67, 67);
-	padding-left: 20px;
 	font-size: 20px;
 }
 
 .additional-info {
 	display: none;
-	/* Hidden by default */
 	padding: 10px;
 	background-color: rgb(49, 49, 49);
 	transition: all 0.3s ease;
-	/* Smooth transition */
 	margin-top: 0;
-	/* Remove margin to keep it close to showcase */
 	transition: height 0.3s ease;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+
 }
 
 .additional-info.visible {
@@ -173,7 +202,11 @@
 	position: relative;
 	width: 60vw;
 	/* height: 14vw; */
-	background-color: #414141;
+	background-color: #3a3a3a;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 .showcase-intro {
