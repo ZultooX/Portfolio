@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
 	background-color: #181818;
 	background-size: cover;
@@ -13,7 +19,7 @@ body {
 
 .navbar {
 	background-color: rgba(0, 0, 0, 0.7);
-	width: 100vw;
+	width: 105vw;
 	height: 70px;
 	top: 0;
 	position: fixed;
@@ -22,12 +28,12 @@ body {
 	align-items: center;
 	z-index: 10000;
 }
-
 .navbar-item {
 	color: rgb(220, 220, 220);
 	font-family: Arial, sans-serif;
 	text-align: center;
 	font-size: 30px;
+	/* Default font size */
 	padding: 10px 20px;
 	border: none;
 	cursor: pointer;
@@ -36,6 +42,26 @@ body {
 	display: inline-block;
 	transition: transform 0.3s ease, font-size 0.3s ease, margin 0.3s ease;
 	left: 0px;
+}
+
+/* When on smaller devices (e.g. tablets and mobile) */
+@media (max-width: 768px) {
+	.navbar-item {
+		font-size: 24px;
+		/* Reduce font size for smaller screens */
+		padding: 8px 16px;
+		/* Adjust padding to save space */
+	}
+}
+
+/* When on very small screens (mobile phones in portrait) */
+@media (max-width: 480px) {
+	.navbar-item {
+		font-size: 20px;
+		/* Further reduce font size for small screens */
+		padding: 6px 12px;
+		/* Adjust padding for compact layout */
+	}
 }
 
 .navbar-item:hover {
