@@ -24,6 +24,7 @@
 	color: white;
 	text-align: left;
 	padding-left: 20px;
+	padding-right: 20px;
 	font-size: 1.3rem;
 }
 
@@ -113,6 +114,14 @@
 	font-size: 1.2rem;
 }
 
+.game-sub-description {
+	width: 100%;
+	color: rgb(219, 219, 219);
+	text-align: left;
+	padding-left: 40px;
+	font-size: 1.2rem;
+}
+
 .game-description-title {
 	width: 100%;
 	color: white;
@@ -121,6 +130,60 @@
 	padding-top: 30px;
 	font-size: 2.2rem;
 }
+
+.game-description-subtitle {
+	width: 100%;
+	color: white;
+	text-align: left;
+	padding-left: 40px;
+	padding-top: 30px;
+	font-size: 1.8rem;
+}
+
+.showdesc-image-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.game-description-content {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 20px;
+	width: 100%;
+}
+
+.game-description-image {
+	width: 500px;
+	height: auto;
+	flex-shrink: 0;
+	padding-right: 40px;
+}
+
+.game-sub-description {
+	max-width: auto;
+	flex-grow: 1;
+	white-space: normal;
+	padding-left: 50px;
+}
+
+
+.showcase-description-image-description-title {
+	font-weight: bold;
+	color: white;
+	padding-right: 40px;
+	padding-top: 10px;
+}
+
+.showcase-description-image-description {
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+
 
 .game-description-specification-title,
 .showcase-specification-text {
@@ -143,7 +206,7 @@
 
 
 .video-container {
-
+	padding: 20px;
 }
 
 
@@ -175,11 +238,8 @@
 
 .additional-info.visible {
 	display: block;
-	/* Show when the 'visible' class is added */
 	background-color: rgb(49, 49, 49);
-	/* Add your desired background color */
 	height: auto;
-	/* Allow height to grow as content grows */
 	padding: 10px;
 }
 
@@ -191,7 +251,6 @@
 	width: 60vw;
 	height: 14vw;
 	background-color: #414141;
-	/* padding: 20px; */
 }
 
 
@@ -205,13 +264,13 @@
 .showcase {
 	position: relative;
 	width: 60vw;
-	/* height: 14vw; */
 	background-color: #3a3a3a;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 }
+
 
 .showcase-intro {
 	width: 100%;
