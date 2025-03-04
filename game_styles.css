@@ -18,6 +18,14 @@
 	align-items: center;
 	gap: 20px;
 }
+.aboutme-showcase {
+	z-index: 1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
 
 .game-info {
 	width: 100%;
@@ -26,6 +34,27 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	font-size: 1.3rem;
+}
+
+.aboutme-container {
+	position: relative;
+	width: 60vw;
+}
+
+.aboutme-info {
+	width: 100%;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 1.3rem; 
+	color: white;
+}
+
+.aboutme-thumbnail {
+	position: relative;
+	width: 30%;
+	object-fit: cover;
+border-radius: 20px;
 }
 
 .game-title {
