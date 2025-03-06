@@ -29,7 +29,7 @@
 				Zengine
 			</a>
 		</div>
-
+	
 		<div class="navbar-logo">
 			<a href="https://www.linkedin.com/in/christopher-vedlund-64a7a0245/" target="_blank">
 				<img src="Images/linkedin-logo.png" alt="LinkedIn">
@@ -222,6 +222,64 @@
 					</ul>
 				</div>
 
+				<h1 class="game-description-title">Collision System</h1>
+				<p class="game-description">
+					I wanted to push my understanding of low-level game development by creating a custom collision
+					manager, as I felt it would provide deeper insights into optimizing performance and implementing
+					more complex interactions.
+				</p>
+
+				<div class="showdesc-image-container">
+					<h1 class="game-description-subtitle">Process</h1>
+
+					<div class="game-description-content">
+						<p class="game-sub-description">
+							After I had a discussion with my group we decided that we would only need AABB (Axis aligned
+							bounding box), which made the development of the system much simpler since I could focus on
+							one shape!
+							<br><br>
+							I began the development by exploring different methods of checking collision between AABBs
+							and decided to use regular AABB-AABB detection since we won't be using OBB (Oriented
+							bounding boxes), we would just use axis-aligned.
+							<br>
+							Since the game was a platformer without depth enabled, it allowed me to implement AABB
+							collision in 2D,
+							which was interesting to me since most of the game is in 3D.
+							<br><br>
+							After the initial collision checks were implemented, it was time to figure out how to
+							resolve the collision. I chose to add a force to the collider, which pushed it in the normal
+							direction of the face it collided with, giving it a realistic feel. This introduced a
+							problem where the object would be pushed too far or too little. To fix this, I calculated
+							how far inside the collider the object was and scaled the force with this scalar. This fixed
+							the issue, though now I had to constrain the "Force Engine" so it didn't add force to an
+							axis that was colliding with a collider. To solve this, I divided the physics calculation by
+							each axis and disabled the force on the axis if it collided.
+						</p>
+						<div class="showcase-description-image-description">
+							<img src="Images/p3/collision.gif" class="game-description-image">
+							<p class="showcase-description-image-description-title">
+								It works!
+							</p>
+							<p>
+								This shows the first time the collision system works with the "Force Engine".
+								The player can jump move around in a realistic manner.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<h1 class="game-description-subtitle">Problems</h1>
+
+				<div class="game-description-content">
+					<p class="game-sub-description">
+						Some problems i faced when developing the collision system was mainly the math behind the
+						collision resolution. I tried different ways of blocking the object from moving, until i managed
+						to find a way to calculate the normals of the collision and but also where I should focus on
+						fixing existing bugs or new bugs that appears while my group used the system. I chose to fix the
+						bugs that my group found since, they would have the biggest impact on the actual game itself.
+						Otherwise the bugs wouldn't have been found so fast.
+					</p>
+				</div>
 
 				<h1 class="game-description-title">Project Specifications</h1>
 				<div>
