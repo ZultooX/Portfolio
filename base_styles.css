@@ -161,3 +161,27 @@ img {
 	font-size: large;
 	font-style: 30px;
 }
+
+
+
+
+
+
+.bottom-bar {
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+	box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.2);
+	height: 150px;
+}
+
+.bottom-bar a {
+	color: #4CAF50;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.bottom-bar a:hover {
+	text-decoration: underline;
+}
