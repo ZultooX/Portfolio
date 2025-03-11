@@ -5,9 +5,8 @@
 }
 
 body {
-	background-color: #181818;
+	background-color: #1A1A1A;
 	background-size: cover;
-	color: #AAAAAA;
 	font-family: 'Times New Roman';
 	background-attachment: fixed;
 	margin-top: 70px;
@@ -19,7 +18,7 @@ body {
 
 
 .navbar {
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.85);
 	width: 100%;
 	height: 70px;
 	top: 0;
@@ -33,7 +32,6 @@ body {
 .navbar-links {
 	display: flex;
 	gap: 15px;
-	/* Adds spacing between links */
 }
 
 .navbar-item {
@@ -62,23 +60,17 @@ body {
 	cursor: pointer;
 }
 
-/* When on smaller devices (e.g. tablets and mobile) */
 @media (max-width: 768px) {
 	.navbar-item {
 		font-size: 24px;
-		/* Reduce font size for smaller screens */
 		padding: 8px 16px;
-		/* Adjust padding to save space */
 	}
 }
 
-/* When on very small screens (mobile phones in portrait) */
 @media (max-width: 480px) {
 	.navbar-item {
 		font-size: 20px;
-		/* Further reduce font size for small screens */
 		padding: 6px 12px;
-		/* Adjust padding for compact layout */
 	}
 }
 
@@ -92,9 +84,7 @@ body {
 .about-page {
 	display: flex;
 	justify-content: center;
-	/* Center horizontally */
 	align-items: center;
-	/* Center vertically */
 	height: 100vh;
 }
 
@@ -184,4 +174,20 @@ img {
 
 .bottom-bar a:hover {
 	text-decoration: underline;
+}
+
+.my-contributions-container {
+	text-align: center;
+	font-size: 40px;
+}
+
+.my-contributions-container a {
+	color: #E63946;
+	font-weight: bold;
+	text-decoration: underline;
+cursor: pointer;
+}
+
+.my-contributions-container a:hover {
+	color: #C62828;
 }
