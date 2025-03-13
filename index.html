@@ -109,76 +109,22 @@
 		<a class="showcase-container-title">Group Projects</a>
 
 		<!-- FINDERS KEEPERS -->
-		<div class="showcase">
-			<div class="showcase-intro" role="button" onclick="toggleGameInfo('finderskeepers')">
-				<div class="game-showcase">
-					<img src="Images/p1/thumbnail.png" class="game-thumbnail">
-					<div class="game-info">
-						<h2 class="game-title">Finders Keepers</h2>
-						<p>
-							Travel through time, and with the power of a handy zapper, outsmart and outrun your
-							alien
-							pursuer.
-						</p>
+			<a class="showcase" href="finders-keepers.html">
+				<div class="showcase-intro" role="button">
+					<div class="game-showcase">
+						<img src="Images/p1/thumbnail.png" class="game-thumbnail">
+						<div class="game-info">
+							<h2 class="game-title">Finders Keepers</h2>
+							<p>
+								Travel through time, and with the power of a handy zapper, outsmart and outrun your
+								alien pursuer.
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div id="finderskeepers" class="additional-info">
-				<div class="video-container">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/rGN-_40a7Lo?si=qRK-ccFtreMmJ5si"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-
-				<p class="game-description">
-					This game was the first game project I did at The Game Assembly.
-					<br>
-					It was made using The Unity Game Engine.
-				</p>
-
-				<h1 class="game-description-title">My Contributions</h1>
-				<div>
-					<ul class="game-sub-description">
-						<li>Player Movement</li>
-						<li>Animation Blending</li>
-						<li>Portal Mechanic</li>
-					</ul>
-				</div>
-
-				<h1 class="game-description-title">Project Specifications</h1>
-				<div>
-					<h1 class="game-description-specification-title">Team Size:</h1>
-					<h1 class="showcase-specification-text">14</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Reference:</h1>
-					<h1 class="showcase-specification-text">Subway Surfers</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Duration:</h1>
-					<h1 class="showcase-specification-text">7 Weaks</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Speed:</h1>
-					<h1 class="showcase-specification-text">50%</h1>
-					<p class="game-description"></p>
-				</div>
-
-				<div class="my-contributions-container" >
-					<a href="Downloads/kenobi.gif" download="kenobi.gif">Download the game here!</a>
-				</div>
-				<div class="my-contributions-container">
-					<a>Read more about my contributions here!</a>
-				</div>
-
-				<div class="link-container">
-					<a class="game-link" href="Downloads/kenobi.gif" download="kenobi.gif">Download the game
-						here!</a>
-				</div>
-			</div>
-		</div>
+				<img src="Images/right-arrow.svg" class="arrow">
+			</a>
 
 
 		<!-- GHOST IN THE SHIELD -->
@@ -199,131 +145,7 @@
 				</div>
 			</div>
 
-			<div id="ghostintheshield" class="additional-info">
-				<div class="video-container">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/Xii4a4BIEeE?si=e46Gz-zX8WKdiv5z"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-
-				<p class="game-description">
-					This was the first game project developed using The Game Assembly's custom game engine, TGE.
-					Since
-					TGE is a barebones engine, we were responsible for developing many of its core features from
-					scratch.
-					<br>
-					<br>
-					During this project my team wanted to explore combining 2D graphics with a world in 3D. The
-					player
-					and the enemy entities were made in 2D while the world were in 3D.
-				</p>
-
-				<h1 class="game-description-title">My Contributions</h1>
-				<div>
-					<ul class="game-sub-description">
-						<li>Collision System</li>
-						<li>Physics based force engine</li>
-						<li>Physics based Player Controller</li>
-						<li>Video Player</li>
-					</ul>
-				</div>
-
-				<div>
-					<h1 class="game-description-title">Collision System</h1>
-					<p class="game-description">
-						I wanted to push my understanding of collisions by creating a custom collision
-						manager, as I felt it would provide deeper insights into optimizing performance and implementing
-						more complex interactions.
-					</p>
-
-					<div class="showdesc-image-container">
-						<h1 class="game-description-subtitle">Process</h1>
-
-						<div class="game-description-content">
-							<p class="game-sub-description">
-								After I had a discussion with my group we decided that we would only need AABB (Axis
-								aligned
-								bounding box), which made the development of the system much simpler since I could focus
-								on
-								one shape!
-								<br><br>
-								I began the development by exploring different methods of checking collision between
-								AABBs
-								and decided to use regular AABB-AABB detection since we won't be using OBB (Oriented
-								bounding boxes), we would just use axis-aligned.
-								<br>
-								Since the game was a platformer without depth enabled, it allowed me to implement AABB
-								collision in 2D,
-								which was interesting to me since most of the game is in 3D.
-								<br><br>
-								After the initial collision checks were implemented, it was time to figure out how to
-								resolve the collision. I chose to add a force to the collider, which pushed it in the
-								normal
-								direction of the face it collided with, giving it a realistic feel. This introduced a
-								problem where the object would be pushed too far or too little. To fix this, I
-								calculated
-								how far inside the collider the object was and scaled the force with this scalar. This
-								fixed
-								the issue, though now I had to constrain the "Force Engine" so it didn't add force to an
-								axis that was colliding with a collider. To solve this, I divided the physics
-								calculation by
-								each axis and disabled the force on the axis if it collided.
-							</p>
-							<div class="showcase-description-image-description">
-								<img src="Images/p3/collision.gif" class="game-description-image">
-								<p class="showcase-description-image-description-title">
-									It works!
-								</p>
-								<p>
-									This shows the first time the collision system works with the "Force Engine".
-									The player can jump move around in a realistic manner.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<h1 class="game-description-subtitle">Problems</h1>
-
-					<div class="game-description-content">
-						<p class="game-sub-description">
-							Some problems i faced when developing the collision system was mainly the math behind the
-							collision resolution. I tried different ways of blocking the object from moving, until i
-							managed
-							to find a way to calculate the normals of the collision and but also where I should focus on
-							fixing existing bugs or new bugs that appears while my group used the system. I chose to fix
-							the
-							bugs that my group found since, they would have the biggest impact on the actual game
-							itself.
-							Otherwise the bugs wouldn't have been found so fast.
-						</p>
-					</div>
-				</div>
-
-				<h1 class="game-description-title">Project Specifications</h1>
-				<div>
-					<h1 class="game-description-specification-title">Team Size:</h1>
-					<h1 class="showcase-specification-text">14</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Reference:</h1>
-					<h1 class="showcase-specification-text">Katana Zero & Metroid Dread</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Duration:</h1>
-					<h1 class="showcase-specification-text">11 Weeks</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Speed:</h1>
-					<h1 class="showcase-specification-text">50%</h1>
-					<p class="game-description"></p>
-				</div>
-
-				<div class="link-container">
-					<a class="game-link" href="Downloads/kenobi.gif" download="kenobi.gif">Download the game
-						here!</a>
-				</div>
-			</div>
+			<img src="Images/right-arrow.svg" class="arrow">
 		</div>
 
 
@@ -343,95 +165,7 @@
 				</div>
 			</div>
 
-			<div id="spitedecrepitdepths" class="additional-info">
-				<p class="game-description">
-					This game was made during the 5/6th game project at The Game Assembly were we made our custom
-					DirectX11 Engine. We made an engine wich we chose to call Titan symbolising how strong it is!
-				</p>
-
-				<h1 class="game-description-title">My Contributions</h1>
-				<div>
-					<ul class="game-sub-description">
-						<li>Collision System</li>
-						<li>Video Player using FFMPEG</li>
-						<li>Animation Stack</li>
-						<li>Graphics Engine</li>
-						<li>Debug Line Drawer</li>
-						<li>PBR</li>
-					</ul>
-				</div>
-
-				<div>
-					<h1 class="game-description-title">Animation Stack</h1>
-					<p class="game-description">
-						I wanted to make a way for us to be able to set animations and then that it would go
-						back to the previous animation. So I made a our animations like a stack. The idea was
-						that the it would adapt a Last-In-First-Out principle. That way we could play a walking
-						animation and then transition back to a the idle animation.
-					</p>
-
-					<div class="showdesc-image-container">
-						<h1 class="game-description-subtitle">Process</h1>
-
-						<div class="game-description-content">
-							<p class="game-sub-description">
-								To solve this I just made a list which active animations gets added to. And once
-								an animation finishes it pops the back of the vector. The animation player always plays
-								the animation at the back of the vector. But how can I controll how animations are
-								played?
-								<br><br>
-								Before you can use animations you have to add the animations to a storage, which loads
-								and stores the animation data. Wich may be "Should I loop", "can i be popped before done
-								playing" and so one. So a walking animation can be pushed to the stack once and keep
-								looping until the MovementController pops it from the stack.
-							</p>
-							<div class="showcase-description-image-description">
-								<img src="Images/p5&6/first-iteration-animaiton-state-stackgif.gif"
-									class="game-description-image">
-								<p class="showcase-description-image-description-title">
-									First iteration of the animation controller!
-								</p>
-								<p>
-									This shows the first time iteration of the animation controller. I am by default in
-									idle and then im pushing walking and the animations plays!
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<h1 class="game-description-subtitle">Feedback</h1>
-
-					<div class="game-description-content">
-						<p class="game-sub-description">
-							The feedback I got from the Animation Stack was positive
-						</p>
-					</div>
-				</div>
-
-				<h1 class="game-description-title">Project Specifications</h1>
-				<div>
-					<h1 class="game-description-specification-title">Team Size:</h1>
-					<h1 class="showcase-specification-text">18</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Reference:</h1>
-					<h1 class="showcase-specification-text">Diablo 3</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Duration:</h1>
-					<h1 class="showcase-specification-text">9 Weeks</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Speed:</h1>
-					<h1 class="showcase-specification-text">50%</h1>
-					<p class="game-description"></p>
-				</div>
-
-				<div class="link-container">
-					<a class="game-link" href="Downloads/kenobi.gif" download="kenobi.gif">Download the game
-						here!</a>
-				</div>
-			</div>
+			<img src="Images/right-arrow.svg" class="arrow">
 		</div>
 
 
@@ -452,47 +186,7 @@
 				</div>
 			</div>
 
-			<div id="boom" class="additional-info">
-				<p class="game-description">
-					This was the seventh project at The Game Assembly, where we had to make a first person shooter
-					game.
-					<br>
-					We also had to implement a physics API, and my group chose to implement PhysX
-				</p>
-
-				<h1 class="game-description-title">My Contributions</h1>
-				<div>
-					<ul class="game-sub-description">
-						<li>PhysX Implementation</li>
-						<li>Decals</li>
-						<li>Improved Animation Stack</li>
-					</ul>
-				</div>
-
-				<h1 class="game-description-title">Project Specifications</h1>
-				<div>
-					<h1 class="game-description-specification-title">Team Size:</h1>
-					<h1 class="showcase-specification-text">15</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Reference:</h1>
-					<h1 class="showcase-specification-text">DOOM</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Duration:</h1>
-					<h1 class="showcase-specification-text">16 Weeks</h1>
-					<p class="game-description"></p>
-
-					<h1 class="game-description-specification-title">Speed:</h1>
-					<h1 class="showcase-specification-text">50%</h1>
-					<p class="game-description"></p>
-				</div>
-
-				<div class="link-container">
-					<a class="game-link" href="Downloads/kenobi.gif" download="kenobi.gif">Download the game
-						here!</a>
-				</div>
-			</div>
+			<img src="Images/right-arrow.svg" class="arrow">
 		</div>
 	</div>
 

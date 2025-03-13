@@ -70,6 +70,7 @@
 	width: 50%;
 	object-fit: cover;
 	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 @media (min-width:1000px) {
@@ -295,13 +296,34 @@
 	position: relative;
 	width: 60vw;
 	background-color: #3a3a3a;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border-bottom-left-radius: 20px;
+	border-radius: 20px;
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+	transition: transform 0.1s ease-in-out, fill 0.1s ease-in-out;
+text-decoration: none;
 }
 
+
+.arrow {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	width: 40px;
+	height: auto;
+	filter: invert(1);
+	transition: transform 0.1s ease-in-out, fill 0.1s ease-in-out;
+}
+
+.showcase:hover .arrow {
+	transform: scale(1.2);
+}
+
+.showcase:hover {
+	transform: scale(1.02);
+}
+
+.showcase:hover .game-title {
+	text-decoration: underline;
+}
 
 .showcase-intro {
 	width: 100%;
