@@ -299,7 +299,7 @@
 	border-radius: 20px;
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
 	transition: transform 0.1s ease-in-out, fill 0.1s ease-in-out;
-text-decoration: none;
+	text-decoration: none;
 }
 
 
