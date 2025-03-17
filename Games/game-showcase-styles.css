@@ -36,6 +36,15 @@
     padding: 40px;
 }
 
+.showcase .center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #505050;
+}
+
 
 .description {
     margin: 1%;
@@ -43,6 +52,9 @@
     color: white;
     padding: 20px;
 }
+
+.showcase .center .description{
+max-width: 90vw;}
 
 
 
