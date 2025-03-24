@@ -28,10 +28,15 @@
 }
 
 .showcase .even img,
-.showcase .odd img,
+.showcase .odd img {
+    width: 50%;
+    height: auto;
+    padding: 40px;
+}
+
 .showcase .even iframe,
 .showcase .odd iframe {
-    width: 50vw;
+    width: 50%;
     height: 50vh;
     padding: 40px;
 }
@@ -53,15 +58,23 @@
     padding: 20px;
 }
 
-.showcase .center .description{
-max-width: 90vw;}
+.showcase .center .description {
+    max-width: 90vw;
+}
 
 
 
 .description .title {
     font-size: 40px;
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
+}
+
+.description .subtitle {
+    font-size: 25px;
+font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .description a {

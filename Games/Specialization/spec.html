@@ -50,12 +50,16 @@
                     TGA offers a course were the student gets to specialize in an area in which they are intrested in.
                     <br>
                     <br>
-                    So I to specialize in procedural animations and developing an Inverse Kinematics alghoritm using the
+                    So I decided to specialize in procedural animations and developing an Inverse Kinematics alghoritm
+                    using the
                     FABRIK (Forward And Backwards Reaching Inverse Kinematics) method.
                     <br>
                     <br>
                     And with the finished inverse kinematics I wanted to recreate the subtle hand animations from
                     Uncharted 4: A Thief's End.
+                    <br>
+                    <br>
+                    I made the project in my own custom C++ DirectX11 game engine.
                 </a>
             </div>
 
@@ -63,6 +67,64 @@
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+
+        <div class="even">
+            <img src="../../Images/specialization/SolvePosition_prnt.png">
+            <div class="description">
+                <div class="title">FABRIK Implementation</div>
+                <a>
+                    The implementation of the position solving was straight forward. Perform the passes a number of
+                    iterations. But I found that a single iteration is enough for my joint chain. But for larger joint
+                    chains more iterations was needed.
+                    <br>
+                    <br>
+                    And you can also set a flag in the chain to decide if it should use the target local to its own
+                    space, set it so it uses world space and the models transform.
+                </a>
+            </div>
+        </div>
+
+        <div class="odd">
+            <div class="description">
+                <div class="title">Passes</div>
+                <a>
+                    The FABRIK algorithm operates in two key passes to adjust joint positions efficiently:
+                </a>
+
+                <div class="subtitle">Backward Pass</div>
+                <a>
+                    The chain starts from the end effector and moves backward toward the root. This step ensures that
+                    the
+                    end effector reaches the target while maintaining segment lengths.
+                </a>
+
+                <div class="subtitle">Forward Pass</div>
+                <a>
+                    The chain then moves forward, repositioning joints while keeping the root in place. This step
+                    restores
+                    the structure while maintaining the target alignment.
+                </a>
+            </div>
+
+            <img src="../../Images/specialization/frw_bcw_pass.png" alt="FABRIK Forward and Backward Pass">
+        </div>
+
+        <div class="even">
+            <img src="../../Images/specialization/solve-rotations.png">
+            <div class="description">
+                <div class="title">Joint Rotations</div>
+                <a>
+                    The SolveRotation step in FABRIK adjusts joint rotations after their positions are updated. It
+                    iterates through each joint (except the last) to align it with the next joint in the chain. For the
+                    last joint, it adjusts its rotation to face the target position.
+                    <br>
+                    <br>
+                    Using quaternions ensures smooth rotations and avoids problems like gimbal lock, maintaining both
+                    correct positions and natural orientations.
+                </a>
+            </div>
         </div>
 
 
@@ -82,105 +144,6 @@
                     <br>
                     <br>
                     <a style="color:red;">WRITE MORE?</a>
-                </a>
-            </div>
-        </div>
-
-        <div class="even">
-            <img src="../../Images/p1/thumbnail.png">
-            <div class="description">
-                <div class="title">Title</div>
-                <a>
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
-                    Here is the description of the image.
                 </a>
             </div>
         </div>
