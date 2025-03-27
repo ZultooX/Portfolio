@@ -39,9 +39,20 @@
     <div class="showcase">
         <div class="odd">
             <div class="description">
-                <div class="title">My contributions</div>
+                <div class="title">Group Project 3</div>
                 <a>
-                    
+                    This project is my favorite since it was the first were we didnt use Unity and instead used TGA's
+                    inhouse engine. Some of my contributions to this project is:
+                    <br>
+                    <br>
+
+                    <ul>
+                        <li>Collision System</li>
+                        <li>Force Engine</li>
+                        <li>Physics Based Player Movement</li>
+                        <li>Player State Stack</li>
+                        <li>And more!</li>
+                    </ul>
                 </a>
             </div>
 
@@ -52,64 +63,47 @@
         </div>
 
         <div class="even">
-            <img src="../../Images/specialization/SolvePosition_prnt.png">
+            <img src="../../Images/p3/collision.gif">
             <div class="description">
-                <div class="title">FABRIK Implementation</div>
+                <div class="title">Collision System</div>
                 <a>
-                    The implementation of the position solving was straight forward. Perform the passes a number of
-                    iterations. But I found that a single iteration is enough for my joint chain. But for larger joint
-                    chains more iterations was needed.
+                    My goal was to implement a system that would be easy to use for my team members. I could reach that
+                    goal thanks to ES which was the name our component system was given.
                     <br>
                     <br>
-                    And you can also set a flag in the chain to decide if it should use the target local to its own
-                    space, set it so it uses world space and the models transform.
+                    Im not sure what to write since ive forgotten most of the system
                 </a>
             </div>
         </div>
 
         <div class="odd">
             <div class="description">
-                <div class="title">Passes</div>
+                <div class="title">Force Engine</div>
                 <a>
-                    The FABRIK algorithm operates in two key passes to adjust joint positions efficiently:
-                </a>
-
-                <div class="subtitle">Backward Pass</div>
-                <a>
-                    The chain starts from the end effector and moves backward toward the root. This step ensures that
-                    the
-                    end effector reaches the target while maintaining segment lengths.
-                </a>
-
-                <div class="subtitle">Forward Pass</div>
-                <a>
-                    The chain then moves forward, repositioning joints while keeping the root in place. This step
-                    restores
-                    the structure while maintaining the target alignment.
+                    I wanted to make character controller that feels good and natural, so I wanted to make a physics
+                    based character controller. But since the engine dont have a physics engine implemented I had to
+                    take actions into my own hands and implement an engine which only applies force to objects,
+                    therefore the name Force Engine.
+                    <br>
+                    <br>
+                    This force engine would also make it easier to separate colliders from eachother by simple applying
+                    a force.
                 </a>
             </div>
 
-            <img src="../../Images/specialization/frw_bcw_pass.png" alt="FABRIK Forward and Backward Pass">
+            <img src="../../Images/p3/separate-collisions.png">
         </div>
 
         <div class="even">
-            <img src="../../Images/specialization/solve-rotations.png">
+            <img src="../../Images/p3/player-movement.png">
             <div class="description">
-                <div class="title">Joint Rotations</div>
+                <div class="title">Player Movement</div>
                 <a>
-                    This part was the hardest to figure out, I struggled sometime with what space the positions would be
-                    calculated in and which space would make the rotation calculations easier. But I solved it by coming
-                    up with this solution!
-                    <br>
-                    <br>
-                    The SolveRotation step in FABRIK adjusts joint rotations after their positions are updated. It
-                    iterates through each joint (except the last) to align it with the next joint in the chain. For the
-                    last joint, I store a parameter withing the chain where you can chose your own rotations using euler
-                    angles.
-                    <br>
-                    <br>
-                    Using quaternions ensures smooth rotations and avoids problems like gimbal lock, maintaining both
-                    correct positions and natural orientations.
+                    I want to create a movement system where the player accelerates smoothly in the direction of input
+                    while maintaining a maximum speed. The movement should feel responsive, but also natural, with a
+                    slight inertia effect when changing directions. Additionally, if no input is given, the player
+                    should gradually slow down instead of stopping abruptly. This will make movement feel fluid and more
+                    dynamic.
                 </a>
             </div>
         </div>
@@ -118,7 +112,7 @@
 
     <div class="bottom-bar">
         <p>Contact me at: email@example.com</p>
-        <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a> | <a href="#">GitHub</a>y
     </div>
 
     <script src="../../base.js"></script>

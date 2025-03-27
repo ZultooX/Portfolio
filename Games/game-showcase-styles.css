@@ -70,6 +70,10 @@
     text-align: center;
 }
 
+.description ul {
+        padding-left: 80px;
+}
+
 .description .subtitle {
     font-size: 25px;
 font-weight: bold;
