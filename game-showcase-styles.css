@@ -27,12 +27,21 @@
     background-color: #414141;
 }
 
-.showcase .even img,
-.showcase .odd img {
+.about-me-image {
+    width: 20%;
+    padding: 40px;
+    margin-right: 10%;
+    border-radius: 45px;
+}
+
+.showcase .even .game-image,
+.showcase .odd .game-image {
     width: 50%;
     height: auto;
     padding: 40px;
 }
+
+
 
 .showcase .even iframe,
 .showcase .odd iframe {
@@ -40,6 +49,11 @@
     height: 50vh;
     padding: 40px;
 }
+
+
+
+
+
 
 .showcase .center {
     width: 100%;
@@ -58,29 +72,60 @@
     padding: 20px;
 }
 
+.about-me {
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 50vw;
+    color: white;
+    padding: 20px;
+}
+
 .showcase .center .description {
     max-width: 90vw;
 }
 
 
 
+.about-me .title,
 .description .title {
     font-size: 40px;
     font-weight: bolder;
     text-align: center;
 }
 
-.description ul {
-        padding-left: 80px;
+.about-me.sub-title,
+.description .sub-title {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
 }
 
+.about-me.ul,
+.description ul {
+    padding-left: 30px;
+}
+
+.about-me.subtitle,
 .description .subtitle {
     font-size: 25px;
-font-weight: bold;
+    font-weight: bold;
     text-align: center;
     padding-top: 30px;
 }
 
+.about-me a,
 .description a {
     font-size: 20px;
+}
+
+
+.description .spec-title {
+    font-weight: bolder;
+    padding-left: 30px;
+}
+
+.description .spec-text {
+    font-weight: lighter;
+    font-style: italic;
+    color: rgb(173, 173, 173);
 }

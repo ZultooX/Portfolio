@@ -13,25 +13,24 @@
 <body>
     <div class="navbar">
         <div class="navbar-links">
-            <a class="navbar-item" href="../../index.html#aboutme" onmouseover="onHover_MenuEffect(0)"
+            <a class="navbar-item" href="index.html" onmouseover="onHover_MenuEffect(0)"
                 onmouseout="resetMenuEffect(0)">
-                About Me
+                Home
             </a>
-            <a class="navbar-item" href="../../index.html#games" onmouseover="onHover_MenuEffect(1)"
-                onmouseout="resetMenuEffect(1)">
-                Games
-            </a>
-            <a class="navbar-item" href="../../index.html#spec" onmouseover="onHover_MenuEffect(2)"
-                onmouseout="resetMenuEffect(2)">
+            <a class="navbar-item" href="spec.html" onmouseover="onHover_MenuEffect(1)" onmouseout="resetMenuEffect(1)">
                 Specialization
             </a>
-            <a class="navbar-item" href="../../index.html#gamejams" onmouseover="onHover_MenuEffect(3)"
+            <a class="navbar-item" href="index.html#games" onmouseover="onHover_MenuEffect(2)"
+                onmouseout="resetMenuEffect(2)">
+                Games
+            </a>
+            <a class="navbar-item" href="index.html#gamejams" onmouseover="onHover_MenuEffect(3)"
                 onmouseout="resetMenuEffect(3)">
                 Game Jams
             </a>
-            <a class="navbar-item" href="../../index.html#zengine" onmouseover="onHover_MenuEffect(4)"
+            <a class="navbar-item" href="about-me.html" onmouseover="onHover_MenuEffect(4)"
                 onmouseout="resetMenuEffect(4)">
-                Zengine
+                About Me
             </a>
         </div>
     </div>
@@ -39,10 +38,36 @@
     <div class="showcase">
         <div class="odd">
             <div class="description">
-                <div class="title">My contributions</div>
+                <div class="title">Group Project 1</div>
                 <a>
-                    
+                    During this project we were tasked with making an "infinite runner".
+                    <br>
+                    Now that im looking back at this project and looking at the code I wrote back then, I can really see
+                    how much that I've improved over the time at TGA.
                 </a>
+                <br>
+                <br>
+                <a class="sub-title">
+                    My Contributions
+                </a>
+                <ul>
+                    <li>Player Movement</li>
+                    <li>Animations</li>
+                    <li>Portal Mechanic</li>
+                    <li>"Time travel mechanic"</li>
+                    <li>And more!</li>
+                </ul>
+
+                <br>
+                <br>
+                <a class="sub-title">
+                    Project Specifications
+                </a>
+                <br>
+                <a class="spec-title">Team Size: <a class="spec-text">14</a><br></a>
+                <a class="spec-title">Reference: <a class="spec-text">Subway Surfers</a><br></a>
+                <a class="spec-title">Duration: <a class="spec-text">7 weeks</a><br></a>
+                <a class="spec-title">Speed: <a class="spec-text">50%</a><br></a>
             </div>
 
             <iframe src="https://www.youtube.com/embed/rGN-_40a7Lo?si=RbYLZIKhTvxU_X0p" title="YouTube video player"
@@ -52,64 +77,18 @@
         </div>
 
         <div class="even">
-            <img src="../../Images/specialization/SolvePosition_prnt.png">
+            <img src="Images/p1/movement-showcase.gif">
             <div class="description">
-                <div class="title">FABRIK Implementation</div>
+                <div class="title">Player Movement</div>
                 <a>
-                    The implementation of the position solving was straight forward. Perform the passes a number of
-                    iterations. But I found that a single iteration is enough for my joint chain. But for larger joint
-                    chains more iterations was needed.
+                    My group was indecisive about how we wanted the movement to be, so I offered to make two different
+                    versions so that they can see how the different types would be. I made one like Temple Run 2 were
+                    the player is not confined within lanes giving the player more freedoom. The second one I made was
+                    like Subway Surfers were the player is confined within lanes.
                     <br>
                     <br>
-                    And you can also set a flag in the chain to decide if it should use the target local to its own
-                    space, set it so it uses world space and the models transform.
-                </a>
-            </div>
-        </div>
-
-        <div class="odd">
-            <div class="description">
-                <div class="title">Passes</div>
-                <a>
-                    The FABRIK algorithm operates in two key passes to adjust joint positions efficiently:
-                </a>
-
-                <div class="subtitle">Backward Pass</div>
-                <a>
-                    The chain starts from the end effector and moves backward toward the root. This step ensures that
-                    the
-                    end effector reaches the target while maintaining segment lengths.
-                </a>
-
-                <div class="subtitle">Forward Pass</div>
-                <a>
-                    The chain then moves forward, repositioning joints while keeping the root in place. This step
-                    restores
-                    the structure while maintaining the target alignment.
-                </a>
-            </div>
-
-            <img src="../../Images/specialization/frw_bcw_pass.png" alt="FABRIK Forward and Backward Pass">
-        </div>
-
-        <div class="even">
-            <img src="../../Images/specialization/solve-rotations.png">
-            <div class="description">
-                <div class="title">Joint Rotations</div>
-                <a>
-                    This part was the hardest to figure out, I struggled sometime with what space the positions would be
-                    calculated in and which space would make the rotation calculations easier. But I solved it by coming
-                    up with this solution!
-                    <br>
-                    <br>
-                    The SolveRotation step in FABRIK adjusts joint rotations after their positions are updated. It
-                    iterates through each joint (except the last) to align it with the next joint in the chain. For the
-                    last joint, I store a parameter withing the chain where you can chose your own rotations using euler
-                    angles.
-                    <br>
-                    <br>
-                    Using quaternions ensures smooth rotations and avoids problems like gimbal lock, maintaining both
-                    correct positions and natural orientations.
+                    After the group saw them and discussed, we came to the conclusion that the lanes was a better fit
+                    for our game.
                 </a>
             </div>
         </div>
@@ -117,8 +96,48 @@
 
 
     <div class="bottom-bar">
-        <p>Contact me at: email@example.com</p>
-        <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+
+        <div class="item">
+            <div class="vertical-container">
+                <a class="title">Location</a>
+                <a class="phone">Stockholm, Sweden</a>
+                <a class="phone">Järfälla 177 47</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="vertical-container">
+                <a class="title">Contact</a>
+                <a class="mail" href="mailto:vedlundchristopher@gmail.com"
+                    target="_self">vedlundchristopher@gmail.com</a>
+                <a class="phone">(+46) 768-68 61 70</a>
+            </div>
+        </div>
+
+
+        <div class="item">
+            <div class="vertical-container">
+                <a class="title">Links</a>
+            </div>
+
+            <div class="links">
+                <a href="https://www.linkedin.com/in/christopher-vedlund-64a7a0245/" target="_blank">
+                    <img src="Images/linkedin-logo.png" role="button">
+                </a>
+
+                <a href="https://zultoox.itch.io" target="_blank">
+                    <img src="Images/itch-io.1024x1024.png">
+                </a>
+
+                <a href="https://github.com/ZultooX" target="_blank">
+                    <img src="Images/github.png">
+                </a>
+
+                <a href="https://1drv.ms/b/s!AqtFedgErE4RqvQ1vkNq_is4kpp5Ow?e=qucdbA" target="_blank">
+                    <img src="Images/resume-7.png">
+                </a>
+            </div>
+        </div>
     </div>
 
     <script src="../../base.js"></script>

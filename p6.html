@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Vedlund Game Programmer</title>
+
+    <link rel="stylesheet" href="../../base_styles.css">
+    <link rel="stylesheet" href="../game-showcase-styles.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-links">
+            <a class="navbar-item" href="index.html" onmouseover="onHover_MenuEffect(0)"
+                onmouseout="resetMenuEffect(0)">
+                Home
+            </a>
+            <a class="navbar-item" href="spec.html" onmouseover="onHover_MenuEffect(1)" onmouseout="resetMenuEffect(1)">
+                Specialization
+            </a>
+            <a class="navbar-item" href="index.html#games" onmouseover="onHover_MenuEffect(2)"
+                onmouseout="resetMenuEffect(2)">
+                Games
+            </a>
+            <a class="navbar-item" href="index.html#gamejams" onmouseover="onHover_MenuEffect(3)"
+                onmouseout="resetMenuEffect(3)">
+                Game Jams
+            </a>
+            <a class="navbar-item" href="about-me.html" onmouseover="onHover_MenuEffect(4)"
+                onmouseout="resetMenuEffect(4)">
+                About Me
+            </a>
+        </div>
+    </div>
+
+    <div class="showcase">
+        <div class="odd">
+            <div class="description">
+                <div class="title">Group Project 6</div>
+                <a>
+                    During this project my group made our custom C++ DX11 Game Engine, which both came with pros and
+                    cons.
+                    <br>
+                    <br>
+
+                    <a class="title">My Contributions</a>
+                    <ul>
+                        <li>Collision System</li>
+                        <li>Debug Drawer</li>
+                        <li>Navmesh Implementation</li>
+                        <li>Animation Manager</li>
+                        <li>PBR</li>
+                        <li>And more!</li>
+                    </ul>
+
+                    <br>
+                    <br>
+                    <a class="sub-title">
+                        Project Specifications
+                    </a>
+                    <br>
+                    <a class="spec-title">Team Size: <a class="spec-text">18</a><br></a>
+                    <a class="spec-title">Reference: <a class="spec-text">Diablo 3</a><br></a>
+                    <a class="spec-title">Duration: <a class="spec-text">9 weeks</a><br></a>
+                    <a class="spec-title">Speed: <a class="spec-text">50%</a><br></a>
+                </a>
+            </div>
+
+            <iframe src="https://www.youtube.com/embed/D1MNXhfdGHE?si=WtB7KMQCcwdx7uPC" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="even">
+            <img src="Images/p5&6/first-iteration-animaiton-state-stackgif.gif">
+            <div class="description">
+                <div class="title">Animation Manager</div>
+                <a>
+                    To make it easier for my group to add animations, I created a stack-based animation system.
+                    Animations are pushed onto
+                    the stack and popped based on set conditions.
+                    <br>
+                    <br>
+                    For example, an idle animation is pushed first and set to stay indefinitely. When the player starts
+                    walking, a walking animation is pushed on top, overriding the idle animation. Once movement stops,
+                    the walking
+                    animation is popped, revealing the idle animation again.
+                    <br>
+                    <br>
+                    This system ensures smooth transitions and makes managing animations simple and flexible.
+                    <br>
+                    <br>
+                    The feedback I got for this was amazing!
+                </a>
+            </div>
+        </div>
+
+        <div class="odd">
+            <div class="description">
+                <div class="title">Collision System</div>
+                <a>
+
+                </a>
+            </div>
+
+            <img src="">
+        </div>
+
+        <div class="even">
+            <img src="">
+            <div class="description">
+                <div class="title">PBR</div>
+                <a>
+
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom-bar">
+
+        <div class="item">
+            <div class="vertical-container">
+                <a class="title">Location</a>
+                <a class="phone">Stockholm, Sweden</a>
+                <a class="phone">Järfälla 177 47</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="vertical-container">
+                <a class="title">Contact</a>
+                <a class="mail" href="mailto:vedlundchristopher@gmail.com"
+                    target="_self">vedlundchristopher@gmail.com</a>
+                <a class="phone">(+46) 768-68 61 70</a>
+            </div>
+        </div>
+
+
+        <div class="item">
+            <div class="vertical-container">
+                <a class="title">Links</a>
+            </div>
+
+            <div class="links">
+                <a href="https://www.linkedin.com/in/christopher-vedlund-64a7a0245/" target="_blank">
+                    <img src="Images/linkedin-logo.png" role="button">
+                </a>
+
+                <a href="https://zultoox.itch.io" target="_blank">
+                    <img src="Images/itch-io.1024x1024.png">
+                </a>
+
+                <a href="https://github.com/ZultooX" target="_blank">
+                    <img src="Images/github.png">
+                </a>
+
+                <a href="https://1drv.ms/b/s!AqtFedgErE4RqvQ1vkNq_is4kpp5Ow?e=qucdbA" target="_blank">
+                    <img src="Images/resume-7.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../base.js"></script>
+</body>
+
+</html>
