@@ -38,53 +38,70 @@
     <div class="showcase">
         <div class="odd">
             <div class="description">
-                <div class="title">Group Project 7</div>
+                <div class="title">Grapple Ascent</div>
                 <a>
-                    During this project, we had to implement physics using a physics library. I chose NVIDIA PhysX for
-                    its efficiency and robust simulation features. It allowed me to handle collisions, gravity, and
-                    object interactions smoothly, making the gameplay feel more realistic and responsive.
+                    <a>
+                        During this game jam the theme were built to scale, my team interpreted with making a jojo whos
+                        built to scale a mountain. But a finite mountain is no fun, so we made it infinite.
+                    </a>
                     <br>
                     <br>
 
-                    <a class="title">My Contributions</a>
+                    <a class="sub-title">My Contributions</a>
                     <ul>
-                        <li>Physics Engine using PhysX</li>
-                        <li>Animations</li>
+                        <li>Tower Generation</li>
                         <li>And more!</li>
                     </ul>
+                    <br>
+                    <br>
+                    <a class="sub-title">
+                        Project Specifications
+                    </a>
+                    <br>
+                    <a class="spec-title">Team Size: <a class="spec-text">5</a><br></a>
+                    <a class="spec-title">Theme: <a class="spec-text">Built to Scale</a><br></a>
+                    <a class="spec-title">Reference: <a class="spec-text">Getting Over It</a><br></a>
+                    <a class="spec-title">Duration: <a class="spec-text">3 Days</a><br></a>
+                    <a class="spec-title">Speed: <a class="spec-text">100%</a><br></a>
                 </a>
             </div>
 
-            <iframe src="https://www.youtube.com/embed/D1MNXhfdGHE?si=WtB7KMQCcwdx7uPC" title="YouTube video player" frameborder="0"
+            <iframe src="https://www.youtube.com/embed/Dod657eCWag?si=thqrLfwGpq7hXdUZ" title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
+
         <div class="even">
-            <img src="">
+            <img clasS="game-image" src="Images/grapple/YOYO.png">
             <div class="description">
-                <div class="title">Physics Engine using PhysX</div>
+                <div class="title">Tower Generation</div>
                 <a>
-                    This took most of my time during this project, I wanted to make it easy for the rest of the group to
-                    use the engine and that they wont have to do to much themselves.
+                    The tower generation is simple but dynamic. It begins by creating the main tower piece with a random
+                    orientation, based on a min-max range from the biome. This ensures that each tower feels unique.
+                    After that, flying boulders and stones are placed around the mountain, forming natural climbing
+                    paths. These features not only make the terrain more engaging but also provide strategic routes for
+                    the player to navigate the tower more easily.
+                    <br>
+                    <br>
+                    Though the tower generation lacks checks to ensure that stones aren't generated too close to each
+                    other, which could potentially create an impassable segment, we found that the likelihood of this
+                    happening is minimal. After multiple players tested the game on itch.io, we concluded that the
+                    chances of generating an impossible segment were small enough not to significantly affect the
+                    overall gameplay experience.
                 </a>
             </div>
         </div>
 
-        <div class="odd">
-            <div class="description">
-                <div class="title">More About physics engine?</div>
-                <a>
-                </a>
-            </div>
 
-            <img src="">
-        </div>
     </div>
 
+    <script src="../../base.js"></script>
+</body>
 
+<footer>
     <div class="bottom-bar">
-
         <div class="item">
             <div class="vertical-container">
                 <a class="title">Location</a>
@@ -121,14 +138,12 @@
                     <img src="Images/github.png">
                 </a>
 
-                <a href="https://1drv.ms/b/s!AqtFedgErE4RqvQ1vkNq_is4kpp5Ow?e=qucdbA" target="_blank">
-                    <img src="Images/resume-7.png">
-                </a>
+            <a href="Downloads/CV.pdf" target="_blank">
+                <img src="Images/resume-7.png">
+            </a>
             </div>
         </div>
     </div>
-
-    <script src="../../base.js"></script>
-</body>
+</footer>
 
 </html>

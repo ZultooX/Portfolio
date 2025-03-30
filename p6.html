@@ -45,7 +45,7 @@
                     <br>
                     <br>
 
-                    <a class="title">My Contributions</a>
+                    <a class="sub-title">My Contributions</a>
                     <ul>
                         <li>Collision System</li>
                         <li>Debug Drawer</li>
@@ -75,7 +75,7 @@
         </div>
 
         <div class="even">
-            <img src="Images/p5&6/first-iteration-animaiton-state-stackgif.gif">
+            <img class="game-image" src="Images/p5&6/first-iteration-animaiton-state-stackgif.gif">
             <div class="description">
                 <div class="title">Animation Manager</div>
                 <a>
@@ -102,25 +102,39 @@
             <div class="description">
                 <div class="title">Collision System</div>
                 <a>
-
+                    We needed a way to check if objects, like bullet projectiles were hitting the target and the player
+                    were within specific regions in the game. I implemented Oriented Bounding Box (OBB) collisions. This
+                    allowed for more accurate collision detection, especially with rotated objects, compared to simple
+                    axis-aligned bounding boxes.
+                    <br>
+                    <br>
+                    I used matrix transformations to perform OBB vs. OBB and OBB vs. sphere checks, incorporating the
+                    separating axis theorem (SAT) for precise results. This system proved crucial for handling
+                    interactions in the game, ensuring efficient and accurate detection for bullets and event triggers.
                 </a>
             </div>
 
-            <img src="">
+            <img class="game-image" src="Images/p5&6/Collisions.gif">
         </div>
 
         <div class="even">
-            <img src="">
+            <img class="game-image" src="Images/p5&6/reflection.gif">
             <div class="description">
                 <div class="title">PBR</div>
                 <a>
-
+                    I wanted to deepen my knowledge of light physics and how it interacts with materials. This showcase
+                    is one of the earlier iterations of development, demonstrating key aspects of Physically Based
+                    Rendering (PBR), such as Fresnel reflections, and roughness-based light scattering. Even at this
+                    stage, the foundation for realistic lighting was already taking shape.
                 </a>
             </div>
         </div>
     </div>
 
+    <script src="../../base.js"></script>
+</body>
 
+<footer>
     <div class="bottom-bar">
 
         <div class="item">
@@ -159,14 +173,12 @@
                     <img src="Images/github.png">
                 </a>
 
-                <a href="https://1drv.ms/b/s!AqtFedgErE4RqvQ1vkNq_is4kpp5Ow?e=qucdbA" target="_blank">
-                    <img src="Images/resume-7.png">
-                </a>
+            <a href="Downloads/CV.pdf" target="_blank">
+                <img src="Images/resume-7.png">
+            </a>
             </div>
         </div>
     </div>
-
-    <script src="../../base.js"></script>
-</body>
+</footer>
 
 </html>
