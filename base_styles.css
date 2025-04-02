@@ -246,23 +246,27 @@ footer {
 	.navbar {
 		display: none;
 		justify-content: space-between;
-		padding: 0 20px;
+		padding: 40px;
 		position: fixed;
 		top: auto;
 		bottom: 0px;
 		height: auto;
+		background-color: rgba(0, 0, 0, 1);
+		/* margin: 2vw; */
 	}
 
 	.navbar-links {
 		display: none;
 		flex-direction: column;
-		background-color: rgba(0, 0, 0, 0.85);
+		background-color: rgba(0, 0, 0, 1);
 		position: absolute;
 		left: 0;
 		top: auto;
 		width: 100%;
 		text-align: center;
-		padding: 0px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
 	}
 
 	.navbar.active {
@@ -271,7 +275,6 @@ footer {
 		padding: 0px;
 		position: fixed;
 		bottom: 0px;
-		margin: 2vw;
 	}
 
 	.navbar-links.active {
