@@ -1,1 +1,9 @@
-Fix navbar - reference in teams
+Lägg till namn och programmerare till höger av navbaren.
+Ändra games till Group Projects i navbaren.
+Fyll ut med mer text på vissa ställen.
+Omformulera flera I wants i grupp projekten.
+Omformulera P3, ser ut som jag ogillar unity.
+TGA "offers" inte specialiseringen.
+Lägg till conclusion på specialiseringen.
+
+Fixa för mobiler.
