@@ -88,40 +88,46 @@
 
 .about-me .title,
 .description .title {
-    font-size: 40px;
+    font-size: 2vw;
     font-weight: bolder;
     text-align: center;
 }
 
 .about-me.sub-title,
 .description .sub-title {
-    font-size: 25px;
+    font-size: 1.2vw;
     font-weight: bolder;
     text-align: center;
 }
 
-.about-me.ul,
+.about-me ul,
 .description ul {
-    padding-left: 30px;
+    padding-left: 1.3vw;
+}
+
+.about-me li,
+.description li {
+    font-size: 0.8vw;
+    padding-left: 1.3vw;
 }
 
 .about-me.subtitle,
 .description .subtitle {
-    font-size: 25px;
+    font-size: 1.3vw;
     font-weight: bold;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .about-me a,
 .description a {
-    font-size: 20px;
+    font-size: 1.3vw;
 }
 
 
 .description .spec-title {
     font-weight: bolder;
-    padding-left: 30px;
+    padding-left: 1.4vw;
 }
 
 .description .spec-text {
