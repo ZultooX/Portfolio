@@ -26,17 +26,37 @@ function resetMenuEffect(menuIndex) {
 function nextImage(totalImages, imageId) {
 }
 
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+	const hamburger = document.querySelector(".hamburger");
+	const navbarLinks = document.querySelector(".navbar-links");
+	const navbar = document.querySelector(".navbar");
+
+	hamburger.addEventListener("click", function () {
+		navbarLinks.classList.toggle("active");
+		navbar.classList.toggle("active");
+	});
+});
+
+
+
 // let position = 0; // Track the current position
 
 // setInterval(() => {
 // 	if (position > -1600)
 // 	{
-		
+
 // 		position -= 35; // Increment position
 // 		document.getElementById("fk_Active").style.transform = `translateX(${position}px)`;
 // 		document.getElementById("fk_Next").style.transform = `translateX(${position}px)`;
 // 	}
-	
+
 
 // }, 1);
 function toggleGameInfo(gameElement) {

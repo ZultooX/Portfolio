@@ -61,19 +61,20 @@ body {
 	cursor: pointer;
 }
 
-@media (max-width: 768px) {
-	.navbar-item {
-		font-size: 24px;
-		padding: 8px 16px;
-	}
+.hamburger {
+	display: none;
+	cursor: pointer;
+	font-size: 30px;
+	color: white;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 10001;
 }
 
-@media (max-width: 480px) {
-	.navbar-item {
-		font-size: 20px;
-		padding: 6px 12px;
-	}
-}
+
+
+
 
 .navbar-item:hover {
 	color: rgb(255, 67, 67);
@@ -233,4 +234,107 @@ img {
 
 footer {
 	width: 100%;
+}
+
+
+
+@media (max-width: 800px) {
+	body {
+		margin-top: 0px;
+	}
+
+	.navbar {
+		display: none;
+		justify-content: space-between;
+		padding: 0 20px;
+		position: fixed;
+		top: auto;
+		bottom: 0px;
+		height: auto;
+	}
+
+	.navbar-links {
+		display: none;
+		flex-direction: column;
+		background-color: rgba(0, 0, 0, 0.85);
+		position: absolute;
+		left: 0;
+		top: auto;
+		width: 100%;
+		text-align: center;
+		padding: 0px;
+	}
+
+	.navbar.active {
+		display: flex;
+		justify-content: space-between;
+		padding: 0px;
+		position: fixed;
+		bottom: 0px;
+		margin: 2vw;
+	}
+
+	.navbar-links.active {
+		display: flex;
+		justify-content: space-between;
+		bottom: 0px;
+	}
+
+	.navbar-item {
+		padding: 1vw;
+		font-size: 2vh;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+
+
+
+
+
+
+	.bottom-bar {
+		display: flex;
+		flex-direction: column;
+		/* Stack items vertically */
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		/* Allow dynamic height */
+		padding: 20px 10px;
+	}
+
+	.bottom-bar .horizontal-container {
+		flex-direction: column;
+		/* Stack items */
+		align-items: center;
+		width: 100%;
+	}
+
+	.bottom-bar .vertical-container {
+		width: 100%;
+		align-items: center;
+	}
+
+	.item {
+		width: 90%;
+		/* Ensure it takes up most of the screen width */
+		text-align: center;
+		padding: 15px 0;
+		/* Increase padding */
+		font-size: 20px;
+		/* Increase text size */
+	}
+
+	.item .title {
+		font-size: 24px;
+		/* Adjust title size */
+	}
+
+	.bottom-bar img {
+		width: 38px;
+		/* Ensure images are correctly sized */
+	}
 }
