@@ -30,7 +30,9 @@ function nextImage(totalImages, imageId) {
 
 
 
-
+document.querySelector('.me-container').addEventListener('click', function () {
+	window.location.href = "about-me.html";
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {

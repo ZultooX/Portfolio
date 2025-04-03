@@ -19,7 +19,7 @@ body {
 
 
 .navbar {
-	background-color: rgba(0, 0, 0, 0.85);
+	background-color: rgba(0, 0, 0, 0.75);
 	width: 100%;
 	height: 70px;
 	top: 0;
@@ -74,7 +74,15 @@ body {
 
 
 
-
+.separator {
+	position: fixed;
+	top: 70px;
+	width: 100%;
+	border: none;
+	height: 2px;
+	background-color: rgb(255, 255, 255);
+	z-index: 10000;
+}
 
 .navbar-item:hover {
 	color: rgb(255, 67, 67);
@@ -236,9 +244,111 @@ footer {
 	width: 100%;
 }
 
+.navbar-name {
+	position: fixed;
+	color: rgb(255, 67, 67);
+	top: 10px;
+	left: 10px;
+	font-size: 25px;
+}
 
+.navbar-title {
+	position: fixed;
+	color: rgb(255, 67, 67);
+	top: 40px;
+	left: 10px;
+	font-size: 20px;
+}
+
+.intro-img {
+	filter: blur(6px);
+	opacity: 0.45;
+	object-fit: cover;
+	object-position: 0px -90px;
+	/* Moves the crop down */
+	width: 110vw;
+	height: 24vw;
+	display: flex;
+	position: relative;
+	pointer-events: none;
+	align-content: center;
+	justify-content: center;
+	cursor: pointer;
+	transform: translate(-10vw, -6vw);
+}
+
+
+.me-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Center horizontally */
+	justify-content: center;
+	/* Center vertically */
+	text-align: center;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 300px;
+	border-radius: 10px;
+	/* Rounded corners */
+	cursor: pointer;
+}
+
+
+
+.myname {
+	font-size: 75px;
+	color: rgb(187, 187, 187);
+	position: absolute;
+	top: 120px;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.mytitle {
+	font-size: 60px;
+	color: rgb(150, 150, 150);
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+.aggreement {
+	color: rgb(255, 67, 67);
+	font-size: 20px;
+}
 
 @media (max-width: 800px) {
+	.myname {
+		font-size: 25px;
+		position: absolute;
+		top: 25px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.mytitle {
+		font-size: 20px;
+		position: absolute;
+		top: 55px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.navbar-name {
+		display: none;
+	}
+
+	.navbar-title {
+		display: none;
+	}
+
 	body {
 		margin-top: 0px;
 	}
@@ -339,5 +449,14 @@ footer {
 	.bottom-bar img {
 		width: 38px;
 		/* Ensure images are correctly sized */
+	}
+
+	.separator {
+		position: absolute;
+		top: 100px;
+		width: 100%;
+		border: none;
+		height: 2px;
+		background-color: rgb(255, 255, 255);
 	}
 }

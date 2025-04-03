@@ -224,4 +224,9 @@
     .description .title {
         font-size: 6vw;
     }
+
+    .about-me {
+        width: 80%;
+        max-width: 80%;
+    }
 }
