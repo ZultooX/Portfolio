@@ -39,7 +39,7 @@ body {
 	color: rgb(220, 220, 220);
 	font-family: Arial, sans-serif;
 	text-align: center;
-	font-size: 30px;
+	font-size: 2vw;
 	padding: 10px 20px;
 	border: none;
 	cursor: pointer;
@@ -249,7 +249,7 @@ footer {
 	color: rgb(212, 212, 212);
 	top: 10px;
 	left: 10px;
-	font-size: 25px;
+	font-size: 1.4vw;
 }
 
 .navbar-title {
@@ -257,7 +257,7 @@ footer {
 	color: rgb(150, 150, 150);
 	top: 40px;
 	left: 10px;
-	font-size: 20px;
+	font-size: 1.2vw;
 }
 
 .intro-img {
@@ -298,22 +298,23 @@ footer {
 
 
 .myname {
-	font-size: 75px;
+	font-size: 5vw;
 	color: rgb(212, 212, 212);
 	position: absolute;
-	top: 120px;
+	top: 100px;
 	text-align: center;
 	left: 50%;
+	object-fit: fill;
 	transform: translateX(-50%);
 }
 
 .mytitle {
-	font-size: 60px;
+	font-size: 4vw;
 	color: rgb(150, 150, 150);
 	position: absolute;
-	top: 200px;
+	top: 170px;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translate(-50%, 30%);
 }
 
 
@@ -322,7 +323,7 @@ footer {
 	font-size: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
 	.myname {
 		font-size: 25px;
 		position: absolute;
@@ -453,7 +454,150 @@ footer {
 
 	.separator {
 		position: absolute;
-		top: 100px;
+		top: 21vw;
+		width: 100%;
+		border: none;
+		height: 2px;
+		background-color: rgb(255, 255, 255);
+	}
+}
+
+
+
+
+@media (max-width: 400px) {
+	.myname {
+		font-size: 8vw;
+		position: absolute;
+		top: 25px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.mytitle {
+		font-size: 6vw;
+		position: absolute;
+		top: 55px;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 2vw;
+	}
+
+	.navbar-name {
+		display: none;
+	}
+
+	.navbar-title {
+		display: none;
+	}
+
+	body {
+		margin-top: 0px;
+	}
+
+	.navbar {
+		display: none;
+		justify-content: space-between;
+		padding: 40px;
+		position: fixed;
+		top: auto;
+		bottom: 0px;
+		height: auto;
+		background-color: rgba(0, 0, 0, 1);
+		/* margin: 2vw; */
+	}
+
+	.navbar-links {
+		display: none;
+		flex-direction: column;
+		background-color: rgba(0, 0, 0, 1);
+		position: absolute;
+		left: 0;
+		top: auto;
+		width: 100%;
+		text-align: center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+	}
+
+	.navbar.active {
+		display: flex;
+		justify-content: space-between;
+		padding: 0px;
+		position: fixed;
+		bottom: 0px;
+	}
+
+	.navbar-links.active {
+		display: flex;
+		justify-content: space-between;
+		bottom: 0px;
+	}
+
+	.navbar-item {
+		padding: 1vw;
+		font-size: 2vh;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+
+
+
+
+
+
+	.bottom-bar {
+		display: flex;
+		flex-direction: column;
+		/* Stack items vertically */
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		/* Allow dynamic height */
+		padding: 20px 10px;
+	}
+
+	.bottom-bar .horizontal-container {
+		flex-direction: column;
+		/* Stack items */
+		align-items: center;
+		width: 100%;
+	}
+
+	.bottom-bar .vertical-container {
+		width: 100%;
+		align-items: center;
+	}
+
+	.item {
+		width: 90%;
+		/* Ensure it takes up most of the screen width */
+		text-align: center;
+		padding: 15px 0;
+		/* Increase padding */
+		font-size: 20px;
+		/* Increase text size */
+	}
+
+	.item .title {
+		font-size: 24px;
+		/* Adjust title size */
+	}
+
+	.bottom-bar img {
+		width: 38px;
+		/* Ensure images are correctly sized */
+	}
+
+	.separator {
+		position: absolute;
+		top: 26vw;
 		width: 100%;
 		border: none;
 		height: 2px;
