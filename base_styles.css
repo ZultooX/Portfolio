@@ -246,7 +246,7 @@ footer {
 
 .navbar-name {
 	position: fixed;
-	color: rgb(255, 67, 67);
+	color: rgb(212, 212, 212);
 	top: 10px;
 	left: 10px;
 	font-size: 25px;
@@ -254,7 +254,7 @@ footer {
 
 .navbar-title {
 	position: fixed;
-	color: rgb(255, 67, 67);
+	color: rgb(150, 150, 150);
 	top: 40px;
 	left: 10px;
 	font-size: 20px;
@@ -299,7 +299,7 @@ footer {
 
 .myname {
 	font-size: 75px;
-	color: rgb(187, 187, 187);
+	color: rgb(212, 212, 212);
 	position: absolute;
 	top: 120px;
 	text-align: center;
