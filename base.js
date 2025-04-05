@@ -27,14 +27,6 @@ function nextImage(totalImages, imageId) {
 }
 
 
-
-
-
-document.querySelector('.me-container').addEventListener('click', function () {
-	window.location.href = "about-me.html";
-});
-
-
 document.addEventListener("DOMContentLoaded", function () {
 	const hamburger = document.querySelector(".hamburger");
 	const navbarLinks = document.querySelector(".navbar-links");
@@ -45,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		navbar.classList.toggle("active");
 	});
 });
+
+
+document.querySelector('.me-container').addEventListener('click', function () {
+	window.location.href = "about-me.html";
+});
+
 
 
 
