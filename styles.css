@@ -13,7 +13,7 @@ body {
     height: calc(100vh - 100px);
     overflow-y: auto;
     margin: 0px;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 
 }
 
@@ -124,7 +124,6 @@ img {
     width: 7vw;
     min-height: 100vh;
     height: auto;
-    padding: 40px;
     position: absolute;
     top: 0;
     transform: translate(-50%, 0);
@@ -326,8 +325,8 @@ footer {
 }
 
 .sshowcase {
-    top: 70px;
-    margin-top: 40px;
+    /* top: 70px; */
+    /* margin-top: 40px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -441,7 +440,7 @@ footer {
 
 .about-me a,
 .description a {
-    font-size: 1.3vw;
+    font-size: 3.3vw;
 }
 
 
