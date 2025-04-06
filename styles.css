@@ -354,7 +354,7 @@ footer {
 }
 
 .about-me-image {
-    width: 20%;
+    width: 40%;
     padding: 40px;
     margin-right: 10%;
     border-radius: 45px;
@@ -438,7 +438,10 @@ footer {
     padding-top: 10px;
 }
 
-.about-me a,
+.about-me a{
+font-size:1.3vw;
+}
+
 .description a {
     font-size: 3.3vw;
 }
