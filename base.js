@@ -75,10 +75,3 @@ function downloadFile() {
 	element.download = "custom_filename.txt"; // Name of the file to download
 	element.click();
 }
-
-
-
-window.dataLayer = window.dataLayer || [];
-function ftag() { dataLayer.push(arguments); }
-ftag('js', new Date());
-ftag('config', 'G-YMNRFE4X1W');
