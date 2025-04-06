@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christopher Vedlund Portfolio</title>
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="Images/sp23christophervedlind-300x375.png">
+
     <meta name="description" content="Graphics &amp; Gameplay programmer">
     <meta name="twitter:site_name" content="Christopher Vedlund Portfolio">
     <meta name="twitter:title" content="Christopher Vedlund Portfolio">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Graphics &amp; Gameplay programmer">
-    
+
     <meta property="og:url" content="https://christopher-vedlund.se/">
     <meta property="og:image" content="https://christopher-vedlund.se/Images/sp23christophervedlind-300x375.png">
     <meta property="og:site_name" content="Christopher Vedlund">
@@ -34,13 +35,12 @@
             <a class="navbar-item" href="specialization" onmouseover="onHover_MenuEffect(1)" onmouseout="resetMenuEffect(1)">
                 Specialization
             </a>
-            <a class="navbar-item" href="./#games" onmouseover="onHover_MenuEffect(2)"
+            <a class="navbar-item" href="index.html#games" onmouseover="onHover_MenuEffect(2)"
                 onmouseout="resetMenuEffect(2)">
                 Group Projects
             </a>
-            <a class="navbar-item" href="./#gamejams" onmouseover="onHover_MenuEffect(3)"
-                onmouseout="resetMenuEffect(3)">
-                Game Jams
+            <a class="navbar-item" href="./#hobby-projects" onmouseover="onHover_MenuEffect(3)" onmouseout="resetMenuEffect(3)">
+                Hobby Projects
             </a>
             <a class="navbar-item" href="about-me" onmouseover="onHover_MenuEffect(4)"
                 onmouseout="resetMenuEffect(4)">
@@ -52,101 +52,67 @@
 
     <div class="hamburger">☰</div>
 
-<div class="sshowcase" style="margin-top: 70px">
+    <div class="sshowcase" style="margin-top: 70px">
         <div class="odd">
             <div class="description">
-                <div class="title">Group Project 3</div>
+                <div class="title">Group Project 1</div>
                 <a>
-                    This project quickly became one of my favorites, especially because it marked the transition from
-                    working in Unity to The Game Assembly’s custom C++ engine, TGE. Unlike commercial engines, TGE came
-                    with very limited built-in systems, which meant we had to build many features from the ground
-                    up—including collisions, physics, 
-
-                    <br><br>
-
-                    Working in this kind of low-level environment was challenging, but also incredibly rewarding. It
-                    forced me to deeply understand how game systems function under the hood and pushed me to solve
-                    problems I would normally rely on an engine to handle for me. That hands-on experience gave me a
-                    much stronger grasp of both C++ and engine architecture, and it made every solution feel truly
-                    earned.
+                    During this project we were tasked with making an "infinite runner".
                     <br>
-                    <br>
-
-                    <a class="sub-title">My Contributions</a>
-                    <ul>
-                        <li>Collision System</li>
-                        <li>Force Engine</li>
-                        <li>Player Movement</li>
-                        <li>Player State Stack</li>
-                        <li>And more!</li>
-                    </ul>
-
-                    <br>
-                    <br>
-                    <a class="sub-title">
-                        Project Specifications
-                    </a>
-                    <br>
-                    <a class="spec-title">Team Size: <a class="spec-text">14</a><br></a>
-                    <a class="spec-title">Reference: <a class="spec-text">Katana Zero & Metroid Dread</a><br></a>
-                    <a class="spec-title">Duration: <a class="spec-text">11 weeks</a><br></a>
-                    <a class="spec-title">Speed: <a class="spec-text">50%</a><br></a>
+                    Now that im looking back at this project and looking at the code I wrote back then, I can really see
+                    how much that I've improved over the time at TGA.
                 </a>
+                <br>
+                <br>
+                <a class="sub-title">
+                    My Contributions
+                </a>
+                <ul>
+                    <li>Player Movement</li>
+                    <li>Animations</li>
+                    <li>Portal Mechanic</li>
+                    <li>"Time travel mechanic"</li>
+                    <li>And more!</li>
+                </ul>
+
+                <br>
+                <br>
+                <a class="sub-title">
+                    Project Specifications
+                </a>
+                <br>
+                <a class="spec-title">Team Size: <a class="spec-text">14</a><br></a>
+                <a class="spec-title">Reference: <a class="spec-text">Subway Surfers</a><br></a>
+                <a class="spec-title">Duration: <a class="spec-text">7 weeks</a><br></a>
+                <a class="spec-title">Speed: <a class="spec-text">50%</a><br></a>
             </div>
 
-            <iframe src="https://www.youtube.com/embed/Xii4a4BIEeE?si=MJA1wFzg-ZYiMcPl" title="YouTube video player"
+            <iframe src="https://www.youtube.com/embed/rGN-_40a7Lo?si=RbYLZIKhTvxU_X0p" title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div class="even">
-            <img class="game-image" src="../../Images/p3/collision.gif">
-            <div class="description">
-                <div class="title">Collision System</div>
-                <a>
-                    My goal was to implement a system that would be easy to use for my team members. I could reach that
-                    goal thanks to ES which was the name our component system was given.
-                    <br>
-                    <br>
-                    Im not sure what to write since ive forgotten most of the system
-                </a>
-            </div>
-        </div>
-
-        <div class="odd">
-            <div class="description">
-                <div class="title">Force Engine</div>
-                <a>
-                    I wanted to make character controller that feels good and natural, so I wanted to make a physics
-                    based character controller. But since the engine dont have a physics engine implemented I had to
-                    take actions into my own hands and implement an engine which only applies force to objects,
-                    therefore the name Force Engine.
-                    <br>
-                    <br>
-                    This force engine would also make it easier to separate colliders from eachother by simple applying
-                    a force.
-                </a>
-            </div>
-
-            <img class="game-image" src="../../Images/p3/separate-collisions.png">
-        </div>
-
-        <div class="even">
-            <img class="game-image" src="../../Images/p3/player-movement.png">
+            <img class="game-image" src="Images/p1/movement-showcase.gif">
             <div class="description">
                 <div class="title">Player Movement</div>
                 <a>
-                    I want to create a movement system where the player accelerates smoothly in the direction of input
-                    while maintaining a maximum speed. The movement should feel responsive, but also natural, with a
-                    slight inertia effect when changing directions. Additionally, if no input is given, the player
-                    should gradually slow down instead of stopping abruptly. This will make movement feel fluid and more
-                    dynamic.
+                    My group was indecisive about how we wanted the movement to be, so I offered to make two different
+                    versions so that they can see how the different types would be. I made one like Temple Run 2 were
+                    the player is not confined within lanes giving the player more freedoom. The second one I made was
+                    like Subway Surfers were the player is confined within lanes.
+                    <br>
+                    <br>
+                    After the group saw them and discussed, we came to the conclusion that the lanes was a better fit
+                    for our game.
                 </a>
             </div>
         </div>
     </div>
+
     <script src="base.js"></script>
+
 </body>
 
 

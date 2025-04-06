@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="Images/sp23christophervedlind-300x375.png">
-
     <meta name="description" content="Graphics &amp; Gameplay programmer">
     <meta name="twitter:site_name" content="Christopher Vedlund Portfolio">
     <meta name="twitter:title" content="Christopher Vedlund Portfolio">
@@ -28,23 +27,21 @@
             <a class="navbar-name">Christopher Vedlund</a>
             <a class="navbar-title">Game Programmer</a>
 
-            <a class="navbar-item" href="./" onmouseover="onHover_MenuEffect(0)"
-                onmouseout="resetMenuEffect(0)">
+            <a class="navbar-item" href="./" onmouseover="onHover_MenuEffect(0)" onmouseout="resetMenuEffect(0)">
                 Home
             </a>
-            <a class="navbar-item" href="specialization" onmouseover="onHover_MenuEffect(1)" onmouseout="resetMenuEffect(1)">
+            <a class="navbar-item" href="specialization" onmouseover="onHover_MenuEffect(1)"
+                onmouseout="resetMenuEffect(1)">
                 Specialization
             </a>
-            <a class="navbar-item" href="./#games" onmouseover="onHover_MenuEffect(2)"
-                onmouseout="resetMenuEffect(2)">
+            <a class="navbar-item" href="./#games" onmouseover="onHover_MenuEffect(2)" onmouseout="resetMenuEffect(2)">
                 Group Projects
             </a>
-            <a class="navbar-item" href="./#gamejams" onmouseover="onHover_MenuEffect(3)"
+            <a class="navbar-item" href="./#hobby-projects" onmouseover="onHover_MenuEffect(3)"
                 onmouseout="resetMenuEffect(3)">
-                Game Jams
+                Hobby Projects
             </a>
-            <a class="navbar-item" href="about-me" onmouseover="onHover_MenuEffect(4)"
-                onmouseout="resetMenuEffect(4)">
+            <a class="navbar-item" href="about-me" onmouseover="onHover_MenuEffect(4)" onmouseout="resetMenuEffect(4)">
                 About Me
             </a>
         </div>
@@ -56,20 +53,18 @@
     <div class="sshowcase" style="margin-top: 70px">
         <div class="odd">
             <div class="description">
-                <div class="title">Group Project 6</div>
+                <div class="title">Group Project 7</div>
                 <a>
-                    During this project my group made our custom C++ DX11 Game Engine, which both came with pros and
-                    cons.
+                    During this project, we had to implement physics using a physics library. I chose NVIDIA PhysX for
+                    its efficiency and robust simulation features. It allowed me to handle collisions, gravity, and
+                    object interactions smoothly, making the gameplay feel more realistic and responsive.
                     <br>
                     <br>
 
                     <a class="sub-title">My Contributions</a>
                     <ul>
-                        <li>Collision System</li>
-                        <li>Debug Drawer</li>
-                        <li>Navmesh Implementation</li>
-                        <li>Animation Manager</li>
-                        <li>PBR</li>
+                        <li>Physics Engine using PhysX</li>
+                        <li>Animations</li>
                         <li>And more!</li>
                     </ul>
 
@@ -79,9 +74,9 @@
                         Project Specifications
                     </a>
                     <br>
-                    <a class="spec-title">Team Size: <a class="spec-text">18</a><br></a>
-                    <a class="spec-title">Reference: <a class="spec-text">Diablo 3</a><br></a>
-                    <a class="spec-title">Duration: <a class="spec-text">9 weeks</a><br></a>
+                    <a class="spec-title">Team Size: <a class="spec-text">15</a><br></a>
+                    <a class="spec-title">Reference: <a class="spec-text">DOOM</a><br></a>
+                    <a class="spec-title">Duration: <a class="spec-text">16 weeks</a><br></a>
                     <a class="spec-title">Speed: <a class="spec-text">50%</a><br></a>
                 </a>
             </div>
@@ -93,59 +88,39 @@
         </div>
 
         <div class="even">
-            <img class="game-image" src="Images/p5&6/first-iteration-animaiton-state-stackgif.gif">
+            <img class="game-image" src="Images/p7/physics-first-iteration.gif">
             <div class="description">
-                <div class="title">Animation Manager</div>
+                <div class="title">Physics Engine using PhysX</div>
                 <a>
-                    To make it easier for my group to add animations, I created a stack-based animation system.
-                    Animations are pushed onto
-                    the stack and popped based on set conditions.
+                    This part of the project took up most of my time. I wanted to ensure that the engine was easy for
+                    the rest of the team
+                    to use, minimizing the amount of work they needed to do on their own.
                     <br>
                     <br>
-                    For example, an idle animation is pushed first and set to stay indefinitely. When the player starts
-                    walking, a walking animation is pushed on top, overriding the idle animation. Once movement stops,
-                    the walking
-                    animation is popped, revealing the idle animation again.
+                    The image shows that multiple actors can be created and deleted during runtime, with a functional
+                    cleanup process in
+                    place to ensure proper memory management.
                     <br>
                     <br>
-                    This system ensures smooth transitions and makes managing animations simple and flexible.
-                    <br>
-                    <br>
-                    The feedback I got for this was amazing!
+                    It also displays the first iteration of the physics engine, which was a crucial milestone in making
+                    the game world more
+                    dynamic and interactive.
                 </a>
             </div>
         </div>
 
         <div class="odd">
             <div class="description">
-                <div class="title">Collision System</div>
+                <div class="title">Rework of the Physics Engine</div>
                 <a>
-                    We needed a way to check if objects, like bullet projectiles were hitting the target and the player
-                    were within specific regions in the game. I implemented Oriented Bounding Box (OBB) collisions. This
-                    allowed for more accurate collision detection, especially with rotated objects, compared to simple
-                    axis-aligned bounding boxes.
-                    <br>
-                    <br>
-                    I used matrix transformations to perform OBB vs. OBB and OBB vs. sphere checks, incorporating the
-                    separating axis theorem (SAT) for precise results. This system proved crucial for handling
-                    interactions in the game, ensuring efficient and accurate detection for bullets and event triggers.
+                    As I learned more about PhysX and its inner workings, I reworked the engine twice to improve its
+                    performance. The first rework focused on optimizing physics calculations and collision detection,
+                    while the second aimed at improving scalability and ensuring smoother interaction with other game
+                    systems. Each iteration made the engine more efficient and responsive.
                 </a>
             </div>
 
-            <img class="game-image" src="Images/p5&6/Collisions.gif">
-        </div>
-
-        <div class="even">
-            <img class="game-image" src="Images/p5&6/reflection.gif">
-            <div class="description">
-                <div class="title">PBR</div>
-                <a>
-                    I wanted to deepen my knowledge of light physics and how it interacts with materials. This showcase
-                    is one of the earlier iterations of development, demonstrating key aspects of Physically Based
-                    Rendering (PBR), such as Fresnel reflections, and roughness-based light scattering. Even at this
-                    stage, the foundation for realistic lighting was already taking shape.
-                </a>
-            </div>
+            <img class="game-image" src="Downloads/kenobi.gif">
         </div>
     </div>
     <script src="base.js"></script>
