@@ -213,20 +213,20 @@ img {
     color: white;
     padding: 3vw;
     margin: 5px;
-    font-size: 16px;
+    font-size: 1vw;
 }
 
 .item .title {
-    font-size: 25px;
+    font-size: 1.2vw;
     font-weight: bolder;
     padding: 0px;
     padding-bottom: 0.3vw;
 }
 
 .item .links {
-    padding-left: 10px;
     gap: 15px;
     display: flex;
+    justify-content: center;
 }
 
 .item a {
@@ -320,7 +320,7 @@ footer {
 
 .aggreement {
     color: rgb(255, 67, 67);
-    font-size: 20px;
+    font-size: 1.2vw;
 }
 
 .sshowcase {
@@ -1001,7 +1001,9 @@ footer {
 
 
 
-
+    .aggreement {
+        font-size: 2vw;
+    }
 
 
 
@@ -1140,12 +1142,9 @@ footer {
 
     .item {
         width: 90%;
-        /* Ensure it takes up most of the screen width */
         text-align: center;
         padding: 15px 0;
-        /* Increase padding */
-        font-size: 20px;
-        /* Increase text size */
+        font-size: 1.2vw;
     }
 
     .item .title {
@@ -1154,7 +1153,7 @@ footer {
     }
 
     .bottom-bar img {
-        width: 38px;
+        width: 3vw;
         /* Ensure images are correctly sized */
     }
 
@@ -1245,6 +1244,10 @@ footer {
 
 /* hi-res laptops and desktops */
 @media (min-width:1281px) {
+    .aggreement {
+        font-size: 1.2vw;
+    }
+
     .showcases {
         display: flex;
         flex-direction: column;
