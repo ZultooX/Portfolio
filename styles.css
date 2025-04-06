@@ -1128,6 +1128,16 @@ footer {
         align-items: center;
     }
 
+    .about-me ul,
+    .description ul {
+        padding-left: 4.3vw;
+    }
+
+    .about-me li,
+    .description li {
+        font-size: 1vw;
+    }
+
     .item {
         width: 90%;
         /* Ensure it takes up most of the screen width */
@@ -1213,7 +1223,7 @@ footer {
     }
 
     .sshowcase .description a {
-        font-size: 1.3vw;
+        font-size: 1vw;
     }
 
     .sshowcase .description {
