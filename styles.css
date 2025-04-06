@@ -194,6 +194,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+padding: 20px 100px;
 }
 
 .bottom-bar .horizontal-container {
@@ -226,7 +227,7 @@ img {
 .item .links {
     gap: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: center;;
 }
 
 .item a {
@@ -854,10 +855,7 @@ footer {
         width: 100%;
     }
 
-    .about-me a,
-    .description a {
-        font-size: 3.3vw;
-    }
+  
 
     .sshowcase .even iframe,
     .sshowcase .odd iframe {
@@ -1010,12 +1008,9 @@ footer {
     .bottom-bar {
         display: flex;
         flex-direction: column;
-        /* Stack items vertically */
         align-items: center;
         justify-content: center;
         height: auto;
-        /* Allow dynamic height */
-        padding: 20px 10px;
     }
 
     .bottom-bar .horizontal-container {
@@ -1116,7 +1111,6 @@ footer {
         align-items: center;
         justify-content: center;
         height: auto;
-        padding: 20px 10px;
     }
 
     .bottom-bar .horizontal-container {
