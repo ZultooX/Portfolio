@@ -193,7 +193,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-padding: 20px 100px;
+    padding: 20px 100px;
 }
 
 .bottom-bar .horizontal-container {
@@ -226,7 +226,8 @@ padding: 20px 100px;
 .item .links {
     gap: 15px;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+    ;
 }
 
 .item a {
@@ -266,7 +267,6 @@ footer {
     opacity: 0.45;
     object-fit: cover;
     object-position: 0px -90px;
-    /* Moves the crop down */
     width: 110vw;
     height: 24vw;
     display: flex;
@@ -438,8 +438,8 @@ footer {
     padding-top: 10px;
 }
 
-.about-me a{
-font-size:1.3vw;
+.about-me a {
+    font-size: 1.3vw;
 }
 
 .description a {
@@ -767,6 +767,12 @@ font-size:1.3vw;
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @media (min-width:320px) {
+
+    .intro-img {
+        height: 36vw;
+    }
+
+
     .showcases {
         display: flex;
         flex-direction: column;
@@ -858,7 +864,7 @@ font-size:1.3vw;
         width: 100%;
     }
 
-  
+
 
     .sshowcase .even iframe,
     .sshowcase .odd iframe {
@@ -1063,13 +1069,41 @@ font-size:1.3vw;
 @media (min-width:481px) {}
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-@media (min-width:641px) {}
+@media (min-width:641px) {
+    .intro-img {
+        height: 28vw;
+    }
+
+    .myname {
+        font-size: 5vw;
+    }
+
+    .mytitle {
+        font-size: 4vw;
+    }
+}
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
-@media (min-width:961px) {}
+@media (min-width:961px) {
+    .intro-img {
+        height: 24vw;
+    }
+
+    .myname {
+        font-size: 5vw;
+    }
+
+    .mytitle {
+        font-size: 4vw;
+    }
+}
 
 /* big landscape tablets, laptops, and desktops */
 @media (min-width:1025px) {
+    .intro-img {
+        height: 36vh;
+    }
+
     .game-thumbnail {
         -webkit-mask-image: linear-gradient(to right,
                 rgba(0, 0, 0, 1) 85%,
@@ -1241,6 +1275,10 @@ font-size:1.3vw;
 
 /* hi-res laptops and desktops */
 @media (min-width:1281px) {
+    .intro-img {
+        height: 24vw;
+    }
+
     .aggreement {
         font-size: 1.2vw;
     }
