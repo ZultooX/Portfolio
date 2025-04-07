@@ -540,6 +540,10 @@ footer {
     .arrow {
         display: none;
     }
+
+    .description a {
+        font-size: 2.3vw;
+    }
 }
 
 
