@@ -1085,6 +1085,13 @@ footer {
     .mytitle {
         font-size: 4vw;
     }
+
+    .sshowcase .even iframe,
+    .sshowcase .odd iframe {
+        width: 80vw;
+        height: 45vw;
+        padding: 40px;
+    }
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -1099,6 +1106,13 @@ footer {
 
     .mytitle {
         font-size: 4vw;
+    }
+
+    .sshowcase .even iframe,
+    .sshowcase .odd iframe {
+        width: 80vw;
+        height: 45vw;
+        padding: 40px;
     }
 }
 
