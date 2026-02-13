@@ -1,0 +1,162 @@
+{
+    "icons": {
+        "github": "assets/images/icons/github-logo.png",
+        "itch": "assets/images/icons/itch-io-logo.png"
+    },
+
+    "projects": [
+        {
+            "title": "Eclipsed Game Engine",
+            "tags": [
+                "game engine"
+            ],
+            "contributions": "Assets • Editor • Hot-Reload Game Code",
+            "pitch": "Is a lightweight, open-source C++ engine built to be easy to use, featuring hot-reloadable game code, custom editor and an efficient asset pipeline.",
+            "thumbnail": "assets/projects/eclipsed/eclipsed-card-background.png",
+            "techs": [
+                "C++",
+                "Cmake",
+                "Box2D",
+                "Fmod",
+                "OpenGL",
+                "Batch Scripting"
+            ],
+            "links": {
+                "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+            },
+            "modal": [
+                {
+                    "screenshot": "assets/images/icons/github-logo.png",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                },
+                {
+                    "screenshot": "assets/projects/zengine/zengine-card-background.svg",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                }
+            ]
+        },
+                {
+            "title": "Eclipsed Game Engine",
+            "tags": [
+                "game engine"
+            ],
+            "contributions": "Assets • Editor • Hot-Reload Game Code",
+            "pitch": "Is a lightweight, open-source C++ engine built to be easy to use, featuring hot-reloadable game code, custom editor and an efficient asset pipeline.",
+            "thumbnail": "assets/projects/eclipsed/eclipsed-card-background.png",
+            "techs": [
+                "C++",
+                "Cmake",
+                "Box2D",
+                "Fmod",
+                "OpenGL",
+                "Batch Scripting"
+            ],
+            "links": {
+                "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+            },
+            "modal": [
+                {
+                    "screenshot": "assets/images/icons/github-logo.png",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                },
+                {
+                    "screenshot": "assets/projects/zengine/zengine-card-background.svg",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                }
+            ]
+        },
+                {
+            "title": "Eclipsed Game Engine",
+            "tags": [
+                "game engine"
+            ],
+            "contributions": "Assets • Editor • Hot-Reload Game Code",
+            "pitch": "Is a lightweight, open-source C++ engine built to be easy to use, featuring hot-reloadable game code, custom editor and an efficient asset pipeline.",
+            "thumbnail": "assets/projects/eclipsed/eclipsed-card-background.png",
+            "techs": [
+                "C++",
+                "Cmake",
+                "Box2D",
+                "Fmod",
+                "OpenGL",
+                "Batch Scripting"
+            ],
+            "links": {
+                "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+            },
+            "modal": [
+                {
+                    "screenshot": "assets/images/icons/github-logo.png",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                },
+                {
+                    "screenshot": "assets/projects/zengine/zengine-card-background.svg",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                }
+            ]
+        },
+                {
+            "title": "Eclipsed Game Engine",
+            "tags": [
+                "game engine"
+            ],
+            "contributions": "Assets • Editor • Hot-Reload Game Code",
+            "pitch": "Is a lightweight, open-source C++ engine built to be easy to use, featuring hot-reloadable game code, custom editor and an efficient asset pipeline.",
+            "thumbnail": "assets/projects/eclipsed/eclipsed-card-background.png",
+            "techs": [
+                "C++",
+                "Cmake",
+                "Box2D",
+                "Fmod",
+                "OpenGL",
+                "Batch Scripting"
+            ],
+            "links": {
+                "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+            },
+            "modal": [
+                {
+                    "screenshot": "assets/images/icons/github-logo.png",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                },
+                {
+                    "screenshot": "assets/projects/zengine/zengine-card-background.svg",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                }
+            ]
+        },
+                 {
+            "title": "Lightweight Text Format",
+            "tags": [
+                "game engine"
+            ],
+            "contributions": "Assets • Editor • Hot-Reload Game Code",
+            "pitch": "Is a lightweight, open-source C++ engine built to be easy to use, featuring hot-reloadable game code, custom editor and an efficient asset pipeline.",
+            "thumbnail": "assets/projects/eclipsed/eclipsed-card-background.png",
+            "techs": [
+                "C++",
+                "Cmake",
+                "Box2D",
+                "Fmod",
+                "OpenGL",
+                "Batch Scripting"
+            ],
+            "links": {
+                "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+            },
+            "modal": [
+                {
+                    "screenshot": "assets/images/icons/github-logo.png",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                },
+                {
+                    "screenshot": "assets/projects/zengine/zengine-card-background.svg",
+                    "description": "TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting TestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTestingTesting "
+                }
+            ]
+        }
+    ],
+    "systems": [
+
+    ]
+}
