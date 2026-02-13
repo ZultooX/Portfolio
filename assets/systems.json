@@ -1,0 +1,72 @@
+[
+    {
+        "title": "LTF — [Lightweight Text Format]",
+        "tags": [
+            "TEXT FORMAT",
+            "TOOL"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/grapple/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    },
+    {
+        "title": "Reflection System — [RTTI]",
+        "tags": [
+            "Runtime",
+            "Algorithms"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    },
+    {
+        "title": "Tile Map",
+        "tags": [
+            "Runtime",
+            "Algorithms"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    },
+    {
+        "title": "Asset Manager",
+        "tags": [
+            "Animation",
+            "Algorithms"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    },
+        { 
+        "title": "Job System",
+        "tags": [
+            "Animation",
+            "Algorithms"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    }
+]

@@ -1,0 +1,83 @@
+[
+    {
+        "title": "Eclipsed Game Engine",
+        "tags": [
+            "game engine"
+        ],
+        "contributions": "Assets • Editor • Hot-Reload Game Code",
+        "pitch": "This is a fast-paced action game built in Unity...",
+        "image": "assets/projects/eclipsed/eclipsed-card-background.png",
+        "techs": [
+            "C++",
+            "Cmake",
+            "Box2D",
+            "Fmod",
+            "Batch Scripting"
+        ],
+        "links": {
+            "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+        }
+    },
+    {
+        "title": "Grapple Ascent",
+        "tags": [
+            "GAME",
+            "GAME JAM"
+        ],
+        "contributions": "Procedural Generation • UI",
+        "pitch": "You are a mechanicly engineered Yo-Yo built specificly by a foreign civilizationto scale an infinietly reaching mountain.",
+        "image": "https://christopher-vedlund.se/Images/grapple/thumbnail.png",
+        "techs": [
+            "Unity",
+            "C#"
+        ],
+        "links": {
+            "itch": "https://zultoox.itch.io/grapple-ascent-gmtk2024"
+        }
+    },
+    {
+        "title": "Zengine",
+        "tags": [
+            "graphics engine"
+        ],
+        "contributions": "Solo development",
+        "pitch": "Started as part of the graphics programming course at The Game Assembly. Turned later into a hobby project.",
+        "image": "assets/projects/zengine/zengine-card-background.svg",
+        "techs": [
+            "C++",
+            "DirectX 11",
+            "Premake",
+            "FBXSDK",
+            "PhysX"
+        ],
+        "github": ""
+    },
+    {
+        "title": "Inverse Kinematics — [FABRIK]",
+        "tags": [
+            "Animation",
+            "Algorithms"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    },
+    {
+        "title": "PCG",
+        "tags": [
+            "Animation",
+            "Algorithms"
+        ],
+        "contributions": "Solo development",
+        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
+        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
+        "techs": [
+            "C++"
+        ],
+        "github": ""
+    }
+]
