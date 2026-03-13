@@ -1,83 +1,84 @@
-[
-    {
-        "title": "Eclipsed Game Engine",
-        "tags": [
-            "game engine"
-        ],
-        "contributions": "Assets • Editor • Hot-Reload Game Code",
-        "pitch": "This is a fast-paced action game built in Unity...",
-        "image": "assets/projects/eclipsed/eclipsed-card-background.png",
-        "techs": [
-            "C++",
-            "Cmake",
-            "Box2D",
-            "Fmod",
-            "Batch Scripting"
-        ],
-        "links": {
-            "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+{
+    "icons": {
+        "github": "assets/images/icons/github-logo.png",
+        "itch": "assets/images/icons/itch-io-logo.png",
+        "documentation": "path/to/doc-icon.png"
+    },
+    "projects": [
+        {
+            "id": "project1",
+            "title": "Eclipsed Game Engine",
+            "thumbnail": "assets/projects/eclipsed/EclipseEngine.png",
+            "pitch": "Is a lightweight, soon to be open-source C++ engine built to be easy to use, featuring hot-reloadable game code, custom editor and an efficient asset pipeline.",
+            "description": "Started as a project to learn what we wanted to learn about engine development, turned later into a passion project",
+            "contributions": "Asset Loading • Editor • Runtime Reflection • Hot-Reload Game Code",
+            "tags": [
+                "game engine"
+            ],
+            "techs": [
+                "C++",
+                "Cmake",
+                "Box2D",
+                "Fmod",
+                "OpenGL",
+                "Batch Scripting"
+            ],
+            "categories": [
+                "highlight",
+                "game-engine"
+            ],
+            "teamSize": 2,
+            "date": "2025-08-28",
+            "featured": true,
+            "links": {
+                "github": "https://github.com/Eclipsed-Interactive/Eclipsed-Engine"
+            },
+            "modal": [
+                {
+                    "title": "Feature 1",
+                    "screenshot": "path/to/screenshot1.jpg",
+                    "description": "Description of feature 1"
+                },
+                {
+                    "title": "Feature 1",
+                    "screenshot": "path/to/screenshot1.jpg",
+                    "description": "Description of feature 1"
+                }
+            ]
+        },
+        {
+            "id": "GrappleAscent",
+            "title": "Grapple Ascent",
+            "thumbnail": "assets/projects/grapple-ascent/thumbnail.png",
+            "pitch": "You are a mechanicly engineered Yo-Yo built specificly by a foreign civilization to scale an infinietly gigantic mountain.",
+            "trailer": "https://www.youtube.com/embed/Dod657eCWag?si=gClxVP_QWy6IZMBx", 
+            "description": "This is a much longer description about the project.\n\nIt can have multiple paragraphs.\n\nAnd goes into much more detail than the pitch field.",
+            "contributions": "Procedural Generation • UI",
+            "tags": [
+                "game",
+                "game jam"
+            ],
+            "techs": [
+                "C#",
+                "Unity"
+            ],
+            "categories": [
+                "highlight",
+                "game"
+            ],
+            "teamSize": 5,
+            "date": "2024-08-20",
+            "featured": true,
+            "links": {
+                "itch": "https://zultoox.itch.io/grapple-ascent-gmtk2024"
+            },
+            "modal": [
+                {
+                    "title": "Feature 1",
+                    "screenshot": "path/to/screenshot1.jpg",
+                    "description": "Description of feature 1"
+                }
+            ]
         }
-    },
-    {
-        "title": "Grapple Ascent",
-        "tags": [
-            "GAME",
-            "GAME JAM"
-        ],
-        "contributions": "Procedural Generation • UI",
-        "pitch": "You are a mechanicly engineered Yo-Yo built specificly by a foreign civilizationto scale an infinietly reaching mountain.",
-        "image": "https://christopher-vedlund.se/Images/grapple/thumbnail.png",
-        "techs": [
-            "Unity",
-            "C#"
-        ],
-        "links": {
-            "itch": "https://zultoox.itch.io/grapple-ascent-gmtk2024"
-        }
-    },
-    {
-        "title": "Zengine",
-        "tags": [
-            "graphics engine"
-        ],
-        "contributions": "Solo development",
-        "pitch": "Started as part of the graphics programming course at The Game Assembly. Turned later into a hobby project.",
-        "image": "assets/projects/zengine/zengine-card-background.svg",
-        "techs": [
-            "C++",
-            "DirectX 11",
-            "Premake",
-            "FBXSDK",
-            "PhysX"
-        ],
-        "github": ""
-    },
-    {
-        "title": "Inverse Kinematics — [FABRIK]",
-        "tags": [
-            "Animation",
-            "Algorithms"
-        ],
-        "contributions": "Solo development",
-        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
-        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
-        "techs": [
-            "C++"
-        ],
-        "github": ""
-    },
-    {
-        "title": "PCG",
-        "tags": [
-            "Animation",
-            "Algorithms"
-        ],
-        "contributions": "Solo development",
-        "pitch": "I wanted to design a way to save the scenes for Eclipsed Game Engine faster since json was slowing everything down.",
-        "image": "https://christopher-vedlund.se/Images/specialization/thumbnail.png",
-        "techs": [
-            "C++"
-        ],
-        "github": ""
-    }
-]
+    ]
+}
