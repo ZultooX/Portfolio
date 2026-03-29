@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Golems Quest: Crystal Keep
+            </div>
+        </div>
+        <img class="thumbnail" />
+    </div>
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            The fourth project at The Game Assembly was a 3D top down game made in TGE,
+            A custom engine created and maintained by the educators at TGA.
+            It was made during a 8 week half time.
+            Our reference game was At Deaths Door.
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Shadows
+            </h1>
+        </div>
+
+        <div class="project-text">
+            The main and major feature that I implemented was level shadows.
+            We knew the game needed shadows half way through development when the scene looked wrong and way too bright
+            everywhere.
+            We had not had the lecture about shadows so I was reluctant but decided it will be worth the time time spent
+            on it.
+            What helped me a ton was
+            <a class="a-href-style" href="https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping">
+                Shadow Mapping</a> on LearnOpenGL,
+            and translating it to DX11 for our game
+            <br><br>
+            First result did not go as planned like it usually does.
+        </div>
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/GolemsQuest/BackwardsShadows.jpg" class="content-image" />
+        </div>
+
+        <div class="project-text">
+            It looked very weird and took a while to find what it was.
+            In the end it was simply that the sun was looking from the bottom upwards,
+            I rotated it by 180 degrees and the shadows displayed correctly.
+            <br><br>
+            Last thing that i did was to apply a procent close filtering to blur the shadow edges and make it look more
+            interesting.
+        </div>
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/GolemsQuest/FinalShadows.jpg" class="content-image" />
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Enemy Damage Shader
+            </h1>
+        </div>
+
+        <div class="project-text">
+            This was an interesting task that i took because i had not done much shaders before.
+            So i had to learn HLSL while doing it.
+            Tutorials helped and using some voronoi to randomize what direction the "cracks" form.
+        </div>
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/GolemsQuest/ShaderEnemy.jpg" class="content-image" />
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Closing Thoughts
+            </h1>
+        </div>
+
+        <div class="project-text">
+            This project has been the hardest to this point because we had to modify our engine quite a lot because many
+            things were broken.
+            I really liked doing this, working more on low level development.
+            I will say the ememy shaders could be improved alot by someone who knew more what they were doing.
+
+            <br><br>
+
+            Unfortunately, the game is not avaible online but if you really curious here is a link to download a zip
+            file of the game,
+            <a class="a-href-style" href="/Assets/ProjectFiles/GolemsQuestCrystalKeep.zip">Golems Quest: Crystal Keep ↓</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<script src="/Content/TextModify.js"></script>
+<script src="/Content/ScreenManager.js"></script>
+<script src="/Content/BreadcrumbConsoleBar.js"></script>
+<script src="/Content/Projects.js"></script>

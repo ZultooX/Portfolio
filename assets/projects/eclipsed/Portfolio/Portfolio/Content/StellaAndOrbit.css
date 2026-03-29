@@ -1,0 +1,59 @@
+.inline-divider,
+.divider-handle,
+.divider {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* If you want to prevent any text selection while dragging */
+.divider * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.fill-image-left{
+    pointer-events: none;
+    clip-path: inset(0 50% 0 0);
+}
+.fill-image-right{
+    pointer-events: none;
+    clip-path: inset(0 0 0 50%);
+}
+.divider{
+    width: 2%;
+    height: 100px;
+
+    position: absolute;
+    z-index: 1;
+    cursor: w-resize;
+
+    align-items: center;
+
+    left: 50%;
+}
+
+.inline-divider{
+    background-color: rgb(100, 100, 116);
+    width: 15%;
+
+    height: inherit;
+    z-index: 2;
+    justify-self: center;
+}
+
+.divider-handle{
+    background-color: rgb(83, 100, 137);
+    width: 250%;
+    height: 10%;
+
+    transform: translateY(425%);
+    
+    border-radius: 100px;
+
+    z-index: 3;
+
+    justify-self: center;
+
+    align-self: center;
+}

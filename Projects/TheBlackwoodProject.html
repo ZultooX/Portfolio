@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                The Blackwood Project
+            </div>
+        </div>
+        <img class="thumbnail" />
+    </div>
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            The Blackwood Project was our last project at TGA and was an amazing game to work on.
+            Its was extremely fun to work on and this project all being together in one room and working for 16 weeks on fulltime.
+            The reference game was Mistery, a top down 3D zombie survival murder mystery shooter game. Too many genres for a game.
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Lightup Visability Mechanic
+            </h1>
+        </div>
+
+        <div class="project-text">
+            The main mechanic for our horror game was enemies and interactables become visible only in light.
+            To make things more interesting all kinds of lights will make things visible.
+            Point lights, Directional light and Spot lights.
+            
+            <br><br>
+
+            First thing made was the Flashlight. 
+            It used Spotlight and making anything in dark invisible by discarding pixels.
+        </div>
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/FlashlightProto.gif" class="content-image"/>
+        </div>
+
+        <div class="project-text">
+            After this we have to only affect Items and enemies by the lights.
+            The line was way to prominent so a gradient of opacity wa inserted and it looked alot like what we wanted for the game.
+        </div>
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/FinishedFlashlight.gif" class="content-image"/>
+        </div>
+        
+        <div class="project-text">
+            An issue with this whole thing was that when doing a top down game you want to pretend like the game is 2D because thats the only way you can shoot.
+            So now its instead a slice of cake that gets lit up and looks way better.
+            <br><br>
+
+            By default this looked not quite right, its stil a hard cut with the blur and the same all the way.
+            What looked better was counting the color stength into the operation and made the switch more random and noisy.
+        </div>
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/EnemyVisibleInLight.gif" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Pointlight and Spotlight shadows
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Now that all lights affect monsters if there is something blocking the enemy it will still be lit upp.
+            Reason being, all of it are just a math operation checking if the pixel face is looking at the light.
+            Same goes with point lights that needs to check for walls.
+            <br><br>
+            Spotlight shadows were the simplest being normal Directional shadows but as if its camputed from a camera with a lens.
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/SpotLightShadowTexture.jpg" class="content-image"/>
+        </div>
+        
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/SpotLightShadows.jpg" class="content-image"/>
+        </div>
+
+        <div class="project-text">
+            Point lights its alot different, they have to shade 360 degrees around them.
+            This is accomplished by renderig a shadow map to 6 faces of a cube texture with a 90 degree FOV to capture everything around the light.
+            When rendering the light it checks all 6 sides of the map to see if the pixel is in shadow.
+            <br><br>
+            The below has only the sides showing for easier viewing, 4 images at 128px each.
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 90%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/PointLightShadowTexture.jpg" class="content-image"/>
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 60%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/PointLightShadows.jpg" class="content-image"/>
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Projected Decals
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Now that all lights affect monsters if there is something blocking the enemy it will still be lit upp.
+            Reason being, all of it are just a math operation checking if the pixel face is looking at the light.
+            Same goes with point lights that needs to check for walls.
+            <br><br>
+            Spotlight shadows were the simplest being normal Directional shadows but as if its camputed from a camera with a lens.
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/SpotLightShadowTexture.jpg" class="content-image"/>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<script src="/Content/TextModify.js"></script>
+<script src="/Content/ScreenManager.js"></script>
+<script src="/Content/BreadcrumbConsoleBar.js"></script>
+<script src="/Content/Projects.js"></script>

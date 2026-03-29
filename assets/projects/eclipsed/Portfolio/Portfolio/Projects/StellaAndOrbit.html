@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <link rel="stylesheet" href="/Content/StellaAndOrbit.css">
+    <meta charset="utf-8">
+</head>
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Stella & Orbit: Take Flight
+            </div>
+        </div>
+        <img class="thumbnail" />
+    </div>
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            This was a challenging but fun project where i got to learn many new technologies.
+            The time for this project was 15 weeks during half time.
+            The reference game was Ratchet & Clank: Quest for Booty.
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Cascaded Shadow Maps
+            </h1>
+        </div>
+
+        <div class="project-text">
+            With our games theme being space pirates we will have alot of open space in the level wich means long
+            distance shadows.
+            At the time we had a very simple shadow system that would only show shadows close to the player.
+            So cascaded shadow maps was my mission to figure out. With help from <a
+                href="https://learnopengl.com/Guest-Articles/2021/CSM" class="a-href-style">Shadow Cascading
+                LearnOpenGL</a>
+            It started off rough with my first shadow map looking like this
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 80%;">
+            <img src="/Assets/Images/Projects/Content/StellaAndOrbit/CascadedShadowMapFOV.jpg" class="content-image" />
+        </div>
+
+        <div class="project-text">
+            This issue took a while to solve being quite new too everything.
+            The image looks like it has very much FOV which must mean that the view matrix is wrong.
+            It was simple, two values in the view matrix were switched making the FOV value another value.
+            What did help was <a href="https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps"
+                class="a-href-style">DX11 Cascaded Shadow maps example</a>
+            <br><br>
+            Drag to see the result and difference, left has no cascades and right has cascades
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 80%;" draggable="false">
+            <img id="cascade-holder" src="/Assets/Images/Projects/Content/StellaAndOrbit/WithoutCascades.jpg"
+                class="content-image" draggable="false" style="opacity: 0;">
+            <div class="divider" draggable="false">
+                <div class="inline-divider" draggable="false">
+                    <div class="divider-handle" draggable="false">
+
+                    </div>
+                </div>
+            </div>
+            <img id="before-cascading" src="/Assets/Images/Projects/Content/StellaAndOrbit/WithoutCascades.jpg"
+                class="content-image fill-image-left" draggable="false" style="position: absolute; width: auto;" />
+            <img id="after-cascading" src="/Assets/Images/Projects/Content/StellaAndOrbit/WithCascades.jpg"
+                class="content-image fill-image-right" draggable="false" style="position: absolute; width: auto;" />
+            </img>
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Text Renderer
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Redering text is essenial for a custom game engine to display information for the player to look at or
+            interact with.
+            The chosen text library was <a
+                href="https://learn.microsoft.com/en-us/windows/win32/dxtecharts/cascaded-shadow-maps"
+                class="a-href-style">freetype</a>, a free and open source library.
+            This was very hazzle free and was able to get a working prototype in just a few days.
+
+            <br><br>
+            I made a component from it and was now way easier to add text to the game.
+            This was our final text Renderer that we used for the remaning projects.
+            <br><br>
+            Here is some text that I rendered in engine with comic sans font
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 80%;">
+            <img src="/Assets/Images/Projects/Content/StellaAndOrbit/TextRendered.png" class="content-image" />
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                NPC Dialouge
+            </h1>
+        </div>
+
+        <div class="project-text">
+            The game needed some more interactions in the world so some dialog NPCs were in order.
+            Making it appear instantly looks weird so instead writing it out looks better.
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/StellaAndOrbit/DialougeInGame.gif" class="content-image" />
+        </div>
+
+        <div class="project-text">
+            Lastly to make it easily editable I created a component for the dialoge and export it with the scene export tool we used.
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/StellaAndOrbit/UnrealDialouge.jpg" class="content-image" />
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Closing Thoughts
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Stella & Orbit was next to last project at TGA and was a blast to work on.
+            I got to experience new techniques and software which i love to do.
+            This game was also very fun to jump around and play.
+
+            <br><br>
+
+            Unfortunately, the game is not avaible online but if you really curious here is a link to download a zip
+            file of the game, <a class="a-href-style" href="/Assets/ProjectFiles/Stella & Orbit - Take Flight.zip">Stella & Orbit: Take Flight</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script src="/Content/TextModify.js"></script>
+<script src="/Content/ScreenManager.js"></script>
+<script src="/Content/BreadcrumbConsoleBar.js"></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/DragChange.js"></script>
