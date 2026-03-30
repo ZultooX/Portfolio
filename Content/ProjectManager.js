@@ -117,7 +117,7 @@ function CreateSystemsUsed(ProjectJson, Card) {
     ProjectJson.SystemsUsed.forEach(system => {
         let SystemName = document.createElement("p")
         SystemName.className = "project-tag-name"
-        SystemName.innerText = system.Name
+        SystemName.innerHTML = system.Name
         SystemName.style.color = system.Color
         SystemsUsedHolder.appendChild(SystemName)
     });

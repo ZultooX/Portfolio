@@ -16,7 +16,7 @@
             "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
             "Title": "Eclipsed Engine",
             "HtmlPage": "Projects/EclipsedEngine",
-            "Description": "Eclipsed Engine is a 2D game engine with an editor. We are developing this game engine for a new puzzle game, code name Project Nova.",
+            "Description": "<a href=\"https://christopher-vedlund.se\" class=\"a-href-style\">jiwajdiwajdi</a>Eclipsed Engine is a 2D game engine with an editor. We are developing this game engine for a new puzzle game, code name Project Nova.",
             "SystemsUsed": [
                 {
                     "Name": "C++",
@@ -72,7 +72,7 @@
             "Thumbnail": "Assets/Images/Projects/Thumbnails/HoleEMole.jpg",
             "Title": "Hole-É-Mole",
             "HtmlPage": "Projects/HoleEMole",
-            "Description": "<a class=\"a-href-style\"href=\"https://overwatch.blizzard.com/en-us/heroes/\"> Hej</a> Hole-É-Mole is a 3D Mobile Puzzle game made in Unity. First game i worked on that was made for mobile",
+            "Description": "Hole-É-Mole is a 3D Mobile Puzzle game made in Unity. First game i worked on that was made for mobile",
             "SystemsUsed": [
                 {
                     "Name": "C#",
