@@ -1,7 +1,7 @@
 let JsonObj = await LoadProjects()
 
 async function LoadProjects() {
-    let jsonFile = await fetch("/Assets/Projects.json")
+    let jsonFile = await fetch("./Assets/Projects.json")
     let JsonString = await jsonFile.text()
 
     let JsonObj = JSON.parse(JsonString)

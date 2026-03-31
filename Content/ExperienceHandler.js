@@ -109,7 +109,7 @@ function SwitchButtons(Element) {
 let ExperienceJsonObj = await LoadJson()
 
 async function LoadJson() {
-    let jsonFile = await fetch("/Assets/Experience.json")
+    let jsonFile = await fetch("./Assets/Experience.json")
     let JsonString = await jsonFile.text()
 
     let JsonObj = JSON.parse(JsonString)
