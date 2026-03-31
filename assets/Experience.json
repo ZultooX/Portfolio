@@ -1,18 +1,20 @@
 {
     "Work": [
         {
-            "CompanyName": "Invisible Walls",
-            "CompanyIcon": "Assets/Images/CompanyIcons/InvisibleWalls.png",
+            "CompanyName": "ION Game Design",
+            "CompanyIcon": "Assets/Images/CompanyIcons/Logo_Ion-01.png",
             "CompanyLink": "https://www.invisiblewalls.co/",
             "Role": "Procedural Game Programmer (Intern)",
             "TimeSpan": "Sep 2025 - Apr 2026",
             "Info": [
-                "Worked alot with Procedural world generation using many of the Unreal Engines Procedural Content Generation Pipeline, mainly using Procedural Constent Graph",
-                "This was my first time in the professional game development industry and seing how things operate there was interesting and made me learn alot.",
-                "It was an honor to work with all the amazing people at Invisible Walls and their amazing games like one of my favorites being <br><a class=\"a-href-style accent-color\" href=\"https://www.neighborsgame.com/\"> Neighbors: Suburban Warfare </a>"
+                
             ],
             "LinkButtons": [
                 {
+                    "Title": "Unreal PCG",
+                    "Link": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-pcg-with-gpu-processing-in-unreal-engine"
+                },
+                 {
                     "Title": "Unreal PCG",
                     "Link": "https://dev.epicgames.com/documentation/en-us/unreal-engine/using-pcg-with-gpu-processing-in-unreal-engine"
                 }
@@ -40,7 +42,7 @@
             "TimeSpan": "Aug 2020 - Jun 2023",
             "BackgroundColor": "rgb(0, 0, 0)",
             "Info": [
-                ""
+                "Learned the basics of game development using the Unity game engine, where we did assignments and did "
             ],
             "LinkButtons": []
         }
