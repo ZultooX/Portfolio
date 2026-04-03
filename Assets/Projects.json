@@ -9,9 +9,35 @@
     ],
     "FeaturedProjects": [
         0,
+        3,
+        2,
         1
     ],
     "Projects": [
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
+            "Title": "Eclipsed Game Engine",
+            "HtmlPage": "Projects/EclipsedEngine",
+            "Description": "Specialization project at The Game Assembly where I wanted to recreate Uncharted 4's procedural hand animations. This project was made in my game engine called \"Zengine\"",
+            "SystemsUsed": [
+                {
+                    "Name": "C++ 20",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "ImGui",
+                    "Color": "rgb(220, 220, 220)"
+                },
+                {
+                    "Name": "FMOD",
+                    "Color": "rgb(220, 220, 220)"
+                },
+                {
+                    "Name": "OpenGL",
+                    "Color": "rgb(220, 220, 220)"
+                }
+            ]
+        },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/TGA-Specialization.jpg",
             "Title": "Inverse Kinematics using FABRIK",
@@ -27,20 +53,28 @@
                     "Color": "rgb(200, 200, 113)"
                 },
                 {
-                    "Name": "Photoshop",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
                     "Name": "ImGui",
                     "Color": "rgb(220, 220, 220)"
                 }
             ]
         },
         {
+            "Thumbnail": "",
+            "Title": "C++ Runtime Reflection",
+            "HtmlPage": "Projects/RuntimeReflection",
+            "Description": "Specialization project at The Game Assembly where I wanted to recreate Uncharted 4's procedural hand animations. This project was made in my game engine called \"Zengine\"",
+            "SystemsUsed": [
+                {
+                    "Name": "C++ 17",
+                    "Color": "rgb(210, 167, 162)"
+                }
+            ]
+        },
+        {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/ION-NGPVJ.jpg",
-            "Title": "Greenland ● Neanderthal ● Pax Viking",
+            "Title": "ION Strategy Collection",
             "HtmlPage": "Projects/ION-NGPVJ",
-            "Description": "A collection of strategy board games from ION Game Design. These titles explore deep historical themes and complex decision-making systems.",
+            "Description": "Greenland ● Neanderthal ● High Frontier 4 ● Pax Viking Junior<br><br>A collection of strategy board games from ION Game Design. These titles explore deep historical themes and complex decision-making systems.",
             "SystemsUsed": [
                 {
                     "Name": "C#",

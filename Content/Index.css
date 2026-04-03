@@ -257,6 +257,7 @@
     padding-top: 5vw;
     width: 1050px;
 
+    display:grid;
     justify-self: center;
 }
 

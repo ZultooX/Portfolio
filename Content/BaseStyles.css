@@ -5,6 +5,9 @@ body {
     font-family: "JetBrains Mono", monospace;
 
     scrollbar-color: rgb(234, 24, 24);
+
+    display: grid;
+    justify-content: center;
 }
 
 ::selection {
@@ -86,13 +89,14 @@ a {
 }
 
 .breadcrumb-console-bar-holder {
+    display: grid;
+
     z-index: 9999;
 
     position: fixed;
     top: 0;
     width: 95vw;
     height: 90px;
-    /* extend past visible bar */
 
     backdrop-filter: blur(17px);
     -webkit-backdrop-filter: blur(17px);
@@ -117,6 +121,13 @@ a {
 }
 
 
+.hosted-where-text{
+    font-size: 14px;
+    margin-top: 12px;
+    justify-self: center;
+
+    margin-bottom: 32px;
+}
 
 .bottom-bar {
     background-color: rgb(19, 19, 29);
@@ -126,23 +137,33 @@ a {
     border-radius: 10px;
 
     justify-self: center;
-    margin-bottom: 32px;
     
     margin-top: 100px;
 
 
     display: flex;
-    justify-content: center;
+    justify-content: baseline;
 
     box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.24);
 }
 
+.bottombar-separator{
+    margin-top: 11px;
+    margin-bottom: 11px;
+
+    border-left: 1.5px solid rgb(199, 207, 230);
+}
+
 .cpy-right {
     height: 100%;
-    align-content: center;
-    width: 100%;
 
     margin-left: 1.4%;
+}
+
+.bottom-all-icon-holder{
+    display: flex;
+    
+    align-self: center;
 }
 
 .bottom-icon {
@@ -150,16 +171,14 @@ a {
     height: auto;
 
     margin-top: 20%;
-
     margin-left: -20%;
+
+
 }
 
 @media (max-width: 1100px) {
     .cpy-right {
         font-size: 20px;
-    }
-    .bottom-icon{
-        margin-top: 35%;
     }
 
     .breadcrumb-console-bar {

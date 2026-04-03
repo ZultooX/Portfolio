@@ -36,6 +36,7 @@
     width: 1700px;
 
     justify-self: center;
+    display: grid;
 }
 
 @media (max-width: 1800px) {

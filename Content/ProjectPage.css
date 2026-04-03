@@ -53,6 +53,7 @@
 .page-middle-offseter{
     width: 1000px;
     justify-self: center;
+    display: grid;
 }
 
 .content-image-holder{
@@ -73,6 +74,7 @@
 
 .content-image{
     width: 100%;
+    cursor:zoom-in;
 }
 
 @media (max-width: 1000px) {
@@ -92,4 +94,48 @@
     .thumbnail {
         width: 70%;
     }
+}
+
+
+
+
+.image-zoomin-bg{
+    z-index: 99999999;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 95vw;
+    height: 100vh;
+
+    pointer-events: none;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    opacity: 0;
+}
+
+.image-zoomin{
+    display: flex;
+
+    border-radius: 8px;
+
+    width: 90%;
+    height: 90%;
+
+    background-color: rgb(25, 25, 49);
+
+    margin-left: 7.5%;
+    margin-top: 5vh;
+
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-zoomin-content{
+    border-radius: 4px;
+    user-select: none;
 }

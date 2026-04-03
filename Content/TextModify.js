@@ -8,8 +8,8 @@ document.documentElement.style.setProperty("--accent-color", "rgb(" + AccentRed 
 myName = document.getElementsByClassName("my-name");
 
 for (i = 0; i < myName.length; i++) {
-    myName[i].addEventListener("mouseenter", function () { ChangeName(this, "Noo(Thing).") })
-    myName[i].addEventListener("mouseleave", function () { ChangeName(this, "Simon.") })
+    myName[i].addEventListener("mouseenter", function () { ChangeName(this, "ZultooX.") })
+    myName[i].addEventListener("mouseleave", function () { ChangeName(this, "Christopher.") })
 }
 
 Count = 0
