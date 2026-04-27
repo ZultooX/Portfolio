@@ -1,0 +1,40 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    /* background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-dark-red-abstract-smoke-cloud-dark-color-background-picture-image_1456489.jpg'); */
+    font-family: "Poppins", sans-serif;
+    /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-light-blue-velvet-background-dark-texture-with-a-gradient-image_16180951.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    margin: 0px;
+
+    overflow-x: hidden;
+}
+
+
+
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-light-blue-velvet-background-dark-texture-with-a-gradient-image_16180951.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(8px);
+    transform: scale(1.05);
+    z-index: -1;
+}

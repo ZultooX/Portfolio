@@ -1,0 +1,87 @@
+.introduction {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    margin: 17rem;
+}
+
+.introduction-text {
+    padding:0px;
+    margin:0px 0px;
+    text-align: left;
+}
+
+.introduction img {
+    border-radius: 100%;
+    object-fit: cover;
+    width: 300px;
+}
+
+.introduction h1,
+.introduction h2 {
+    color: white;
+    margin: 0;
+}
+
+.introduction h1 {
+    font-size: 70px;
+}
+
+.introduction h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.int-page-button {
+    background-color: transparent;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-color: white;
+    border: solid;
+    border-width: 2px;
+    color: white;
+    font-family: inherit;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.int-page-button:hover {
+    font-style: bold;
+    border-color: white;
+    background-color: white;
+    color: black;
+    cursor:pointer;
+}
+
+.int-separator {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, #ccc 50%, transparent 100%);
+}
+
+.int-page-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    object-fit: cover; 
+    filter: blur(0.4rem);
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.815);
+    z-index: -1;
+}
