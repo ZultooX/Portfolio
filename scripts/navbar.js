@@ -11,7 +11,7 @@ const nameDiv = document.createElement("div");
 nameDiv.classList.add("name-container");
 
 nameDiv.onclick = () => {
-    window.location.href = "index.html";
+    window.location.href = "/#";
 }
 
 const divider = document.createElement("div");
@@ -51,7 +51,7 @@ menu.classList.add("navbar-menu-container");
 const homeButton = document.createElement("a");
 homeButton.textContent = "HOME";
 homeButton.classList.add("navbar-menu-item");
-homeButton.href = "/index.html";
+homeButton.href = "/#";
 menu.appendChild(homeButton);
 
 
