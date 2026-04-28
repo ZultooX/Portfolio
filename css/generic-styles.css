@@ -17,6 +17,12 @@
     overflow: hidden;
 }
 
+.hero-half {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
 .is-white{
     background-color:#ffffff;
 }
