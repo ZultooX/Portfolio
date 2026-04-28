@@ -16,7 +16,7 @@
     width: 31.5%;
     transition: all 0.3s ease;
     position: relative;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .project-card-content {
@@ -37,7 +37,7 @@
 
 .project-card:hover {
     transform: scale(1.05);
-    box-shadow:  7px 7px 8px rgba(0, 0, 0, 0.151);
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.151);
 }
 
 .truncated-description {
@@ -70,11 +70,29 @@
 
 .project-tag {
     display: inline-block;
-    background-color: #f0f0f0;
+    background-color: #3b3b3b71;
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.8rem;
     margin: 0.3rem 0.1rem;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* .project-tag:hover {
+    transform: scale(1.05);
+    background-color: #222222d7;
+} */
+
+.download-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: #4CAF50;
+    margin-bottom: 0.5rem;
 }
 
 .team-size-text {
@@ -88,7 +106,7 @@
     color: white;
     max-width: fit-content;
     bottom: 0;
-    left:0;
+    left: 0;
     z-index: 10;
     font-weight: 600;
 
