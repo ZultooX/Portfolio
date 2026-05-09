@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
@@ -22,7 +23,7 @@
 		<script src="scripts/scroll.js"></script>
 		<script src="scripts/navbar.js"></script>
 
-		<div id="home" class="hero">
+		<div id="home" class="hero-half">
 			<div class="overlay"></div>
 			<video autoplay muted playsinline loop class="bg-video is-fullscreen">
 				<source src="assets/portfolio-reel.mp4" type="video/mp4">
@@ -49,12 +50,10 @@
 		<!--  -->
 		<div id="highlights" class="hero is-white-bis highlights">
 			<h1>HIGHLIGHTS</h1>
-
 			<div class="has-items-centered">
 				<div class="highlights-project-container">
 
 					<!-- ECLIPSED -->
-					<a href="projects/projects.html" class="project-link">
 						<div class="project-card is-white-ter">
 							<div class="project-card-content">
 								<p class="team-size-text">
@@ -94,81 +93,73 @@
 									alt>
 							</div>
 						</div>
-					</a>
 
 					<!-- TGA SPECIALIZATION -->
-					<a href="projects/projects.html" class="project-link">
+					<div class="project-card is-white-ter">
+						<div class="project-card-content">
+							<p class="team-size-text">
+								<i class="fas fa-users"></i>
+								SOLO
+							</p>
 
-						<div class="project-card is-white-ter">
-							<div class="project-card-content">
-								<p class="team-size-text">
-									<i class="fas fa-users"></i>
-									SOLO
-								</p>
-
-								<h1>Procedural Animation using FABRIK </h1>
-								<p class="truncated-description">
-									As part of The Game Assembly's specialization course I wanted to
-									recreate Uncharted 4's procedural hand animations in my custom graphics
-									engine.
-								</p>
-								<hr class="project-card-separator">
-								<div>
-									<p class="project-tag is-uppercase">C++</p>
-									<p class="project-tag is-uppercase">FABRIK</p>
-									<p class="project-tag is-uppercase">Premake</p>
-									<p class="project-tag is-uppercase">DX11</p>
-									<p class="project-tag is-uppercase">ImGui</p>
-									<p class="project-tag is-uppercase">Nlohmann</p>
-									<p class="project-tag is-uppercase">Custom Engine</p>
-								</div>
-							</div>
-
-							<div class="has-items-centered project-card-image">
-								<p class="project-card-date">
-									February 2025 - April 2025
-								</p>
-								<img src="assets/images/tga/specialization/thumbnail.png" alt>
+							<h1>Procedural Animation using FABRIK </h1>
+							<p class="truncated-description">
+								As part of The Game Assembly's specialization course I wanted to
+								recreate Uncharted 4's procedural hand animations in my custom graphics
+								engine.
+							</p>
+							<hr class="project-card-separator">
+							<div>
+								<p class="project-tag is-uppercase">C++</p>
+								<p class="project-tag is-uppercase">FABRIK</p>
+								<p class="project-tag is-uppercase">Premake</p>
+								<p class="project-tag is-uppercase">DX11</p>
+								<p class="project-tag is-uppercase">ImGui</p>
+								<p class="project-tag is-uppercase">Nlohmann</p>
+								<p class="project-tag is-uppercase">Custom Engine</p>
 							</div>
 						</div>
-					</a>
 
-					<a href="projects/projects.html" class="project-link">
+						<div class="has-items-centered project-card-image">
+							<p class="project-card-date">
+								February 2025 - April 2025
+							</p>
+							<img src="assets/images/tga/specialization/thumbnail.png" alt>
+						</div>
+					</div>
 
-						<!-- ION ADVERTISEMENT AND FIREBASE -->
-						<div class="project-card is-white-ter">
-							<div class="project-card-content">
-								<p class="team-size-text">
-									<i class="fas fa-users"></i>
-									3
-								</p>
+					<!-- ION ADVERTISEMENT AND FIREBASE -->
+					<div class="project-card is-white-ter">
+						<div class="project-card-content">
+							<p class="team-size-text">
+								<i class="fas fa-users"></i>
+								3
+							</p>
 
-								<h1>Advertisement Integration & Firebase</h1>
-								<p class="truncated-description">
-									Added free-to-play monetization to four of ION's existing titles.
-									Integrated Google AdMob for ads across all four games.
-									Was supposed to migrate multiplayer from AWS to Firebase, but was moved
-									to another project.
-								</p>
-								<hr class="project-card-separator">
-								<div>
-									<p class="project-tag is-uppercase">Unity</p>
-									<p class="project-tag is-uppercase">C#</p>
-									<p class="project-tag is-uppercase">Google Admob</p>
-									<p class="project-tag is-uppercase">Firebase</p>
-								</div>
-							</div>
-
-							<div class="has-items-centered project-card-image">
-								<p class="project-card-date">
-									October 2025 - April 2026
-								</p>
-								<img src="assets/images/ion/ION-NGPV-2.png" alt>
+							<h1>Advertisement Integration & Firebase</h1>
+							<p class="truncated-description">
+								Added free-to-play monetization to four of ION's existing titles.
+								Integrated Google AdMob for ads across all four games.
+								Was supposed to migrate multiplayer from AWS to Firebase, but was moved
+								to another project.
+							</p>
+							<hr class="project-card-separator">
+							<div>
+								<p class="project-tag is-uppercase">Unity</p>
+								<p class="project-tag is-uppercase">C#</p>
+								<p class="project-tag is-uppercase">Google Admob</p>
+								<p class="project-tag is-uppercase">Firebase</p>
 							</div>
 						</div>
-					</a>
+
+						<div class="has-items-centered project-card-image">
+							<p class="project-card-date">
+								October 2025 - April 2026
+							</p>
+							<img src="assets/images/ion/ION-NGPV-2.png" alt>
+						</div>
+					</div>
 				</div>
-
 			</div>
 			<a href="https://google.com"
 				class="is-uppercase view-all-projects-button">View all projects</a>

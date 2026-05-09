@@ -19,11 +19,21 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    display: contents;
+    text-decoration: none;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card {
-    /* border: 1px solid rgb(199, 183, 41); */
     height: 97%;
     width: 31.5%;
     transition: all 0.3s ease;
@@ -121,7 +131,6 @@
     left: 0;
     z-index: 10;
     font-weight: 600;
-
 }
 
 
