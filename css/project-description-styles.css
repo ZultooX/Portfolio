@@ -155,6 +155,9 @@ li {
     margin-bottom: 8px;
 }
 
+a{
+    color: #e03b49;
+}
 .muted {
     color: #aaa;
 }

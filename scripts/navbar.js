@@ -51,20 +51,20 @@ menu.classList.add("navbar-menu-container");
 const homeButton = document.createElement("a");
 homeButton.textContent = "HOME";
 homeButton.classList.add("navbar-menu-item");
-homeButton.href = "/#";
+homeButton.href = "/";
 menu.appendChild(homeButton);
 
 
 const highlightsButton = document.createElement("a");
 highlightsButton.textContent = "HIGHLIGHTS";
 highlightsButton.classList.add("navbar-menu-item");
-highlightsButton.href = "#highlights";
+highlightsButton.href = "/#highlights";
 menu.appendChild(highlightsButton);
 
 const aboutButton = document.createElement("a");
 aboutButton.textContent = "ABOUT";
 aboutButton.classList.add("navbar-menu-item");
-aboutButton.href = "#about";
+aboutButton.href = "/#about";
 menu.appendChild(aboutButton);
 
 const gamesButton = document.createElement("a");
