@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Eclipsed Engine — Tech Breakdown</title>
+        <title>Eclipsed Engine — Runtime Reflection</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,124 +17,205 @@
     </head>
 
     <body>
+
         <script src="../scripts/scroll.js"></script>
         <script src="../scripts/navbar.js"></script>
-        <!-- HERO -->
+
+        <!-- ================= HERO ================= -->
         <header class="hero">
             <div class="hero-content">
-                <h1>Engine Architecture Breakdown</h1>
-                <p>Eclipsed Game Engine — Systems, design decisions, and
-                    implementation details</p>
+                <h1>Runtime Reflection</h1>
+                <p>
+                    Runtime Reflection enables the engine to inspect and modify
+                    type information at runtime,
+                    powering editor tools, serialization, and data-driven
+                    systems without compile-time coupling.
+                </p>
             </div>
         </header>
 
-        <!-- NAV (optional structure feel) -->
+        <!-- ================= TABLE OF CONTENTS ================= -->
         <nav class="toc">
             <a href="#overview">Overview</a>
-            <a href="#rendering">Rendering</a>
-            <a href="#ecs">ECS</a>
-            <a href="#asset">Asset Pipeline</a>
-            <a href="#tooling">Tooling</a>
+            <a href="#core-idea">Core Idea</a>
+            <a href="#design">Design</a>
+            <a href="#evolution">Evolution</a>
+            <a href="#use-cases">Use Cases</a>
         </nav>
 
-        <!-- CONTENT -->
+        <!-- ================= CONTENT ================= -->
         <main class="container">
 
-            <section id="overview" class="section">
+            <!-- OVERVIEW -->
+            <section id="overview" class="section-2 card">
                 <h2>Overview</h2>
+
                 <p>
-                    This page breaks down the internal architecture of the
-                    Eclipsed Game Engine.
-                    The focus is on how systems are structured, why decisions
-                    were made, and how subsystems interact.
+                    This page breaks down the design and implementation of a
+                    custom runtime reflection system in C++.
+                </p>
+
+                <p>
+                    The system allows engine and gameplay types to be inspected
+                    and modified at runtime,
+                    enabling generic tooling without explicit per-type
+                    integration.
                 </p>
             </section>
 
-            <section id="rendering" class="section card">
-                <h2>Rendering System</h2>
+            <!-- CORE IDEA -->
+            <section id="core-idea" class="section-1 card">
+                <div class="center">
 
-                <p>
-                    The rendering pipeline is built on top of OpenGL and
-                    designed around a
-                    modular frame graph approach to allow future API
-                    abstraction.
-                </p>
+                    <h2>Core Idea</h2>
 
-                <div class="grid">
-                    <div>
-                        <h3>Design Goals</h3>
-                        <ul>
-                            <li>Minimal CPU overhead</li>
-                            <li>Batch-friendly architecture</li>
-                            <li>Future Vulkan compatibility</li>
-                        </ul>
+                    <p>
+                        The goal is to expose component and engine data to tools
+                        such as the editor without requiring
+                        compile-time knowledge of their structure.
+                    </p>
+
+                    <div class="grid">
+
+                        <div>
+                            <h3>Design Goals</h3>
+                            <ul>
+                                <li>Remove compile-time coupling between engine
+                                    and tools</li>
+                                <li>Enable automatic inspection of all reflected
+                                    types</li>
+                                <li>Support serialization and editor
+                                    integration</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Concept</h3>
+                            <p>
+                                Each type registers metadata describing its
+                                fields, including name, type, and memory offset.
+                                This metadata is stored in a central registry
+                                and used by engine systems at runtime.
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <h3>Implementation</h3>
-                        <p>
-                            Rendering is split into stages: geometry, lighting,
-                            and post-processing.
-                            Each stage is decoupled to allow reordering and
-                            experimentation.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="image-box">
-                    <img
-                        src="../assets/images/eclipsed-interactive/EclipsedEngine (1).jpg">
-                    <p class="caption">Rendering pipeline overview</p>
-                </div>
-            </section>
-
-            <section id="ecs" class="section card">
-                <h2>Entity Component System (ECS)</h2>
-
-                <p>
-                    The ECS is designed for cache-friendly iteration and fast
-                    entity lookup using sparse sets.
-                </p>
-
-                <div class="grid">
-                    <div>
-                        <h3>Why ECS?</h3>
-                        <p>
-                            Traditional OOP approaches created tight coupling.
-                            ECS allows data-driven design and better performance
-                            scaling.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3>Structure</h3>
-                        <ul>
-                            <li>Entity ID (uint32)</li>
-                            <li>Component pools</li>
-                            <li>System processors</li>
-                        </ul>
-                    </div>
                 </div>
             </section>
 
-            <section id="asset" class="section card">
-                <h2>Asset Pipeline</h2>
+            <!-- DESIGN -->
+            <section id="design" class="section-2 card">
+                <div class="center">
 
-                <p>
-                    The asset system pre-processes resources into engine-ready
-                    binary formats
-                    to reduce runtime overhead.
-                </p>
+                    <h2>Design</h2>
+
+                    <p>
+                        The reflection system is built around a global type
+                        registry that stores metadata for all registered types.
+                        Each type defines its fields during a registration step
+                        executed at startup.
+                    </p>
+
+                    <div class="grid">
+
+                        <div>
+                            <h3>Type Metadata</h3>
+                            <ul>
+                                <li>Type name</li>
+                                <li>Field definitions</li>
+                                <li>Memory offsets</li>
+                                <li>Type size information</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Registry System</h3>
+                            <p>
+                                The registry acts as a lookup database that
+                                allows tools and runtime systems
+                                to query and interact with types generically.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
             </section>
 
-            <section id="tooling" class="section card">
-                <h2>Tooling System</h2>
+            <!-- EVOLUTION -->
+            <section id="evolution" class="section-1 card">
+                <div class="center">
 
-                <p>
-                    Tools are built using ImGui and tightly integrated into
-                    runtime systems,
-                    allowing real-time debugging and modification.
-                </p>
+                    <h2>Evolution of the System</h2>
+
+                    <p>
+                        The initial implementation used templated field wrappers
+                        to preserve compile-time type safety.
+                        While this worked for early prototypes, it quickly
+                        became restrictive for tooling and serialization.
+                    </p>
+
+                    <p>
+                        The system was later redesigned to use a metadata-driven
+                        approach based on memory offsets,
+                        allowing fully generic runtime access without
+                        compile-time dependencies.
+                    </p>
+
+                    <div class="grid">
+
+                        <div>
+                            <h3>Initial Approach (Templates)</h3>
+                            <ul>
+                                <li>Compile-time typed field wrappers</li>
+                                <li>Strong coupling to C++ types</li>
+                                <li>Poor serialization flexibility</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3>Final Approach (Offsets)</h3>
+                            <ul>
+                                <li>Runtime metadata representation</li>
+                                <li>Field access via memory offsets</li>
+                                <li>Fully decoupled tooling system</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- USE CASES -->
+            <section id="use-cases" class="section-2 card">
+                <div class="center">
+
+                    <h2>Use Cases</h2>
+
+                    <div class="grid">
+
+                        <div>
+                            <h3>Editor Integration</h3>
+                            <p>
+                                Automatically generates inspectors for any
+                                reflected type, enabling real-time editing
+                                of components without custom UI code.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Serialization</h3>
+                            <p>
+                                Enables generic save/load systems by iterating
+                                over metadata instead of hardcoded fields.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
             </section>
 
         </main>

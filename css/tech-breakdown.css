@@ -19,7 +19,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     background: linear-gradient(135deg, #111, #1a1a1a);
     border-bottom: 1px solid #222;
@@ -32,6 +31,7 @@ body {
 
 .hero-content p {
     color: #bdbdbd;
+    max-width: 800px;
 }
 
 /* ================= TABLE OF CONTENTS ================= */
@@ -40,21 +40,28 @@ body {
     position: sticky;
     top: 60px;
     background: #121212;
-    padding: 10px;
     display: flex;
     justify-content: center;
-    gap: 20px;
     border-bottom: 1px solid #222;
     z-index: 10;
 }
 
+/* make links behave like full-height buttons */
 .toc a {
     color: #cfcfcf;
     text-decoration: none;
     font-size: 0.9rem;
+
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* hover fills full TOC height */
 .toc a:hover {
+    background-color: rgb(104, 101, 101);
     color: white;
 }
 
@@ -62,9 +69,18 @@ body {
 
 .container {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 0 20px;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
+
+/* IMPORTANT: prevents navbar overlap when clicking anchors */
+section {
+    scroll-margin-top: 120px;
+}
+
+/* ================= SECTION BASE ================= */
 
 .section {
     margin-bottom: 60px;
@@ -75,15 +91,27 @@ body {
     margin-bottom: 10px;
 }
 
-/* CARD STYLE */
+/* ================= CARD STYLE ================= */
+
 .card {
-    background: #161616;
     padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #222;
 }
 
-/* GRID */
+/* ================= SECTION VARIANTS (FIXED) ================= */
+/* These now ONLY affect styling, NOT layout */
+
+.section-1 {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-2 {
+    background: rgba(255, 255, 255, 0.01);
+    border-left: 2px solid rgba(255, 255, 255, 0.03);
+}
+
+/* ================= GRID ================= */
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -91,24 +119,8 @@ body {
     margin-top: 15px;
 }
 
-/* IMAGE BLOCK */
-.image-box {
-    margin-top: 20px;
-}
+/* ================= TEXT ================= */
 
-.image-box img {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #222;
-}
-
-.caption {
-    font-size: 0.85rem;
-    color: #999;
-    margin-top: 5px;
-}
-
-/* TEXT */
 p {
     color: #cfcfcf;
 }
@@ -122,7 +134,8 @@ li {
     margin-bottom: 6px;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 800px) {
     .grid {
         grid-template-columns: 1fr;

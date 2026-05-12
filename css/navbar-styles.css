@@ -65,6 +65,7 @@
     z-index: 101;
 
     text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
 
 }
 
