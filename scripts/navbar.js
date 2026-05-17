@@ -70,19 +70,19 @@ menu.appendChild(aboutButton);
 const gamesButton = document.createElement("a");
 gamesButton.textContent = "GAMES";
 gamesButton.classList.add("navbar-menu-item");
-gamesButton.href = "games.html";
+gamesButton.href = "/games.html";
 menu.appendChild(gamesButton);
 
 const projectsButton = document.createElement("a");
 projectsButton.textContent = "PROJECTS";
 projectsButton.classList.add("navbar-menu-item");
-projectsButton.href = "projects.html";
+projectsButton.href = "/projects.html";
 menu.appendChild(projectsButton);
 
 const techBreakDowns = document.createElement("a");
 techBreakDowns.textContent = "TECH BREAKDOWNS";
 techBreakDowns.classList.add("navbar-menu-item");
-techBreakDowns.href = "tech-breakdowns.html";
+techBreakDowns.href = "/tech-breakdowns.html";
 menu.appendChild(techBreakDowns);
 
 // APPEND
