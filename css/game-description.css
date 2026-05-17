@@ -1,0 +1,53 @@
+
+
+/* ICON LINKS */
+.project-links-mini {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.mini-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    text-decoration: none;
+    color: #d0d6dc;
+    font-size: 0.95rem;
+
+    transition: 0.2s ease;
+}
+
+.mini-link:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* FIXED ICON CONTAINER */
+.icon-box {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    overflow: hidden; /* IMPORTANT for SVG safety */
+}
+
+/* FORCE ICON SIZE (FIXES STEAM SVG ISSUE) */
+.icon-box img {
+    width: 18px !important;
+    height: 18px !important;
+
+    max-width: 18px;
+    max-height: 18px;
+
+    object-fit: contain;
+    display: block;
+    line-height: 0;
+}

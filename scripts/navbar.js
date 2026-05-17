@@ -28,11 +28,24 @@ titleText.classList.add("title-text");
 
 const leftMenu = document.createElement("div");
 leftMenu.classList.add("navbar-menu-container");
-const testButton = document.createElement("a");
-testButton.textContent = "RESUME";
-testButton.classList.add("navbar-menu-item");
-testButton.href = "index.html";
-leftMenu.appendChild(testButton);
+const resumeButton = document.createElement("a");
+resumeButton.textContent = "RESUME";
+resumeButton.classList.add("navbar-menu-item");
+resumeButton.href = "index.html";
+resumeButton.target = "_blank";
+resumeButton.rel = "noopener noreferrer";
+leftMenu.appendChild(resumeButton);
+
+const linkedinButton = Object.assign(document.createElement("a"), {
+  textContent: "LINKEDIN",
+  href: "https://www.linkedin.com/in/christopher-vedlund",
+  target: "_blank",
+  rel: "noopener noreferrer",
+});
+
+linkedinButton.classList.add("navbar-menu-item");
+
+leftMenu.appendChild(linkedinButton);
 
 
 nameDiv.appendChild(nameText);

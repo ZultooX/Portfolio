@@ -52,3 +52,15 @@
 .is-behind{
     z-index: -1000;
 }
+
+.hero-scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .hero-scrollable {
+        height: auto;
+        min-height: 100vh;
+    }
+}

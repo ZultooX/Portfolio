@@ -154,3 +154,92 @@ a {
     background-color: #363636;
     margin-bottom: 1rem;
 }
+
+/* ========== MOBILE RESPONSIVE FIXES ========== */
+/* PC layout remains unchanged above this line */
+
+@media (max-width: 768px) {
+    .highlights {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .highlights h1 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .highlights-project-container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 0 1rem;
+        gap: 2rem;
+        box-sizing: border-box;
+    }
+    
+    .project-link {
+        display: block;
+        width: 100%;
+    }
+    
+    .project-card {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .project-card-content h1 {
+        font-size: 24px;
+    }
+    
+    .team-size-text {
+        position: static;
+        display: inline-block;
+        margin: 0 0 1rem 0;
+    }
+    
+    .project-card-image {
+        position: static;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .view-all-projects-button {
+        display: inline-block;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlights h1 {
+        font-size: 1.75rem;
+    }
+    
+    .project-card-content {
+        padding: 0.75rem;
+    }
+    
+    .project-card-content h1 {
+        font-size: 20px;
+    }
+    
+    .truncated-description {
+        font-size: 0.8rem;
+    }
+    
+    .project-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .team-size-text {
+        font-size: 0.7rem;
+    }
+}
