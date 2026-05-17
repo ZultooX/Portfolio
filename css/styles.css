@@ -5,26 +5,20 @@ body {
     height: 100%;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    /* background-image: url('https://png.pngtree.com/background/20211215/original/pngtree-dark-red-abstract-smoke-cloud-dark-color-background-picture-image_1456489.jpg'); */
     font-family: "Poppins", sans-serif;
-    /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-light-blue-velvet-background-dark-texture-with-a-gradient-image_16180951.jpg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
     margin: 0px;
-
     overflow-x: hidden;
 }
-
-
-
 
 .background {
     position: fixed;
@@ -32,25 +26,15 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-
-    /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240913/pngtree-light-blue-velvet-background-dark-texture-with-a-gradient-image_16180951.jpg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     filter: blur(8px);
     transform: scale(1.05);
     z-index: -1;
 }
 
-
-
-
-
-
-
-
-
+/* About Section Styles */
 .about-section {
     display: flex;
     justify-content: center;
@@ -79,11 +63,9 @@ body {
 .about-image img {
     width: 240px;
     height: 240px;
-
     object-fit: cover;
     border-radius: 50%;
-
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* TEXT RIGHT */
@@ -103,4 +85,95 @@ body {
     font-size: 1rem;
     color: #444;
     line-height: 1.7;
+}
+
+/* ============================================ */
+/* MOBILE RESPONSIVE FIXES - PC LAYOUT UNCHANGED */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    /* About Section - Mobile Fixes */
+    .about-section {
+        padding: 40px 20px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    /* IMAGE - moves to top on mobile */
+    .about-image {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+    }
+    
+    .about-image img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    /* TEXT - moves below image on mobile */
+    .about-text {
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .about-title {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small phones */
+    .about-section {
+        padding: 30px 15px;
+    }
+    
+    .about-content {
+        gap: 20px;
+    }
+    
+    .about-image img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .about-title {
+        font-size: 1.5rem;
+    }
+    
+    .about-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* For landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .about-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .about-image img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .about-text {
+        text-align: left;
+    }
+    
+    .about-title {
+        text-align: left;
+    }
 }
