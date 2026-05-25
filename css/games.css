@@ -10,38 +10,39 @@ body {
     color: #333;
 }
 
-/* SECTION */
-.highlights {
+/* Sections */
+.highlights, .about {
     padding: 60px 20px;
     text-align: center;
 }
 
-.highlights h1 {
+.highlights h1,
+.about h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
 }
 
-/* CONTAINER */
+/* Container */
 .projects-container {
-   display: flex;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 /* CARD */
 .project-card {
     width: 320px;
+    max-width: 20rem;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     position: relative;
-
-    cursor: pointer;
     transition: 0.3s ease;
-
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -49,48 +50,40 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* IMAGE */
+/* FORCE IMAGE SIZE - CHANGE THE HEIGHT HERE */
 .project-card img {
-    width: 100%;
-    height: 180px;
+    width: 100% !important;
+    height: 150px !important;  /* ← CHANGE THIS VALUE */
+    object-fit: cover !important;
+    display: block !important;
+    flex-shrink: 0;
+    
+
     object-fit: cover;
-    display: block;
+    object-position: top;
 }
 
 /* CONTENT */
 .project-content {
     padding: 15px;
     text-align: left;
-    cursor: pointer;
-
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-content h2 {
-    font-size: 1.2rem;
-    margin-bottom: 2px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
-/* COMPANY */
-.company {
-    display: block;
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 10px;
-    text-decoration: none;
-}
-
-.company:hover {
-    color: #4da3ff;
-}
-
-/* DESCRIPTION */
 .description {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 10px;
 }
 
-/* DIVIDER */
+/* Divider */
 hr {
     border: none;
     height: 1px;
@@ -98,27 +91,40 @@ hr {
     margin: 10px 0;
 }
 
+/* Team badge */
+.team-size {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+}
+
 /* LINKS */
 .links {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 10px;
+    margin-top: auto;
+    padding-top: 10px;
 }
 
-/* STORE BUTTON */
 .store-btn {
     width: 50px;
     height: 50px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-radius: 10px;
     background: #f0f0f0;
     border: 1px solid #e0e0e0;
-
     transition: 0.2s ease;
 }
 
@@ -132,31 +138,17 @@ hr {
     max-width: 70%;
     max-height: 70%;
     object-fit: contain;
+}
+
+/* Company link style */
+.company {
     display: block;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+    text-decoration: none;
 }
 
-/* TEAM BADGE */
-.team-size {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-
-    background: rgba(0,0,0,0.6);
-    color: white;
-
-    padding: 5px 10px;
-    border-radius: 20px;
-
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.company:hover {
+    color: #4da3ff;
 }
-
-
-
-
-
-
-
-
