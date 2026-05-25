@@ -60,7 +60,7 @@ middle.appendChild(title);
 const links = [
     { text: "GitHub", url: "https://github.com/" },
     { text: "LinkedIn", url: "https://linkedin.com/" },
-    { text: "Email", url: "mailto:you@example.com" }
+    { text: "Email", url: "mailto:vedlundchristopher@gmail.com" }
 ];
 
 links.forEach(link => {
@@ -126,7 +126,7 @@ const copy = document.createElement("p");
 copy.textContent = `© ${new Date().getFullYear()} Christopher Vedlund`;
 
 const built = document.createElement("p");
-built.textContent = "Built with HTML, CSS & JavaScript";
+// built.textContent = "Built with HTML, CSS & JavaScript";
 
 bottom.appendChild(copy);
 bottom.appendChild(built);
