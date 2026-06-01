@@ -48,6 +48,7 @@ body {
 .project-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
 /* FORCE IMAGE SIZE - CHANGE THE HEIGHT HERE */
