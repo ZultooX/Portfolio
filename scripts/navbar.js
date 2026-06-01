@@ -31,7 +31,7 @@ leftMenu.classList.add("navbar-menu-container");
 const resumeButton = document.createElement("a");
 resumeButton.textContent = "RESUME";
 resumeButton.classList.add("navbar-menu-item");
-resumeButton.href = "downloads/christopher-vedlund-resume.pdf";
+resumeButton.href = "/downloads/christopher-vedlund-resume.pdf";
 resumeButton.target = "_blank";
 resumeButton.rel = "noopener noreferrer";
 leftMenu.appendChild(resumeButton);
@@ -83,19 +83,19 @@ menu.appendChild(aboutButton);
 const gamesButton = document.createElement("a");
 gamesButton.textContent = "GAMES";
 gamesButton.classList.add("navbar-menu-item");
-gamesButton.href = "/games.html";
+gamesButton.href = "/games";
 menu.appendChild(gamesButton);
 
 const projectsButton = document.createElement("a");
 projectsButton.textContent = "PROJECTS";
 projectsButton.classList.add("navbar-menu-item");
-projectsButton.href = "/projects.html";
+projectsButton.href = "/projects";
 menu.appendChild(projectsButton);
 
 const techBreakDowns = document.createElement("a");
 techBreakDowns.textContent = "TECH BREAKDOWNS";
 techBreakDowns.classList.add("navbar-menu-item");
-techBreakDowns.href = "/tech-breakdowns.html";
+techBreakDowns.href = "/tech-breakdowns";
 menu.appendChild(techBreakDowns);
 
 // APPEND

@@ -6,7 +6,6 @@
 }
 
 body {
-    background: #0f0f0f;
     color: #eaeaea;
     line-height: 1.6;
 }
@@ -35,11 +34,9 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.3),
-        rgba(0,0,0,0.85)
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.85));
 }
 
 .hero-content {
@@ -91,10 +88,10 @@ body {
     padding: 0 20px;
 }
 
-.steam-link{
+.steam-link {
     margin-top: 60px;
 
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -108,13 +105,14 @@ body {
 .section h2 {
     font-size: 2rem;
     margin-bottom: 15px;
+    color: #363636;
 }
 
 /* ================= TEXT ================= */
 
 .section p {
     margin-bottom: 15px;
-    color: #d0d0d0;
+    color: #363636;
 }
 
 .section ul {
@@ -126,14 +124,14 @@ body {
     margin-bottom: 10px;
     padding-left: 18px;
     position: relative;
-    color: #d0d0d0;
+    color: #363636;
 }
 
 .section li::before {
     content: "▹";
     position: absolute;
     left: 0;
-    color: #ffffff;
+    color: #030303;
 }
 
 /* ================= SPLIT LAYOUT ================= */
@@ -144,17 +142,20 @@ body {
     align-items: flex-start;
 }
 
-.split > div {
+.split>div {
     flex: 2;
 }
 
 .panel {
     flex: 1;
-    background: #171717;
     border: 1px solid #262626;
     border-radius: 12px;
     padding: 20px;
     height: fit-content;
+}
+
+.panel h3 {
+    color: rgb(32, 32, 32);
 }
 
 /* ================= TAGS ================= */

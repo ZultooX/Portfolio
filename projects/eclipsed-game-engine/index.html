@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Eclipsed Game Engine</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/project-description-styles.css">
+        <link rel="stylesheet" href="/css/scrollbar-style.css">
+        <link rel="stylesheet" href="/css/navbar-styles.css">
+    </head>
+
+    <body>
+
+        <!-- JS -->
+        <script src="/scripts/scroll.js"></script>
+        <script src="/scripts/navbar.js"></script>
+
+        <!-- ================= HERO ================= -->
+        <header class="hero">
+
+            <img
+                src="/assets/images/eclipsed-interactive/EclipsedEngine (1).jpg"
+                class="hero-img">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <h1>Eclipsed Game Engine</h1>
+                <p>
+                    A custom C++ engine focused on real-time rendering, tooling
+                    systems,
+                    and high-performance iterative development.
+                </p>
+            </div>
+
+        </header>
+
+        <!-- ================= META ================= -->
+        <section class="meta-bar">
+            <div><span>Role:</span> Engine Programmer</div>
+            <div><span>Team:</span> 2</div>
+            <div><span>Engine:</span> Custom OpenGL</div>
+            <div><span>Status:</span> In Development</div>
+        </section>
+
+        <!-- ================= CONTENT ================= -->
+        <main class="container">
+
+            <!-- OVERVIEW -->
+            <section class="section">
+                <h2>Overview</h2>
+
+                <p>
+                    Eclipsed is a custom-built C++ game engine developed to
+                    explore modern engine architecture,
+                    with a focus on rendering systems, tooling pipelines, and
+                    runtime design patterns.
+                </p>
+
+                <p>
+                    The engine is built around rapid iteration. Systems can be
+                    modified and reloaded at runtime
+                    without restarting the application, enabling fast
+                    experimentation and development feedback loops.
+                </p>
+
+                <p>
+                    Its architecture consists of three core layers: a modular
+                    OpenGL renderer, an entity-component
+                    system for gameplay logic, and an integrated tooling
+                    framework for debugging and editor workflows.
+                </p>
+            </section>
+
+            <!-- CONTRIBUTIONS -->
+            <section class="section split">
+
+                <div>
+                    <h2>Key Contributions</h2>
+
+                    <ul class="contributions">
+
+                        <li class="contribution-item">
+                            <div>
+                                <strong>Runtime Reflection System</strong>
+                                <span>Enables data-driven engine architecture,
+                                    serialization, and editor tooling.</span>
+                            </div>
+
+                            <a class="contribution-link"
+                                href="/tech-breakdowns/c++-runtime-reflection.html">
+                                Read breakdown →
+                            </a>
+                        </li>
+
+                        <li class="contribution-item">
+                            <div>
+                                <strong>Asset Pipeline</strong>
+                                <span>Converts raw assets into optimized runtime
+                                    formats for the engine.</span>
+                            </div>
+
+                            <a class="contribution-link"
+                                href="/tech-breakdowns/asset-manager.html">
+                                Read breakdown →
+                            </a>
+                        </li>
+
+                        <li class="contribution-item">
+                            <div>
+                                <strong>Hot-reloadable Game DLL System</strong>
+                                <span>Enables real-time code iteration without
+                                    restarting the engine.</span>
+                            </div>
+                        </li>
+
+                        <li class="contribution-item">
+                            <div>
+                                <strong>Custom Serialization System</strong>
+                                <span>Lightweight format for engine and gameplay
+                                    data.</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <aside class="panel">
+
+                    <h3>Tech Stack</h3>
+
+                    <div class="tags">
+                        <span>C++</span>
+                        <span>OpenGL</span>
+                        <span>ImGui</span>
+                        <span>CMake</span>
+                        <span>Python</span>
+                    </div>
+
+                    <h3 class="panel-title">Focus Areas</h3>
+
+                    <p class="muted">
+                        Rendering systems, engine architecture, tooling
+                        pipelines,
+                        asset processing, and performance optimization.
+                    </p>
+
+                </aside>
+
+            </section>
+
+            <!-- ARCHITECTURE -->
+            <section class="section">
+
+                <h2>Architecture Philosophy</h2>
+
+                <p>
+                    The engine is built around a modular design where each
+                    subsystem operates independently
+                    with minimal coupling.
+                </p>
+
+                <p>
+                    This allows systems to be replaced, extended, or redesigned
+                    without affecting the rest
+                    of the engine, making experimentation and iteration
+                    significantly faster.
+                </p>
+
+                <p>
+                    The overall goal is to balance performance with flexibility,
+                    ensuring that systems remain
+                    both fast and easy to iterate on during development.
+                </p>
+
+            </section>
+
+        </main>
+    </body>
+
+    <footer>
+        <script src="/scripts/footer.js"></script>
+    </footer>
+</html>
