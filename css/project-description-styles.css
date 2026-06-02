@@ -6,7 +6,6 @@
 }
 
 body {
-    color: #eaeaea;
     line-height: 1.6;
 }
 
@@ -21,7 +20,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .hero-img {
@@ -122,17 +120,13 @@ body {
 
 .section li {
     margin-bottom: 10px;
-    padding-left: 18px;
+    padding-left: 0px;
     position: relative;
     color: #363636;
+    line-height: 1.6; /* Match body line-height */
 }
 
-.section li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: #030303;
-}
+
 
 /* ================= SPLIT LAYOUT ================= */
 
@@ -198,4 +192,59 @@ body {
     .hero-content h1 {
         font-size: 2.2rem;
     }
+}
+
+
+
+.contributions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 35rem;
+}
+
+.contribution-item {
+    display: block;
+    padding: 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.contribution-item:hover {
+    padding-left: 12px;
+    border-bottom-color: #4da3ff;
+}
+
+.contribution-item strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 17px;
+    color: #2c3e50;
+}
+
+.contribution-item span {
+    font-size: 14px;
+    opacity: 0.75;
+    display: block;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.contribution-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 0;
+    color: #4da3ff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.contribution-link:hover {
+    color: #2c7be5;
+    transform: translateX(4px);
 }

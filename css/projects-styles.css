@@ -11,7 +11,8 @@ body {
 }
 
 /* Sections */
-.highlights, .about {
+.highlights,
+.about {
     padding: 60px 20px;
     text-align: center;
 }
@@ -44,12 +45,12 @@ body {
     overflow: hidden;
     position: relative;
     transition: 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .project-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Image */
@@ -105,7 +106,7 @@ hr {
     position: absolute;
     top: 10px;
     left: 10px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 5px 10px;
     border-radius: 20px;
@@ -120,54 +121,17 @@ hr {
 
 
 
-.contributions {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
 
-.contribution-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    padding: 14px 16px;
-    border-radius: 10px;
 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
 
-.contribution-item strong {
-    display: block;
-    margin-bottom: 4px;
-}
 
-.contribution-item span {
-    font-size: 13px;
-    opacity: 0.7;
-}
 
-/* 🔥 THE IMPORTANT PART (makes link obvious) */
-.contribution-link {
-    white-space: nowrap;
-    padding: 8px 12px;
-    border-radius: 8px;
 
-    background: rgba(77, 163, 255, 0.15);
-    border: 1px solid rgba(77, 163, 255, 0.35);
 
-    color: #4da3ff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
 
-    transition: 0.2s ease;
-}
 
-.contribution-link:hover {
-    background: rgba(77, 163, 255, 0.25);
-    transform: translateY(-2px);
-}
+
+
+
+

@@ -15,7 +15,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    text-align: center;
+    text-align: left;
     margin: 0px;
     overflow-x: hidden;
 }
@@ -176,4 +176,28 @@ body {
     .about-title {
         text-align: left;
     }
+}
+
+
+.repo-arrow{
+    color: #444;
+}
+
+
+.repo-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1rem 0 0 0;
+    justify-content: center;
+}
+
+.repo-badges img {
+    height: 28px; /* for-the-badge size is consistent */
+    transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.repo-badges a:hover img {
+    opacity: 0.85;
+    transform: translateY(-1px);
 }
