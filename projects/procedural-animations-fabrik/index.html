@@ -13,28 +13,29 @@
             rel="stylesheet">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/project-description-styles.css">
-        <link rel="stylesheet" href="../css/scrollbar-style.css">
-        <link rel="stylesheet" href="../css/navbar-styles.css">
+        <link rel="stylesheet" href="/css/project-description-styles.css">
+        <link rel="stylesheet" href="/css/scrollbar-style.css">
+        <link rel="stylesheet" href="/css/navbar-styles.css">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
 
     <body>
 
         <!-- JS -->
-        <script src="../scripts/scroll.js"></script>
-        <script src="../scripts/navbar.js"></script>
+        <script src="/scripts/scroll.js"></script>
+        <script src="/scripts/navbar.js"></script>
 
         <!-- ================= HERO ================= -->
         <header class="hero">
 
             <img
-                src="../assets/images/eclipsed-interactive/EclipsedEngine (1).jpg"
+                src="/assets/images/eclipsed-interactive/EclipsedEngine (1).jpg"
                 class="hero-img">
 
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <h1>Eclipsed Game Engine</h1>
+                <h1>wad</h1>
                 <p>
                     A custom C++ engine focused on real-time rendering, tooling
                     systems,
@@ -54,6 +55,63 @@
 
         <!-- ================= CONTENT ================= -->
         <main class="container">
+
+            <div class="repo-badges">
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine">
+                    <img
+                        src="https://img.shields.io/badge/GitHub-eclipsed--engine-181717?style=for-the-badge&logo=github"
+                        alt="GitHub Repository">
+                </a>
+                <a class="repo-arrow">▶</a>
+                <!-- Open issues -->
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine/issues">
+                    <img
+                        src="https://img.shields.io/github/issues/eclipsed-interactive/eclipsed-engine?style=for-the-badge&logo=github&color=blue"
+                        alt="Open Issues">
+                </a>
+
+                <!-- Stars -->
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine/stargazers">
+                    <img
+                        src="https://img.shields.io/github/stars/eclipsed-interactive/eclipsed-engine?style=for-the-badge&logo=github&color=FFD700"
+                        alt="Stars">
+                </a>
+
+                <!-- Contributors -->
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine/graphs/contributors">
+                    <img
+                        src="https://img.shields.io/github/contributors/eclipsed-interactive/eclipsed-engine?style=for-the-badge&logo=github&color=22C55E"
+                        alt="Contributors">
+                </a>
+
+                <!-- Last commit -->
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine/commits/main">
+                    <img
+                        src="https://img.shields.io/github/last-commit/eclipsed-interactive/eclipsed-engine?style=for-the-badge&logo=git&color=F97316"
+                        alt="Last Commit">
+                </a>
+
+                <!-- Top language -->
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine/search?l=c%2B%2B">
+                    <img
+                        src="https://img.shields.io/github/languages/top/eclipsed-interactive/eclipsed-engine?style=for-the-badge&logo=cplusplus&color=00599C"
+                        alt="Top Language">
+                </a>
+
+                <!-- Repository size -->
+                <a
+                    href="https://github.com/eclipsed-interactive/eclipsed-engine">
+                    <img
+                        src="https://img.shields.io/github/repo-size/eclipsed-interactive/eclipsed-engine?style=for-the-badge&logo=gitlfs&color=495057"
+                        alt="Repo Size">
+                </a>
+            </div>
 
             <!-- OVERVIEW -->
             <section class="section">
@@ -88,49 +146,95 @@
                     <h2>Key Contributions</h2>
 
                     <ul class="contributions">
-
                         <li class="contribution-item">
                             <div>
-                                <strong>Runtime Reflection System</strong>
-                                <span>Enables data-driven engine architecture,
-                                    serialization, and editor tooling.</span>
-                            </div>
+                                <a class="contribution-link"
+                                    href="/tech-breakdowns/eclipsed/asset-pipeline/">
+                                    <strong>C++ Runtime Reflection</strong>
+                                </a>
 
-                            <a class="contribution-link"
-                                href="/tech-breakdowns/c++-runtime-reflection.html">
-                                Read breakdown →
-                            </a>
-                        </li>
-
-                        <li class="contribution-item">
-                            <div>
-                                <strong>Asset Pipeline</strong>
-                                <span>Converts raw assets into optimized runtime
-                                    formats for the engine.</span>
-                            </div>
-
-                            <a class="contribution-link"
-                                href="/tech-breakdowns/asset-manager.html">
-                                Read breakdown →
-                            </a>
-                        </li>
-
-                        <li class="contribution-item">
-                            <div>
-                                <strong>Hot-reloadable Game DLL System</strong>
-                                <span>Enables real-time code iteration without
-                                    restarting the engine.</span>
+                                <span>
+                                    Enables data-driven development through
+                                    compile-time registration of type metadata.
+                                </span>
                             </div>
                         </li>
 
                         <li class="contribution-item">
                             <div>
-                                <strong>Custom Serialization System</strong>
-                                <span>Lightweight format for engine and gameplay
-                                    data.</span>
+                                <a class="contribution-link"
+                                    href="/tech-breakdowns/eclipsed/asset-pipeline/">
+                                    <strong>Asset Pipeline</strong>
+                                </a>
+
+                                <span>
+                                    Sophisticated asset pipeline supporting
+                                    editor-side raw file loading, binary
+                                    packing, and game-side runtime asset
+                                    management.
+                                </span>
                             </div>
                         </li>
 
+                        <li class="contribution-item">
+                            <div>
+                                <a class="contribution-link"
+                                    href="/no-site.html">
+                                    <strong>Editor</strong>
+                                </a>
+
+                                <span>
+                                    Built a custom engine editor featuring
+                                    tooling for scene editing, asset management,
+                                    and rapid iteration of gameplay content.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="contribution-item">
+                            <div>
+                                <a class="contribution-link"
+                                    href="/no-site.html">
+                                    <strong>Hot-reloadable Game DLL</strong>
+                                </a>
+
+                                <span>
+                                    Implemented a hot-reloadable gameplay DLL
+                                    system, allowing live code updates without
+                                    restarting the engine.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="contribution-item">
+                            <div>
+                                <a class="contribution-link"
+                                    href="/no-site.html">
+                                    <strong>Build Pipeline</strong>
+                                </a>
+
+                                <span>
+                                    Implemented a configurable build system
+                                    within the editor that packages assets and
+                                    produces ready-to-ship game builds.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="contribution-item">
+                            <div>
+                                <a class="contribution-link"
+                                    href="/no-site.html">
+                                    <strong>FMOD Audio Integration</strong>
+                                </a>
+
+                                <span>
+                                    FMOD-based audio engine supporting 3D
+                                    spatial audio, real-time mixing and
+                                    playbacks.
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
@@ -143,7 +247,11 @@
                         <span>OpenGL</span>
                         <span>ImGui</span>
                         <span>CMake</span>
+                        <span>Git</span>
                         <span>Python</span>
+                        <span>FMOD</span>
+                        <span>Steam SDK</span>
+                        <span>Discord SDK</span>
                     </div>
 
                     <h3 class="panel-title">Focus Areas</h3>
@@ -158,33 +266,10 @@
 
             </section>
 
-            <!-- ARCHITECTURE -->
-            <section class="section">
-
-                <h2>Architecture Philosophy</h2>
-
-                <p>
-                    The engine is built around a modular design where each
-                    subsystem operates independently
-                    with minimal coupling.
-                </p>
-
-                <p>
-                    This allows systems to be replaced, extended, or redesigned
-                    without affecting the rest
-                    of the engine, making experimentation and iteration
-                    significantly faster.
-                </p>
-
-                <p>
-                    The overall goal is to balance performance with flexibility,
-                    ensuring that systems remain
-                    both fast and easy to iterate on during development.
-                </p>
-
-            </section>
-
         </main>
-
     </body>
+
+    <footer>
+        <script src="/scripts/footer.js"></script>
+    </footer>
 </html>

@@ -31,7 +31,7 @@ leftMenu.classList.add("navbar-menu-container");
 const resumeButton = document.createElement("a");
 resumeButton.textContent = "RESUME";
 resumeButton.classList.add("navbar-menu-item");
-resumeButton.href = "/downloads/christopher-vedlund-resume.pdf";
+resumeButton.href = "/downloads/Christopher Vedlund - Resume.pdf";
 resumeButton.target = "_blank";
 resumeButton.rel = "noopener noreferrer";
 leftMenu.appendChild(resumeButton);

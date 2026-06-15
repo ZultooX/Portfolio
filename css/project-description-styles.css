@@ -47,6 +47,7 @@ body {
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 700;
+    color: white;
 }
 
 .hero-content p {
@@ -215,7 +216,7 @@ body {
 
 .contribution-item:hover {
     padding-left: 12px;
-    border-bottom-color: #4da3ff;
+    color: #e70e0e;
 }
 
 .contribution-item strong {
@@ -237,7 +238,7 @@ body {
     display: inline-block;
     margin-bottom: 16px;
     padding: 6px 0;
-    color: #4da3ff;
+    color: #ff4d4d;
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
@@ -246,5 +247,22 @@ body {
 
 .contribution-link:hover {
     color: #2c7be5;
-    transform: translateX(4px);
+    cursor:pointer;
+    /* transform: translateX(4px); */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

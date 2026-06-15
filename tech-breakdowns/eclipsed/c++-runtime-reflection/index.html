@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet">
 
         <link rel="stylesheet" href="/css/tech-breakdown.css">
@@ -17,205 +17,96 @@
     </head>
 
     <body>
-
         <script src="/scripts/scroll.js"></script>
         <script src="/scripts/navbar.js"></script>
 
-        <!-- ================= HERO ================= -->
-        <header class="hero">
-            <div class="hero-content">
-                <h1>Runtime Reflection</h1>
-                <p>
-                    Runtime Reflection enables the engine to inspect and modify
-                    type information at runtime,
-                    powering editor tools, serialization, and data-driven
-                    systems without compile-time coupling.
-                </p>
+        <main>
+            <div class="article-header">
+                <h1>Runtime Reflection in C++</h1>
+                <div class="subtitle">Inspecting and manipulating types at
+                    runtime — from RTTI to custom systems</div>
+                <div class="article-meta">C++ • Game Engine Architecture •
+                    Eclipsed Engine</div>
             </div>
-        </header>
 
-        <!-- ================= TABLE OF CONTENTS ================= -->
-        <nav class="toc">
-            <a href="#overview">Overview</a>
-            <a href="#core-idea">Core Idea</a>
-            <a href="#design">Design</a>
-            <a href="#evolution">Evolution</a>
-            <a href="#use-cases">Use Cases</a>
-        </nav>
-
-        <!-- ================= CONTENT ================= -->
-        <main class="container">
-
-            <!-- OVERVIEW -->
-            <section id="overview" class="section-2 card">
-                <h2>Overview</h2>
-
+            <section>
+                <h2>Iteration</h2>
                 <p>
-                    This page breaks down the design and implementation of a
-                    custom runtime reflection system in C++.
+                    I developed two RTTI systems. The first used a templatized
+                    class to store reflected values, which meant every instance
+                    of a class containing reflected variables also carried
+                    redundant metadata - type names, offset information, and
+                    validation flags - duplicated across hundreds or thousands
+                    of objects. That scrap data should have been stored in a
+                    central type registry, not per-instance.
                 </p>
 
                 <p>
-                    The system allows engine and gameplay types to be inspected
-                    and modified at runtime,
-                    enabling generic tooling without explicit per-type
-                    integration.
+                    The newer system fixes this by moving to compile-time
+                    reflection. All metadata is generated once per type during
+                    static initialization and shared across all instances. The
+                    per-object footprint is now just the raw data <strong>- no overhead, no duplication.</strong>
                 </p>
             </section>
 
-            <!-- CORE IDEA -->
-            <section id="core-idea" class="section-1 card">
-                <div class="center">
+            <section>
+                <h2>Difference</h2>
+                <h3>The old system:</h3>
+                <pre><code>class ObstacleSpawner : public Eclipse::Component
+{
+	COMPONENT_BASE_2(ObstacleSpawner, 3)
 
-                    <h2>Core Idea</h2>
+public:
+	void Start() override;
+	void Update() override;
 
-                    <p>
-                        The goal is to expose component and engine data to tools
-                        such as the editor without requiring
-                        compile-time knowledge of their structure.
-                    </p>
+private:
+	SERIALIZED_FIELD(Eclipse::Assets::Prefab, ObstaclePrefab);
+	SERIALIZED_FIELD(float, ObstacleSpawnInterval, 2);
+	float obstacleSpawnTimer = 0.f;
+};</code></pre>
+                <p><code>SERIALIZED_FIELD</code> macro expanded:</p>
+                <pre><code>Eclipse::Reflection::SerializedVariable<Eclipse::Assets::Prefab> ObstaclePrefab{ "ObstaclePrefab", this, true, 0.1f };</code></pre>
+                <p>Everything reflected is stored locally in the variable, which
+                    means every instance of this component will cause
+                    duplication of data.</p>
 
-                    <div class="grid">
+                <br>
+                <h3>The new system:</h3>
+                <pre><code>CLS
+class Player : public Eclipse::Component
+{
+public:
+	void Move();
 
-                        <div>
-                            <h3>Design Goals</h3>
-                            <ul>
-                                <li>Remove compile-time coupling between engine
-                                    and tools</li>
-                                <li>Enable automatic inspection of all reflected
-                                    types</li>
-                                <li>Support serialization and editor
-                                    integration</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Concept</h3>
-                            <p>
-                                Each type registers metadata describing its
-                                fields, including name, type, and memory offset.
-                                This metadata is stored in a central registry
-                                and used by engine systems at runtime.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
+private:
+	[[serializefield]]
+	float moveSpeed = 2.4f;
+};
+END_CLS</code></pre>
+                <p>Build time code generation (via lexer), static/shared
+                    reflection data per class. </p>
             </section>
-
-            <!-- DESIGN -->
-            <section id="design" class="section-2 card">
-                <div class="center">
-
-                    <h2>Design</h2>
-
-                    <p>
-                        The reflection system is built around a global type
-                        registry that stores metadata for all registered types.
-                        Each type defines its fields during a registration step
-                        executed at startup.
-                    </p>
-
-                    <div class="grid">
-
-                        <div>
-                            <h3>Type Metadata</h3>
-                            <ul>
-                                <li>Type name</li>
-                                <li>Field definitions</li>
-                                <li>Memory offsets</li>
-                                <li>Type size information</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Registry System</h3>
-                            <p>
-                                The registry acts as a lookup database that
-                                allows tools and runtime systems
-                                to query and interact with types generically.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- EVOLUTION -->
-            <section id="evolution" class="section-1 card">
-                <div class="center">
-
-                    <h2>Evolution of the System</h2>
-
-                    <p>
-                        The initial implementation used templated field wrappers
-                        to preserve compile-time type safety.
-                        While this worked for early prototypes, it quickly
-                        became restrictive for tooling and serialization.
-                    </p>
-
-                    <p>
-                        The system was later redesigned to use a metadata-driven
-                        approach based on memory offsets,
-                        allowing fully generic runtime access without
-                        compile-time dependencies.
-                    </p>
-
-                    <div class="grid">
-
-                        <div>
-                            <h3>Initial Approach (Templates)</h3>
-                            <ul>
-                                <li>Compile-time typed field wrappers</li>
-                                <li>Strong coupling to C++ types</li>
-                                <li>Poor serialization flexibility</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Final Approach (Offsets)</h3>
-                            <ul>
-                                <li>Runtime metadata representation</li>
-                                <li>Field access via memory offsets</li>
-                                <li>Fully decoupled tooling system</li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- USE CASES -->
-            <section id="use-cases" class="section-2 card">
-                <div class="center">
-
-                    <h2>Use Cases</h2>
-
-                    <div class="grid">
-
-                        <div>
-                            <h3>Editor Integration</h3>
-                            <p>
-                                Automatically generates inspectors for any
-                                reflected type, enabling real-time editing
-                                of components without custom UI code.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3>Serialization</h3>
-                            <p>
-                                Enables generic save/load systems by iterating
-                                over metadata instead of hardcoded fields.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
+            <section>
+                <h2>Key Takeaway</h2>
+                <p>
+                    The shift from per-instance macro metadata to build-time
+                    code generation proved to be dramatically more efficient. In
+                    the old system, each reflected variable carried a
+                    <strong>
+                        100-200 byte
+                    </strong>
+                    <code>SerializedVariable</code>
+                    object meaning a component with 5 reflected fields added
+                    over 500 bytes of <em>duplicated metadata per instance</em>.
+                    For 10,000 objects, that's <strong>5+ MB of wasted
+                        memory</strong>.
+                </p>
+                <p>
+                    The new system eliminates this entirely. Reflection data is
+                    generated once per type and stored in static memory. Each
+                    instance now pays only for its actual data <strong>- no overhead, no duplication, just efficiency.</strong>
+                </p>
             </section>
         </main>
     </body>

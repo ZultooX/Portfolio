@@ -1,3 +1,7 @@
+body{
+    text-align: center;
+}
+
 .highlights {
     display: inherit;
     scroll-margin-top: 2rem;
@@ -147,6 +151,7 @@ a {
     border-radius: 20px;
     padding: 5px 10px;
     margin-top: 1rem;
+    margin-left: 20px;
 }
 
 .view-all-projects-button:hover {
