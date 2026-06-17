@@ -24,15 +24,45 @@
             <div class="article-header">
                 <h1>Runtime Reflection in C++</h1>
                 <div class="subtitle">Inspecting and manipulating types at
-                    runtime — from RTTI to custom systems</div>
+                    runtime from unity-like editor.</div>
                 <div class="article-meta">C++ • Game Engine Architecture •
-                    Eclipsed Engine</div>
+                    Eclipsed Engine • Runtime</div>
             </div>
+
+            <section>
+                <h2>Why reflection?</h2>
+                <p>
+                    We wanted a way to easily change the game components
+                    parameters, almost like you would do in a professional game
+                    engine, allowing designers and artists to iterate on
+                    gameplay values without needing to touch source code or
+                    recompiling the engine.
+                </p>
+
+                <p>
+                    To achieve this we built a custom runtime reflection system
+                    that scans through all the source files at compile-time,
+                    identifying classes and structs that contain reflection
+                    attributes. These attributes—such as
+                    <code>[serializefield]</code> or <code>[hideineditor]</code>
+                    serve as markers that tell the system which members should
+                    be exposed to the editor. The system then generates a .cpp
+                    file which includes the metadata for the class its currently
+                    reflecting.
+                </p>
+
+                <p>
+                    And what this system also allows is the implementation of
+                    custom attributes, such as <code>[ReplicateField]</code> for
+                    networking.
+                </p>
+            </section>
 
             <section>
                 <h2>Iteration</h2>
                 <p>
-                    I developed two RTTI systems. The first used a templatized
+                    I developed two reflection systems. The first used a
+                    templatized
                     class to store reflected values, which meant every instance
                     of a class containing reflected variables also carried
                     redundant metadata - type names, offset information, and
@@ -45,7 +75,8 @@
                     The newer system fixes this by moving to compile-time
                     reflection. All metadata is generated once per type during
                     static initialization and shared across all instances. The
-                    per-object footprint is now just the raw data <strong>- no overhead, no duplication.</strong>
+                    per-object footprint is now just the raw data <strong>- no
+                        overhead, no duplication.</strong>
                 </p>
             </section>
 
@@ -87,6 +118,24 @@ END_CLS</code></pre>
                 <p>Build time code generation (via lexer), static/shared
                     reflection data per class. </p>
             </section>
+
+            <section>
+                <h2>How It Works</h2>
+                <h3>1. Scan</h3>
+                <p>Lexer scans all source files for attributes</p>
+
+                <h3>2. Generate</h3>
+                <p>Creates .cpp files with TypeInfo&lt;T&gt; specializations</p>
+
+                <h3>3. Register</h3>
+                <p>TypeRegistrar registers each type during static initialization</p>
+
+                <h3>4. Runtime Usage</h3>
+                <p>Engine queries metadata for UI, serialization, networking</p>
+            </section>
+
+
+            
             <section>
                 <h2>Key Takeaway</h2>
                 <p>
@@ -105,7 +154,8 @@ END_CLS</code></pre>
                 <p>
                     The new system eliminates this entirely. Reflection data is
                     generated once per type and stored in static memory. Each
-                    instance now pays only for its actual data <strong>- no overhead, no duplication, just efficiency.</strong>
+                    instance now pays only for its actual data <strong>- no
+                        overhead, no duplication, just efficiency.</strong>
                 </p>
             </section>
         </main>

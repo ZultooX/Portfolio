@@ -48,66 +48,6 @@
                     per-object footprint is now just the raw data <strong>- no overhead, no duplication.</strong>
                 </p>
             </section>
-
-            <section>
-                <h2>Difference</h2>
-                <h3>The old system:</h3>
-                <pre><code>class ObstacleSpawner : public Eclipse::Component
-{
-	COMPONENT_BASE_2(ObstacleSpawner, 3)
-
-public:
-	void Start() override;
-	void Update() override;
-
-private:
-	SERIALIZED_FIELD(Eclipse::Assets::Prefab, ObstaclePrefab);
-	SERIALIZED_FIELD(float, ObstacleSpawnInterval, 2);
-	float obstacleSpawnTimer = 0.f;
-};</code></pre>
-                <p><code>SERIALIZED_FIELD</code> macro expanded:</p>
-                <pre><code>Eclipse::Reflection::SerializedVariable<Eclipse::Assets::Prefab> ObstaclePrefab{ "ObstaclePrefab", this, true, 0.1f };</code></pre>
-                <p>Everything reflected is stored locally in the variable, which
-                    means every instance of this component will cause
-                    duplication of data.</p>
-
-                <br>
-                <h3>The new system:</h3>
-                <pre><code>CLS
-class Player : public Eclipse::Component
-{
-public:
-	void Move();
-
-private:
-	[[serializefield]]
-	float moveSpeed = 2.4f;
-};
-END_CLS</code></pre>
-                <p>Build time code generation (via lexer), static/shared
-                    reflection data per class. </p>
-            </section>
-            <section>
-                <h2>Key Takeaway</h2>
-                <p>
-                    The shift from per-instance macro metadata to build-time
-                    code generation proved to be dramatically more efficient. In
-                    the old system, each reflected variable carried a
-                    <strong>
-                        100-200 byte
-                    </strong>
-                    <code>SerializedVariable</code>
-                    object meaning a component with 5 reflected fields added
-                    over 500 bytes of <em>duplicated metadata per instance</em>.
-                    For 10,000 objects, that's <strong>5+ MB of wasted
-                        memory</strong>.
-                </p>
-                <p>
-                    The new system eliminates this entirely. Reflection data is
-                    generated once per type and stored in static memory. Each
-                    instance now pays only for its actual data <strong>- no overhead, no duplication, just efficiency.</strong>
-                </p>
-            </section>
         </main>
     </body>
 
