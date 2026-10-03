@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar-bg {
+    width: 100%;
+    height: 60px;
+    background-color: #202020;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+}
+
+/* LEFT SIDE */
+.navbar-leftgroup {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.name-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.title-text {
+    color: gray;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.navbar-divider {
+    background-color: rgb(151, 151, 151);
+    width: 3px;
+    height: 80%;
+    border-radius: 10px;
+}
+
+/* MENU */
+.navbar-menu-container {
+    height: 100%;
+    display: flex;
+}
+
+.navbar-menu-item {
+    color: white;
+    height: 100%;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 12px;
+
+    text-decoration: none;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar-menu-item:hover {
+    background-color: rgb(104, 101, 101);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    .navbar-bg {
+        top: auto;
+        bottom: 0;
+        left: 0;
+
+        height: 65px;
+
+        justify-content: space-around;
+
+        padding: 0;
+
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* hide branding for clean mobile UI */
+    .navbar-leftgroup {
+        display: none;
+    }
+
+    .navbar-menu-container {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .navbar-menu-item {
+        flex: 1;
+
+        font-size: 10px;
+        letter-spacing: 1px;
+
+        padding: 0;
+    }
+
+    .navbar-divider {
+        display: none;
+    }
+
+    /* IMPORTANT: prevent content hiding behind bottom nav */
+    body {
+        padding-bottom: 70px;
+    }
+}

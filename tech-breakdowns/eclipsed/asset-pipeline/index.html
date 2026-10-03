@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Eclipsed Engine — Runtime Reflection</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/tech-breakdown.css">
+        <link rel="stylesheet" href="/css/scrollbar-style.css">
+        <link rel="stylesheet" href="/css/navbar-styles.css">
+    </head>
+
+    <body>
+        <script src="/scripts/scroll.js"></script>
+        <script src="/scripts/navbar.js"></script>
+
+        <main>
+            <div class="article-header">
+                <h1>Runtime Reflection in C++</h1>
+                <div class="subtitle">Inspecting and manipulating types at
+                    runtime — from RTTI to custom systems</div>
+                <div class="article-meta">C++ • Game Engine Architecture •
+                    Eclipsed Engine</div>
+            </div>
+
+            <section>
+                <h2>Iteration</h2>
+                <p>
+                    I developed two RTTI systems. The first used a templatized
+                    class to store reflected values, which meant every instance
+                    of a class containing reflected variables also carried
+                    redundant metadata - type names, offset information, and
+                    validation flags - duplicated across hundreds or thousands
+                    of objects. That scrap data should have been stored in a
+                    central type registry, not per-instance.
+                </p>
+
+                <p>
+                    The newer system fixes this by moving to compile-time
+                    reflection. All metadata is generated once per type during
+                    static initialization and shared across all instances. The
+                    per-object footprint is now just the raw data <strong>- no overhead, no duplication.</strong>
+                </p>
+            </section>
+
+            <section>
+                <h2>Difference</h2>
+                <h3>The old system:</h3>
+                <pre><code>class ObstacleSpawner : public Eclipse::Component
+{
+	COMPONENT_BASE_2(ObstacleSpawner, 3)
+
+public:
+	void Start() override;
+	void Update() override;
+
+private:
+	SERIALIZED_FIELD(Eclipse::Assets::Prefab, ObstaclePrefab);
+	SERIALIZED_FIELD(float, ObstacleSpawnInterval, 2);
+	float obstacleSpawnTimer = 0.f;
+};</code></pre>
+                <p><code>SERIALIZED_FIELD</code> macro expanded:</p>
+                <pre><code>Eclipse::Reflection::SerializedVariable<Eclipse::Assets::Prefab> ObstaclePrefab{ "ObstaclePrefab", this, true, 0.1f };</code></pre>
+                <p>Everything reflected is stored locally in the variable, which
+                    means every instance of this component will cause
+                    duplication of data.</p>
+
+                <br>
+                <h3>The new system:</h3>
+                <pre><code>CLS
+class Player : public Eclipse::Component
+{
+public:
+	void Move();
+
+private:
+	[[serializefield]]
+	float moveSpeed = 2.4f;
+};
+END_CLS</code></pre>
+                <p>Build time code generation (via lexer), static/shared
+                    reflection data per class. </p>
+            </section>
+            <section>
+                <h2>Key Takeaway</h2>
+                <p>
+                    The shift from per-instance macro metadata to build-time
+                    code generation proved to be dramatically more efficient. In
+                    the old system, each reflected variable carried a
+                    <strong>
+                        100-200 byte
+                    </strong>
+                    <code>SerializedVariable</code>
+                    object meaning a component with 5 reflected fields added
+                    over 500 bytes of <em>duplicated metadata per instance</em>.
+                    For 10,000 objects, that's <strong>5+ MB of wasted
+                        memory</strong>.
+                </p>
+                <p>
+                    The new system eliminates this entirely. Reflection data is
+                    generated once per type and stored in static memory. Each
+                    instance now pays only for its actual data <strong>- no overhead, no duplication, just efficiency.</strong>
+                </p>
+            </section>
+        </main>
+    </body>
+
+    <footer>
+        <script src="/scripts/footer.js"> </script>
+    </footer>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Eclipsed Engine — Game Client</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/tech-breakdown.css">
+        <link rel="stylesheet" href="/css/scrollbar-style.css">
+        <link rel="stylesheet" href="/css/navbar-styles.css">
+    </head>
+
+    <body>
+        <script src="/scripts/scroll.js"></script>
+        <script src="/scripts/navbar.js"></script>
+
+        <main>
+            <div class="article-header">
+                <h1>From editor to game client</h1>
+                <div class="subtitle">descrtiption</div>
+                <div class="article-meta">C++ • Game Engine Architecture •
+                    Eclipsed Engine</div>
+            </div>
+
+            <section>
+                <h2>Iteration</h2>
+                <p>
+                    I developed two RTTI systems. The first used a templatized
+                    class to store reflected values, which meant every instance
+                    of a class containing reflected variables also carried
+                    redundant metadata - type names, offset information, and
+                    validation flags - duplicated across hundreds or thousands
+                    of objects. That scrap data should have been stored in a
+                    central type registry, not per-instance.
+                </p>
+
+                <p>
+                    The newer system fixes this by moving to compile-time
+                    reflection. All metadata is generated once per type during
+                    static initialization and shared across all instances. The
+                    per-object footprint is now just the raw data <strong>- no overhead, no duplication.</strong>
+                </p>
+            </section>
+        </main>
+    </body>
+
+    <footer>
+        <script src="/scripts/footer.js"> </script>
+    </footer>
+</html>
