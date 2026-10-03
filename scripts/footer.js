@@ -58,8 +58,8 @@ Object.assign(title.style, {
 middle.appendChild(title);
 
 const links = [
-    { text: "GitHub", url: "https://github.com/" },
-    { text: "LinkedIn", url: "https://linkedin.com/" },
+    { text: "GitHub", url: "https://github.com/ZultooX" },
+    { text: "LinkedIn", url: "https://linkedin.com/in/christopher-vedlund" },
     { text: "Email", url: "mailto:vedlundchristopher@gmail.com" }
 ];
 

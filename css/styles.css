@@ -238,3 +238,217 @@ body {
     opacity: 0.85;
     transform: translateY(-1px);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about-page-hero {
+min-height: 75vh;
+display: flex;
+align-items: center;
+}
+
+.about-page-container {
+width: min(1100px, 90%);
+margin: 0 auto;
+}
+
+.about-page-heading {
+margin-bottom: 80px;
+}
+
+.about-page-label,
+.about-section-number,
+.about-page-closing-label {
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 0.15em;
+opacity: 0.55;
+}
+
+.about-page-heading h1 {
+margin: 15px 0 20px;
+font-size: clamp(3.5rem, 8vw, 7rem);
+line-height: 0.95;
+font-weight: 600;
+}
+
+.about-page-role {
+font-size: 1.1rem;
+opacity: 0.65;
+}
+
+.about-page-introduction {
+max-width: 750px;
+margin-left: auto;
+}
+
+.about-page-lead {
+font-size: clamp(1.4rem, 2.5vw, 2rem);
+line-height: 1.6;
+font-weight: 400;
+}
+
+/* SECTIONS */
+
+.about-page-section {
+padding: 140px 0;
+}
+
+.about-page-section:nth-child(even) {
+background: rgba(0, 0, 0, 0.025);
+}
+
+.about-page-container {
+display: grid;
+grid-template-columns: 100px 1fr;
+gap: 50px;
+}
+
+.about-section-content {
+max-width: 750px;
+}
+
+.about-section-content h2 {
+margin: 0 0 45px;
+font-size: clamp(1.8rem, 4vw, 3rem);
+font-weight: 500;
+}
+
+.about-section-content p {
+max-width: 700px;
+margin-bottom: 25px;
+font-size: 1.05rem;
+line-height: 1.9;
+}
+
+/* INTERESTS */
+
+.interest {
+display: grid;
+grid-template-columns: 60px 1fr;
+gap: 25px;
+margin-bottom: 65px;
+}
+
+.interest-icon {
+font-size: 1.5rem;
+padding-top: 4px;
+opacity: 0.65;
+}
+
+.interest h3 {
+margin: 0 0 15px;
+font-size: 1.1rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+}
+
+.interest p {
+margin: 0;
+}
+
+/* LINKS */
+
+.about-page-link {
+display: inline-flex;
+align-items: center;
+gap: 12px;
+
+margin-top: 25px;
+padding-bottom: 7px;
+
+color: inherit;
+text-decoration: none;
+
+font-size: 1.1rem;
+font-weight: 500;
+
+border-bottom: 1px solid currentColor;
+
+
+}
+
+.about-page-link .arrow {
+transition: transform 0.2s ease;
+}
+
+.about-page-link:hover .arrow {
+transform: translateX(7px);
+}
+
+/* CLOSING */
+
+.about-page-closing {
+padding: 180px 0;
+}
+
+.about-page-closing h2 {
+margin: 20px 0 40px;
+font-size: clamp(2.5rem, 6vw, 5rem);
+line-height: 1.1;
+font-weight: 500;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 700px) {
+
+.about-page-hero {
+	min-height: auto;
+	padding: 120px 0 100px;
+}
+
+.about-page-heading {
+	margin-bottom: 60px;
+}
+
+.about-page-container {
+	grid-template-columns: 1fr;
+	gap: 25px;
+}
+
+.about-page-section {
+	padding: 90px 0;
+}
+
+.about-section-number {
+	margin-bottom: 10px;
+}
+
+.interest {
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+
+.about-page-closing {
+	padding: 110px 0;
+}
+}

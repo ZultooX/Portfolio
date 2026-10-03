@@ -5,247 +5,203 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+```
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+	rel="stylesheet">
 
-	<link rel="stylesheet" href="css/navbar-styles.css">
-	<link rel="stylesheet" href="css/scrollbar-style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/generic-styles.css">
+<link rel="stylesheet" href="../css/navbar-styles.css">
+<link rel="stylesheet" href="../css/scrollbar-style.css">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/generic-styles.css">
 
-	<link rel="stylesheet" href="css/main-page-styles.css">
+<title>About | Christopher Vedlund</title>
 
-	<title>Christopher Vedlund | Gameplay & Engine Programmer</title>
+<meta name="description"
+	content="About Christopher Vedlund, a gameplay, engine, graphics and tools programmer.">
 
-	<meta name="description"
-		content="Gameplay, engine and tools programmer portfolio featuring custom engines, procedural animation systems and technical game development projects.">
+<meta property="og:title" content="About | Christopher Vedlund">
+<meta property="og:description"
+	content="Learn more about Christopher Vedlund, his approach to development and interests outside programming.">
+<meta property="og:type" content="website">
+```
 
-	<!-- Open Graph -->
-	<meta property="og:title" content="Christopher Vedlund | Gameplay & Engine Programmer">
-
-	<meta property="og:description"
-		content="Portfolio showcasing gameplay systems, custom engine development, procedural animation and technical game programming projects.">
-
-	<meta property="og:image" content="https://yourdomain.com/assets/images/preview.png">
-
-	<meta property="og:url" content="https://yourdomain.com">
-
-	<meta property="og:type" content="website">
-
-	<!-- Twitter/X -->
-	<meta name="twitter:card" content="summary_large_image">
-
-	<meta name="twitter:title" content="Christopher Vedlund | Gameplay & Engine Programmer">
-
-	<meta name="twitter:description"
-		content="Portfolio showcasing gameplay systems, custom engine development and technical game programming projects.">
-
-	<meta name="twitter:image" content="https://yourdomain.com/assets/images/preview.png">
 </head>
 
 <body>
-	<script src="scripts/scroll.js"></script>
-	<script src="scripts/navbar.js"></script>
 
-	<div id="home" class="hero">
-		<div class="overlay"></div>
-		<video autoplay muted playsinline loop class="bg-video is-fullscreen">
-			<source src="assets/portfolio-reel.mp4" type="video/mp4">
-		</video>
+```
+<script src="../scripts/navbar.js"></script>
 
-		<div class="introduction">
-			<div class="introduction-text">
-				<h1>Christopher Vedlund</h1>
-				<h2>Gameplay • Engine • Tools Programmer</h2>
+<main>
 
-				<hr class="int-separator">
-				<div class="int-page-button-container">
-					<a href="#highlights" class="int-page-button">HIGHLIGHTS</a>
-					<a href="#about" class="int-page-button">ABOUT</a>
-					<a href="/games" class="int-page-button">GAMES</a>
-					<a href="/projects" class="int-page-button">PROJECTS</a>
-					<a href="/tech-breakdowns" class="int-page-button">TECH BREAKDOWNS</a>
-				</div>
+	<!-- HERO -->
+	<section class="about-page-hero">
+
+		<div class="about-page-container">
+
+			<div class="about-page-heading">
+				<p class="about-page-label">ABOUT</p>
+
+				<h1>
+					Christopher<br>
+					Vedlund
+				</h1>
+
+				<p class="about-page-role">
+					Gameplay • Engine • Graphics • Tools Programmer
+				</p>
 			</div>
-			<img src="assets/images/profile.png">
-		</div>
-	</div>
 
-	<!--  -->
-	<div id="highlights" class="hero is-white-bis highlights hero-scrollable">
-		<h1>HIGHLIGHTS</h1>
+			<div class="about-page-introduction">
 
-		<div class="has-items-centered">
-			<div class="highlights-project-container">
+				<p class="about-page-lead">
+					I am a programmer focused on gameplay, engine, graphics and tools development.
+					Beyond these areas, I always strive to learn new things and continue improving
+					as a developer.
+				</p>
 
-				<!-- ECLIPSED -->
-				<a href="projects/eclipsed-game-engine/" class="project-link">
-					<div class="project-card is-white-ter">
-						<div class="project-card-content">
-							<p class="team-size-text">
-								<i class="fas fa-users"></i>
-								2
-							</p>
-
-							<h1>Eclipsed Game Engine</h1>
-							<p class="truncated-description">
-								Custom game engine developed in C++.
-								<br>
-								<br>
-								Implemented compile-time reflection system, live code iteration with
-								hot-reload capabilities, game-client buildable from the editor, a high-performance asset
-								pipeline and lots of
-								other things.
-							</p>
-							<hr class="project-card-separator">
-							<div>
-								<p class="project-tag is-uppercase">C++</p>
-								<p class="project-tag is-uppercase">Python</p>
-								<p class="project-tag is-uppercase">CMake</p>
-								<p class="project-tag is-uppercase">OpenGL</p>
-								<p class="project-tag is-uppercase">ImGui</p>
-								<p class="project-tag is-uppercase">RapidJson</p>
-								<p class="project-tag is-uppercase">Cereal</p>
-								<p class="project-tag is-uppercase">FMOD</p>
-								<p class="project-tag is-uppercase">DiscordSDK</p>
-								<p class="project-tag is-uppercase">Custom Engine</p>
-							</div>
-						</div>
-
-						<div class="has-items-centered project-card-image">
-							<p class="project-card-date">
-								August 2025 - Ongoing
-							</p>
-							<img src="assets/images/eclipsed-interactive/EclipsedEngine (1).jpg" alt>
-						</div>
-					</div>
-				</a>
-
-				<!-- TGA SPECIALIZATION -->
-				<a href="projects/procedural-animations-fabrik/" class="project-link">
-
-					<div class="project-card is-white-ter">
-						<div class="project-card-content">
-							<p class="team-size-text">
-								<i class="fas fa-users"></i>
-								SOLO
-							</p>
-
-							<h1>Procedural Animation using FABRIK </h1>
-							<p class="truncated-description">
-								As part of The Game Assembly's specialization course I wanted to
-								recreate Uncharted 4's procedural hand animations in my custom graphics
-								engine.
-							</p>
-							<hr class="project-card-separator">
-							<div>
-								<p class="project-tag is-uppercase">C++</p>
-								<p class="project-tag is-uppercase">FABRIK</p>
-								<p class="project-tag is-uppercase">Premake</p>
-								<p class="project-tag is-uppercase">DX11</p>
-								<p class="project-tag is-uppercase">ImGui</p>
-								<p class="project-tag is-uppercase">Nlohmann</p>
-								<p class="project-tag is-uppercase">Custom Engine</p>
-							</div>
-						</div>
-
-						<div class="has-items-centered project-card-image">
-							<p class="project-card-date">
-								February 2025 - April 2025
-							</p>
-							<img src="assets/images/tga/specialization/thumbnail.png" alt>
-						</div>
-					</div>
-				</a>
-
-				<a href="projects/projects" class="project-link">
-
-					<!-- ION ADVERTISEMENT AND FIREBASE -->
-					<div class="project-card is-white-ter">
-						<div class="project-card-content">
-							<p class="team-size-text">
-								<i class="fas fa-users"></i>
-								3
-							</p>
-
-							<h1>Advertisement Integration & Firebase</h1>
-							<p class="truncated-description">
-								Added free-to-play monetization to four of ION's existing titles.
-								Integrated Google AdMob for ads across all four games.
-								Was supposed to migrate multiplayer from AWS to Firebase, but was moved
-								to another project.
-							</p>
-							<hr class="project-card-separator">
-							<div>
-								<p class="project-tag is-uppercase">Unity</p>
-								<p class="project-tag is-uppercase">C#</p>
-								<p class="project-tag is-uppercase">Google Admob</p>
-								<p class="project-tag is-uppercase">Firebase</p>
-							</div>
-						</div>
-
-						<div class="has-items-centered project-card-image">
-							<p class="project-card-date">
-								October 2025 - April 2026
-							</p>
-							<img src="assets/images/ion/ION-NGPV-2.png" alt>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-
-		<a href="/projects" class="is-uppercase view-all-projects-button">View all projects</a>
-		<a href="/games" class="is-uppercase view-all-projects-button">View all games</a>
-	</div>
-
-	<div id="about" class="hero-half is-white-ter about-section half-hero-scrollable">
-
-		<div class="about-container">
-
-			<div class="about-content">
-
-				<!-- IMAGE LEFT -->
-				<div class="about-image">
-					<img src="assets/images/profile.png" alt="Profile picture">
-				</div>
-
-				<!-- TEXT RIGHT -->
-				<div class="about-text">
-
-					<h2 class="about-title">ABOUT ME</h2>
-
-					<p>
-						I am a programmer focused on gameplay, engine, graphics and tools development.
-						Beyond these areas, I always strive to learn new things and continue improving as a developer.
-					</p>
-
-					<p>
-						I enjoy building systems from the ground up and understanding how different parts of a game work
-						together.
-						I'm especially interested in solving technical problems, experimenting with new ideas and
-						creating tools and systems that improve the development process.
-					</p>
-
-					<a href="/about/" class="about-link">
-						<span>If you'd like to know me more</span>
-						<span class="arrow">→</span>
-					</a>
-				</div>
 			</div>
 
 		</div>
 
-	</div>
-</body>
+	</section>
+
+
+	<!-- DEVELOPMENT -->
+	<section class="about-page-section">
+
+		<div class="about-page-container">
+
+			<div class="about-section-number">
+				01
+			</div>
+
+			<div class="about-section-content">
+
+				<h2>HOW I LIKE TO DEVELOP</h2>
+
+				<p>
+					I enjoy building systems from the ground up and understanding how different
+					parts of a game work together.
+				</p>
+
+				<p>
+					I'm especially interested in solving technical problems, experimenting with
+					new ideas and creating tools and systems that improve the development process.
+				</p>
+
+				<p>
+					I like working close to the technology and understanding what happens beneath
+					the surface. Whether I'm implementing gameplay, working on rendering technology
+					or building tools for other developers, I enjoy the process of taking something
+					from an idea to a working system.
+				</p>
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<!-- INTERESTS -->
+	<section class="about-page-section about-interests">
+
+		<div class="about-page-container">
+
+			<div class="about-section-number">
+				02
+			</div>
+
+			<div class="about-section-content">
+
+				<h2>OUTSIDE OF DEVELOPMENT</h2>
+
+				<div class="interest">
+
+					<div class="interest-icon">
+						<i class="fas fa-star"></i>
+					</div>
+
+					<div>
+						<h3>ASTRONOMY</h3>
+
+						<p>
+							Outside of development, I am very interested in astronomy and enjoy
+							learning about the universe, from nearby planets and stars to distant
+							galaxies and other objects in deep space.
+						</p>
+					</div>
+
+				</div>
+
+
+				<div class="interest">
+
+					<div class="interest-icon">
+						<i class="fas fa-camera"></i>
+					</div>
+
+					<div>
+						<h3>ASTROPHOTOGRAPHY</h3>
+
+						<p>
+							I also enjoy astrophotography, combining my interest in astronomy with
+							the challenge of capturing and processing images of objects in the night sky.
+						</p>
+
+						<a href="/astrophotography/" class="about-page-link">
+							<span>View astrophotography</span>
+							<span class="arrow">→</span>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<!-- CLOSING -->
+	<section class="about-page-closing">
+
+		<div class="about-page-container">
+
+			<p class="about-page-closing-label">
+				ALWAYS LEARNING
+			</p>
+
+			<h2>
+				I'm always looking for<br>
+				something new to build.
+			</h2>
+
+			<a href="/projects" class="about-page-link">
+				<span>Explore my projects</span>
+				<span class="arrow">→</span>
+			</a>
+
+		</div>
+
+	</section>
+
+</main>
+
 
 <footer>
-	<script src="scripts/footer.js"></script>
+	<script src="../scripts/footer.js"></script>
 </footer>
+```
+
+</body>
 
 </html>
