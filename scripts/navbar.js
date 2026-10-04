@@ -18,7 +18,7 @@ const divider = document.createElement("div");
 divider.classList.add("navbar-divider");
 
 const nameText = document.createElement("div");
-nameText.textContent = "Christopher Vedlund";
+nameText.textContent = "Christopher Vedlund The Greates Devver";
 nameText.classList.add("name-text")
 
 const titleText = document.createElement("div");
