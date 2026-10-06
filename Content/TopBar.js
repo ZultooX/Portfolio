@@ -1,6 +1,6 @@
-AccentRed = 219
-AccentGreen = 164
-AccentBlue = 113
+AccentRed = 255
+AccentGreen = 107
+AccentBlue = 107
 document.documentElement.style.setProperty("--accent-color", "rgb(" + AccentRed + ", " + AccentGreen + ", " + AccentBlue + ")");
 
 const breadCrumbBarHolder = document.createElement("div")

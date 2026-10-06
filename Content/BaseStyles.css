@@ -1,17 +1,28 @@
+:root {
+    --accent-color: #FF6B6B;
+    --background-color: #191719;
+    --surface-color: #242024;
+    --surface-deep: #131113;
+    --surface-raised: #3A2E33;
+    --text-color: #F2EDEE;
+    --muted-color: #B8A9AE;
+}
+
 body {
     margin: 0px;
-    background-color: rgb(30, 30, 46);
-    color: rgb(199, 207, 230);
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: "JetBrains Mono", monospace;
 
-    scrollbar-color: rgb(234, 24, 24);
+    scrollbar-color: var(--accent-color) var(--background-color);
 
     display: grid;
     justify-content: center;
 }
 
 ::selection {
-    background: gray;
+    background: var(--accent-color);
+    color: var(--background-color);
 }
 
 
@@ -21,7 +32,7 @@ body {
 }
 
 ::-webkit-scrollbar-track-piece {
-    background-color: rgb(30, 30, 46);
+    background-color: var(--background-color);
 }
 
 ::-webkit-scrollbar-thumb:vertical {
@@ -42,7 +53,7 @@ a {
     color: var(--accent-color);
     text-decoration: none;
     border-bottom: 3px dotted var(--accent-color);
-    background-color: rgba(219, 164, 113, 0);
+    background-color: transparent;
 
     transition: color 400ms, background-color 400ms;
 
@@ -50,7 +61,7 @@ a {
 }
 
 .a-href-style:hover {
-    color: rgb(30, 30, 46);
+    color: var(--background-color);
     background-color: var(--accent-color);
 }
 
@@ -153,7 +164,7 @@ a {
     z-index: 9998;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(30, 30, 46);
+    background-color: var(--background-color);
     position: fixed;
     top: 0px;
 }
@@ -168,7 +179,7 @@ a {
 }
 
 .bottom-bar {
-    background-color: rgb(19, 19, 29);
+    background-color: var(--surface-deep);
     width: 75vw;
     height: fit-content;
 
@@ -189,7 +200,7 @@ a {
     margin-top: 11px;
     margin-bottom: 11px;
 
-    border-left: 1.5px solid rgb(199, 207, 230);
+    border-left: 1.5px solid var(--text-color);
 }
 
 .cpy-right {

@@ -36,7 +36,7 @@
 }
 
 .inline-divider{
-    background-color: rgb(100, 100, 116);
+    background-color: var(--surface-raised);
     width: 15%;
 
     height: inherit;
@@ -45,7 +45,7 @@
 }
 
 .divider-handle{
-    background-color: rgb(83, 100, 137);
+    background-color: var(--surface-color);
     width: 250%;
     height: 10%;
 

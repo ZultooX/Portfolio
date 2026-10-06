@@ -46,7 +46,7 @@
     padding-bottom: 5%;
     padding-top: 5%;
 
-    background: linear-gradient(140deg, rgb(94, 114, 157), rgb(51, 62, 87));
+    background: linear-gradient(140deg, #593338, #302326);
 }
 
 .project-image {
@@ -93,7 +93,7 @@
 
     border-radius: 6px;
 
-    background-color: rgb(96, 96, 107);
+    background-color: var(--surface-raised);
 
     font-weight: bold;
 }

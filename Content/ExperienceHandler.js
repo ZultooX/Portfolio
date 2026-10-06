@@ -4,8 +4,8 @@ let ExperienceContent = document.getElementsByClassName("experience")
 ExperienceContent[0].style.opacity = 1
 ExperienceContent[1].style.opacity = 0
 
-TypeContainers[0].style.backgroundColor = "rgba(30, 30, 46, " + 1 + ")"
-TypeContainers[1].style.backgroundColor = "rgba(30, 30, 46, " + 0 + ")"
+TypeContainers[0].style.backgroundColor = "rgba(25, 23, 25, " + 1 + ")"
+TypeContainers[1].style.backgroundColor = "rgba(25, 23, 25, " + 0 + ")"
 
 ExperienceContent[0].style.display = "block"
 ExperienceContent[1].style.display = "none"
@@ -49,7 +49,7 @@ function StartAnimateButton(Element) {
     MovingButtonHolder.appendChild(ButtonHolder)
 
     Element.OtherElement.opacity = 1 - Element.OtherElement.opacity
-    Element.OtherElement.style.backgroundColor = "rgba(30, 30, 46, " + Element.OtherElement.opacity + ")"
+    Element.OtherElement.style.backgroundColor = "rgba(25, 23, 25, " + Element.OtherElement.opacity + ")"
 
     ExperienceContent[0].style.opacity = 1 - ExperienceContent[0].style.opacity
     ExperienceContent[1].style.opacity = 1 - ExperienceContent[1].style.opacity
@@ -98,7 +98,7 @@ function SwitchButtons(Element) {
     MovingButtonHolder.removeChild(ButtonHolder)
 
     Element.opacity = 1 - Element.opacity
-    Element.style.backgroundColor = "rgba(30, 30, 46, " + Element.opacity + ")"
+    Element.style.backgroundColor = "rgba(25, 23, 25, " + Element.opacity + ")"
 
     CurrentlyMoving = false
 }

@@ -83,7 +83,7 @@
     grid-template-columns: 50% 50%;
 
     border-radius: 12px;
-    background-color: rgb(64, 64, 92);
+    background-color: var(--surface-raised);
 }
 
 .type-title-box {
@@ -91,7 +91,7 @@
     height: 35px;
 
     border-radius: 10px;
-    background-color: rgba(30, 30, 46, 1);
+    background-color: var(--background-color);
 
     display: grid;
     cursor: pointer;
@@ -131,7 +131,7 @@
 
     border-radius: inherit;
 
-    background-color: rgb(30, 30, 46);
+    background-color: var(--background-color);
 
     border-width: 3px;
     border-color: rgba(121, 121, 121, 0.336);
@@ -198,7 +198,7 @@
     margin-top: 5px;
     margin-left: 20px;
 
-    color: rgba(199, 207, 230, 0.466);
+    color: var(--muted-color);
 }
 
 .company-work-description-experience-info {
@@ -217,7 +217,7 @@
 
     margin-left: auto;
 
-    color: rgba(199, 207, 230, 0.466);
+    color: var(--muted-color);
 }
 
 .shaded-text-company-info {
