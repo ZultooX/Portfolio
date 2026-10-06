@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                FOG
+            </div>
+        </div>
+        <img class="thumbnail"/>
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Fog is an upcoming 2 - 4 player horror co-op roadtrip game.
+            I worked on this game most of my internship and it was amazing.
+            In Fog I mainly worked on procedural generation of the world, terrain, road, trees, etc.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Terrain Generation
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            The terrain generation was not originally the plan but to make the world the most procedural I had to modify the terrain in the generation.
+            Unreal Engine landscapes can not be modified in runtime, I needed this.
+            <br><br>
+            The terrain is created using a given texture with different blue values in it to make height differences.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Terrain/TerrainTexture.jpg" class="content-image"/>
+        </div>
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Terrain/TerrainTextureResult.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            It was quite the process to get this but put simply it takes the texture and checks how big 1 pixel is compared to the terrains width and height.
+            For each step I calculated and each pixel, it writes the height from the blue value from the texture to Z height in the game.
+        </div>
+
+
+        <div class="project-text">
+            The main point of the generated terrain was still to modify it and dig into it to flatten it for buildings and general bumpy ground.
+            Before committing to creating the mesh I only load the texture so I can modify values after.
+            <br><br>
+            I create functions to dig out a circle and a square for what you need it for.
+            After making buildings and roads I go through each building and at specific increments along the road and flatten it with a circle for roads and squares for buildings.
+            <br><br>
+            The following is very exaggerated for easier viewing
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Terrain/DugOutTerrain.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            The buildings were switched to instead dig out circles later in development because it looked nicer.
+        </div>
+
+
+        <div class="project-text">
+            Using only this the world looks very bleak and needs some color.
+            With a similar technique to the digging out I create a mask texture to match the coordinates in the same way that can be replaced with realistic dirt in shaders.
+            <br><br>
+            It does it the same way as the terrain generation but instead of setting the height we now just set the desired color for the mask.
+        </div>
+
+
+        <div class="project-text">
+            What I did not think about was that the texture should be more than per vertex size and could be up to 10x the quality.
+            That is why it looks blurry on edges and you can see the pixels.
+        </div>
+
+
+        <div style="display: flex;">
+            <div class="project-text content-image-holder" style="width: 100%;">
+                <img src="/Assets/Images/Projects/Content/FOG/Terrain/OnlyColor.jpg" class="content-image" style="width: 48.75%; margin-right: 2.5%;"/>
+                <img src="/Assets/Images/Projects/Content/FOG/Terrain/WithRoad.jpg" class="content-image" style="width: 48.75%;"/>
+            </div>
+        </div>
+
+
+        <div class="project-text">
+            At this point the terrain did make the game very laggy because the entire terrain was one object and could not be culled in any way so millions of faces rendered every frame.
+            <br><br>
+            Fixing this was a simple procedure, the terrain was split up in multiple mesh components that could all be culled to render way less tris at once.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Road Generation
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Before I came in the project had tile based generation where each tile was randomly picked and placed, they had roads built on them.
+            A more powerful procedural road generator had to be implemented.
+            <br><br>
+            I chose to use parts of the Wave Function Collapse algorithm, to not bore you too much i wont be explaining Wave Function Collapse here.
+            But if you are interested here is an explanation of the concept this is a good description,
+            <a href="https://robertheaton.com/2018/12/17/wavefunction-collapse-algorithm/" class="a-href-style">Wave Function Collapse</a>.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/WaveFunctionCollapse-credit-oddmax.gif" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            I used a mix between complete random generation and Wave Function Collapse.
+            How you make a road is there are small road pieces that you build from unreals spline components. Then I have the rules for WFC on each road piece for what the next pieces can be.
+            <br><br>
+            When the generation is done and some post process functions are run to merge roads we get what the image below shows.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/Splines.png" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            To change what roads were created after one another, an inspector editor for these roads was added and easy enough to set road pieces and the chance for them to be placed.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/RoadEditor.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            This has very primitive road prices and can change but it's still very much better than the last generation method. I like what the roads generate very much and I'm very happy how it turned out.
+            <br><br>
+            The next step was creating a visual mesh for the spline.
+            I made this in the unreal engines PCG frame work by going along the road and placing spline meshes at distance increments.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/Road-Mesh.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            In this iteration of the road generation it was incredibly slow taking 7 seconds for a full generation.
+            I found out about using hlsl shaders to process points to let the gpu do the transformations.
+            It was very fun to learn how to process points using hlsl and remove 90% of the nodes needed before.
+            The generation went from 7 seconds down to less than 0.001 seconds which was insane for how much it still generates.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 45%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/total-wall-time.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            This was then the finished road with added supports to where it was required on some mountain like terrain.
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/RoadGeneration.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            The last quest was to make the road look more intentional by adding stuff like lightpoles or creating holes in the road.
+            <br><br>
+            Best way I think to make lightpoles was splitting the road in pieces and for each piece go to the left or right and place a light pole there,
+            add some random offset and the lightpoles look great.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Road/Lightpoles.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Bunker building
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            The most special building I made was bunkers and how the tech works behind the scenes.
+            I did not want to modify the terrain to make the hole down because then it can be used on simple objects like cubes for special occasions.
+            <br>
+            <br>
+            The process was something I had done before but for a whole different reason.
+            We can take the default ground shader and add a global mask that uses the depth buffer to remove the pixels covered by the global object mask.
+            We also use a range to check if any player is inside the bunker area and move the object mask to that specific bunker.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/FogBunkers/BunkersOpen.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            The right one is open and you can see through and the left is closed.
+        </div>
+
+
+        <div class="project-text">
+            The visuals are fixed now so you can see through but if you walk on it you will not fall through because the collision is not changed.
+           
+            <br><br>
+            To do this most efficiently we remove the terrain layer from player collisions.
+            <br>
+            We fall through the ground too quickly now and the easiest solution is adding some collision buffer like a big rock under the bunker to let the player stand on that instead of the terrain.
+            <br><br>
+            We can now easily walk through the bunker constantly. The view distance of when the floor visually disappears is very close at the moment for visuals.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 75%;">
+            <img src="/Assets/Images/Projects/Content/FOG/FogBunkers/BunkerEntancesOpenUp.gif" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Trees & Foliage
+            </h1>
+        </div>
+
+
+        <div class="project-text" style="margin-top: 60px;">
+            Attempt 1
+        </div>
+        <div class="project-text">
+            Generating both trees and foliage is the same process, just different amounts and removing collisions for grass.
+            The first way I did was just full terrain generation which worked and took not too long to generate.
+            <br>
+            When I tested the game, it ran horrible, the reason being the collisions of all trees in the map were tested at all times.
+            <br><br>
+            I did try to optimise it by only placing trees around the road but if you drove into the forest the trees would just end so would not work
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/FOG/Map/TreesAttempt.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text" style="margin-top: 60px;">
+            Attempt 2
+        </div>
+        <div class="project-text">
+            The next attempt at this was instead of one spawner making all trees i made a spawner that creates tree spawners with a collision box around it.
+            I used the collision box to check if the player should start colliding with the trees in that box or not.
+            <br>
+            This method helped a lot with performance in game but when generating the game it could take up to a full minute just for the trees to generate once.
+        </div>
+
+
+        <div class="project-text" style="margin-top: 60px;">
+            Attempt 3
+        </div>
+        <div class="project-text">
+            The last and best solution was one they showed as a The Witcher demo for foliage.
+            It used the PCG system but instead of generating all at once it generates and removes foliage around the player locally across all multiplayer clients.
+            The colliders are created along with the meshes as well which solves the collision system automatically.
+        </div>
+
+
+        <div class="project-text">
+            With post processing it looks pretty good I'd say.
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/FOG/ForestLookingGood.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Physical Map
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            The very last element I created was a map to let the players be able to navigate the world.
+            The process was easy by putting multiple scene captures one for each element, one for roads, one for buildings and last for objective.
+        </div>
+
+
+        <div class="project-text">
+            Unreal has a scene capture component and only the road can render first then only render building icons.
+            If we take all the output textures and add them onto each other in a material we get a map that we can use.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 40%;">
+            <img src="/Assets/Images/Projects/Content/FOG/Map/Map.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Town Name Signs
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            With navigation comes challenges for knowing where you are like a landmark or a sign telling you where you are.
+            They could have been done by just having a basic sign and scaling the text on them to match the default width, Thats boooring.
+        </div>
+
+
+        <div class="project-text">
+            This is where I got the idea of procedurally generated signs using an unreal PCG system.
+            I had quite a bit of experience in it with the forest, the road and more so creating it was fun and easy.
+
+
+        </div>
+
+
+        <div class="project-text">
+            The result turned out great and the Text size is what determines the signs final width, the sign can also have varying height for a more genuine feel.
+            It also randomly crosses out the town name as if ahead is a ghost town
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/FOG/Misc/SignGenerator.gif" class="content-image"/>
+        </div>
+
+
+         <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Closing Thoughts
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Being able to work on something I have not worked on a lot, Procedural Generation was incredibly fun.
+            With this I also got to learn a new system, the Unreal Engine PCG system.
+
+
+            <br>
+            I was able to have a lot of freedom of how the generation was done so I was able to research what the best solution would be and make it turn out great.
+           
+            <br>
+            <br>
+            Lastly I wanted to thank Invisible Walls for letting me work on their amazing games and work with all their amazing development team.
+            I loved all the time I spent at the company.
+        </div>
+    </div>
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>
+

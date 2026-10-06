@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Deep Rock Galactic
+            </div>
+        </div>
+        <img class="thumbnail" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Deep Rock Galactic is created by Ghost Ship Games and made in Unreal Engine 4.
+            In my time at Invisible walls I got the amazing opportunity to work on this great game by creating a full perk damage modifier system and a perk for the system.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Perk Damage Modifier System
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Before my work only a small amount of damage modifier perks were in the game which made their implementations simple and temporary.
+            I had to create a system that you can rely on and is abstract enough to be used a lot in the future.
+           
+        </div>
+
+
+        <div class="project-text">
+            How it works is in the backend we have a container for general damage modifiers that has a condition and a multiplier that can be overwritten.
+            All the developer has to do is make a damage modifier and add it to the list with your own condition and multiplier when the modifier should be active.
+           
+        </div>
+
+
+        <div class="project-text">
+            In the front end where the designer balances these damage modifiers it's much easier to understand,
+            They use the Unreal Editor and a custom struct I created.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 70%;">
+            <img src="/Assets/Images/Projects/Content/DeepRockGalactic/PerkActivatin.png" class="content-image"/>
+        </div>
+       
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Finish Them PERK
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            The "Finish Them" perk makes your damage multiply by X amount when the enemy is below X% damage.
+            The thresholds are different for small and big enemies to not make the perk too over powered.
+           
+            <br><br>
+            The perk originally had to use global values for damage modifier and thresholds which made it unsafe if you accidently edited it directly and made not much sense anyway.
+            To scale it better with the games future, the damage modifier system was made like talked about above.
+
+
+            <br><br>
+            Currently multiplying damage by 4 times when the enemy has less than 50% health left, These values are exaggerated for show.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 70%;">
+            <img src="/Assets/Images/Projects/Content/DeepRockGalactic/DRGDamageMultiplier.gif" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Closing Thoughts
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Working on Deep Rock Galactic, a game I have played lots of, was very fun to see how things work in the backend.
+            <br>
+            The code base for the game was difficult to understand at start but as i worked more in the code, it became way easier to understand.
+
+
+            <br><br>
+            
+            <iframe src="https://store.steampowered.com/widget/548430/" style="justify-self: center; display: grid;" frameborder="0" width="100%" height="190"></iframe>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>
+

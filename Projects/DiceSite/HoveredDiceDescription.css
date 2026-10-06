@@ -1,0 +1,52 @@
+
+    @font-face {
+        font-family: upheaval;
+        src: url(upheavtt.ttf);
+    }
+
+#ActiveDice
+{
+    filter: blur(0px) brightness(100%);
+
+    transition: filter 200ms;
+}
+
+#ActiveDice:hover
+{
+    filter: blur(5px) brightness(50%);
+}
+
+
+.WhatDoText{
+    translate: 0 30px;
+    pointer-events: none;
+
+    font-family: upheaval;
+
+    font-size: 500%;
+
+    text-align: center;
+    align-self: center;
+
+    justify-self: center;
+
+    filter: brightness(90%);
+    
+    scale: 1;
+
+    width: 80%;
+
+    z-index: 1;
+
+    opacity: 0%;
+}
+
+#ActiveText {
+    
+
+    transition: opacity 200ms;
+}
+
+#ActiveDice:hover ~ #ActiveText {
+    opacity: 100%;
+}
