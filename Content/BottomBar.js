@@ -59,5 +59,5 @@ for (let i = 0; i < 3; i++) {
 
 let HostedWhere = document.createElement("p")
 HostedWhere.className = "hosted-where-text"
-HostedWhere.innerHTML = "Portfolio self hosted using <a href=\"https://httpd.apache.org/\" class=\"a-href-style\">Apache</a> : Html Source <a href=\"https://github.com/8nooThing8/Portfolio\" class=\"a-href-style\">Github: Portfolio</a>"
+HostedWhere.innerHTML = "Portfolio self hosted"
 document.body.appendChild(HostedWhere)

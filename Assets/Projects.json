@@ -10,7 +10,6 @@
     "FeaturedProjects": [
         0,
         1,
-        9,
         2
     ],
     "Projects": [
@@ -18,7 +17,7 @@
             "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
             "Title": "Eclipsed Engine",
             "HtmlPage": "Projects/EclipsedEngine",
-            "Description": "Eclipsed Engine is a 2D game engine with an editor built with optimization in first hand. We are developing this game engine to make a small 2 player co-op game, code name Project Nova.",
+            "Description": "<a class=\"a-href-style\" href=\"https://www.github.com/Eclipsed-Interactive/Eclipsed-Engine\">Eclipsed Engine</a> is a 2D game engine with an editor built with optimization in first hand. We are developing this game engine to make a small 2 player co-op game, code name Project Nova.",
             "SystemsUsed": [
                 {
                     "Name": "C++",
@@ -30,325 +29,71 @@
                 },
                 {
                     "Name": "ImGui",
-                    "Color": "rgb(220, 220, 220)"
+                    "Color": "rgb(150, 220, 220)"
                 },
                 {
                     "Name": "CMake",
                     "Color": "rgb(207, 190, 235)"
                 },
                 {
-                    "Name": "Box2D",
+                    "Name": "RTTI",
                     "Color": "rgb(200, 200, 113)"
                 },
                 {
-                    "Name": "Asio•Boost",
+                    "Name": "FMOD",
                     "Color": "rgb(171, 186, 241)"
                 }
             ]
         },
         {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/DeepRockGalactic.jpg",
-            "Title": "Deep Rock Galactic",
-            "HtmlPage": "Projects/DeepRockGalactic",
-            "Description": "<a class=\"a-href-style\" href=\"https://www.deeprockgalactic.com/\">Deep Rock Galactic</a> made by <a class=\"a-href-style\" href=\"https://ghostship.dk/\">Ghost Ship Games</a> is a Co-op PvE shooter game. I Worked on both a damage modifier system and a damage modifier perk that use that system",
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/TgaSpecialization.png",
+            "Title": "FABRIK Hand Animation",
+            "HtmlPage": "Projects/procedural-hand-animations",
+            "Description": "Recreating <a class=\"a-href-style\" href=\"https://youtu.be/dlQqiJYdyYM\">Uncharted 4's</a> procedural hand animations using FABRIK in my custom graphics engine, developed during my specialization at The Game Assembly.",
             "SystemsUsed": [
                 {
                     "Name": "C++",
                     "Color": "rgb(210, 167, 162)"
                 },
                 {
-                    "Name": "Unreal Engine",
+                    "Name": "Custom Engine",
                     "Color": "rgb(220, 220, 220)"
                 },
                 {
-                    "Name": "Perforce",
+                    "Name": "GitHub",
                     "Color": "rgb(171, 186, 241)"
                 },
                 {
-                    "Name": "Rider",
+                    "Name": "Math",
                     "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "FABRIK",
+                    "Color": "rgb(171, 186, 241)"
                 }
             ]
         },
         {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/FOG.jpg",
-            "Title": "FOG",
-            "HtmlPage": "Projects/FOG",
-            "FogLinkDescription": "<a class=\"a-href-style\" href=\"https://www.foggame.com/\">FOG</a> an upcoming game by <a class=\"a-href-style\" href=\"https://www.invisiblewalls.co/\">Invisible Walls</a> is a Co-op roadtrip horror game set in 1992 soviet Russia. In FOG I worked on procedural world generation using much of Unreal Engine PCG framework",
-            "Description": "FOG an upcoming game by <a class=\"a-href-style\" href=\"https://www.invisiblewalls.co/\">Invisible Walls</a> is a Co-op roadtrip horror game set in 1992 soviet Russia. In FOG I worked on procedural world generation using much of Unreal Engine PCG framework",
-            "SystemsUsed": [
-                {
-                    "Name": "C++",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "Unreal Engine",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Rider",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "Unreal PCG",
-                    "Color": "rgb(220, 220, 220)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/NoBroomForError.jpg",
-            "Title": "No Broom For Error",
-            "HtmlPage": "Projects/NoBroomForError",
-            "Description": "No Broom For Error is a 3D Endless-runner and crafting. No Broom For Error was the first project we made at The Game Assembly.",
-            "SystemsUsed": [
-                {
-                    "Name": "C#",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "Unity",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/HoleEMole.jpg",
-            "Title": "Hole-É-Mole",
-            "HtmlPage": "Projects/HoleEMole",
-            "Description": "Hole-É-Mole is a 3D Mobile Puzzle game made in Unity. First game i worked on that was made for mobile",
-            "SystemsUsed": [
-                {
-                    "Name": "C#",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "Unity",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/Traum.jpg",
-            "Title": "TRAUM",
-            "HtmlPage": "Projects/Traum",
-            "Description": "TRAUM is a 2D puzzle platformer focused on horror elements. TRAUM was made in TGE, a custom engine from teachers at The Game Assembly.",
-            "SystemsUsed": [
-                {
-                    "Name": "C++",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "DX11",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "TGE",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                },
-                {
-                    "Name": "ImGui",
-                    "Color": "rgb(220, 220, 220)"
-                }
-
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/GolemsQuest.jpg",
-            "Title": "Golems Quest: Crystal Keep",
-            "HtmlPage": "Projects/GolemsQuest",
-            "Description": "Golems Quest is a 3D top down action game. Golems Quest was the first 3D game that i got to work on in a custom engine (TGE).",
-            "SystemsUsed": [
-                {
-                    "Name": "C++",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "DX11",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "TGE",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                },
-                {
-                    "Name": "ImGui",
-                    "Color": "rgb(220, 220, 220)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/SpiteParasite.jpg",
-            "Title": "Spite: Parasite",
-            "HtmlPage": "Projects/SpiteParasite",
-            "Description": "Spite: Parasite is a Diablo II Clone, class Monk. Spite was our first atempt at building a game in a custom made game engine in DX11.",
-            "SystemsUsed": [
-                {
-                    "Name": "C++",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "DX11",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "TRK",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                },
-                {
-                    "Name": "ImGui",
-                    "Color": "rgb(220, 220, 220)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/StellaAndOrbit.jpg",
-            "Title": "Stella & Orbit: Take Flight",
-            "HtmlPage": "Projects/StellaAndOrbit",
-            "Description": "Stella & Orbit is a 3D Platformer alike Ratchet & Clank. Stella & Orbit was the second game that we created in our custom engine Tre rader Kod.",
-            "SystemsUsed": [
-                {
-                    "Name": "C++",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "DX11",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "TRK",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                },
-                {
-                    "Name": "ImGui",
-                    "Color": "rgb(220, 220, 220)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/TheBlackwoodProject.jpg",
-            "Title": "The Blackwood Project",
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/IonInternshipGames.png",
+            "Title": "Game Ad Integration",
             "HtmlPage": "Projects/TheBlackwoodProject",
-            "Description": "The Blackwood Project is a 3D Topdown horror shooter. The game was made in Tre Rader Kod, a homemade engine made by the whole team with VRAK.",
-            "SystemsUsed": [
-                {
-                    "Name": "C++",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "DX11",
-                    "Color": "rgb(200, 200, 113)"
-                },
-                {
-                    "Name": "TRK",
-                    "Color": "rgb(220, 220, 220)"
-                },
-                {
-                    "Name": "Perforce",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "ImGui",
-                    "Color": "rgb(220, 220, 220)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/GrappleAscent.jpg",
-            "Title": "Grapple Ascent",
-            "HtmlPage": "Projects/GrappleAscent",
-            "Description": "Grapple Ascent is a 3D adventure game made in Unity. You are a yoyo climbing up a proceduraly generated Tower mountain. This game was made for <a class=\"a-href-style\" href=\"https://itch.io/jam/gmtk-2024\">GMTK Game Jam 2024</a>",
+            "Description": "Added free-to-play monetization to four of ION's existing titles. Integrated Google AdMob for ads across all four games. Was supposed to migrate multiplayer from AWS to Firebase, but was movedto another project.",
             "SystemsUsed": [
                 {
                     "Name": "C#",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "AdMob",
                     "Color": "rgb(200, 200, 113)"
                 },
                 {
-                    "Name": "Unity",
+                    "Name": "Firebase",
                     "Color": "rgb(220, 220, 220)"
                 },
                 {
-                    "Name": "Github",
+                    "Name": "Unity",
                     "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "Visual Studio",
-                    "Color": "rgb(207, 190, 235)"
-                },
-                {
-                    "Name": "Blender",
-                    "Color": "rgb(210, 167, 162)"
-                }
-            ]
-        },
-        {
-            "Thumbnail": "Assets/Images/Projects/Thumbnails/DiceSite.jpg",
-            "Title": "The Binding Of Isaac Dice Rooms",
-            "HtmlPage": "Projects/TheBindingOfIsaacDiceRooms",
-            "Description": "This was a simple project i made during night because i was bored, The reason being The Binding Of Isaac there are these dice shaped rooms and they do different things but are not implicitly stated so i made a fun and nice looking site to see what they do.",
-            "SystemsUsed": [
-                {
-                    "Name": "Html",
-                    "Color": "rgb(210, 167, 162)"
-                },
-                {
-                    "Name": "CSS",
-                    "Color": "rgb(171, 186, 241)"
-                },
-                {
-                    "Name": "JavaScript",
-                    "Color": "rgb(230, 213, 118)"
                 }
             ]
         }
