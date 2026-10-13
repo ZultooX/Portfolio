@@ -1,0 +1,34 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, x64, website-deploy]
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Deploy website files
+        run: |
+          test -f index.html
+          rsync -rlt \
+            --delete-delay \
+            --delay-updates \
+            --chmod=D755,F644 \
+            --exclude='.*' \
+            ./ /srv/www/mywebsite/html/
