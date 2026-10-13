@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Grapple Ascent
+            </div>
+        </div>
+        <img class="thumbnail" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Grapple Ascent was made in Unity in about 96 hours for GMTK Game Jam 2024.
+            This was one of my first game jams and was fun to collaborate with 3 other developers
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Rope Rendering
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            A rope was needed to use as the grapple string, this started by using the default line renderer in unity.
+            It worked well until the line had to curve around objects and the line cut off.
+            To fix this I created a 3D version of the line renderer that takes in a mesh and still uses line renderer as
+            a base to know where the line will start and end.
+            I also made the line be a bit more strict on where it could connect.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Camera Controller
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            The Camera controller collides with walls and obstacles to not clip into them.
+            I thought the game lacked some kind of response to the player that you are going fast.
+            It did not feel good to swing fast so when you speed up your FOV increases and you get a trail behind you.
+        </div>
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Closing Thoughts
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Grapple Ascent was a very fun game to work on and we also made a very cool product in the end.
+            The game itself is very fun to play and very satisfying to swing around while gaining massive speed.
+
+            <br><br>
+            <iframe frameborder="0" src="https://itch.io/embed/2903435?linkback=true&amp;bg_color=1e1e32&amp;fg_color=d8d9f2&amp;border_color=121220" width="100%" height="167"><a href="https://zultoox.itch.io/grapple-ascent-gmtk2024">Grapple Ascent: A Yo-Yo's big scaling adventure by ZultooX, Acade, Siggebagge, lingonsoppa7, Noo(thing)</a></iframe>
+        </div>
+
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>

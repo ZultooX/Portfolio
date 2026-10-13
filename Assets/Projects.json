@@ -1,0 +1,101 @@
+{
+    "SolidColors": [
+        "Faded orange:  rgb(197, 167, 162)",
+        "Faded Blue:    rgb(171, 186, 241)",
+        "Faded Yellow:  rgb(230, 213, 118)",
+        "Faded Red:     rgb(207, 103, 80)",
+        "Faded Pink:    rgb(207, 190, 235)",
+        "Faded Green:   rgb(200, 200, 113)"
+    ],
+    "FeaturedProjects": [
+        0,
+        1,
+        2
+    ],
+    "Projects": [
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
+            "Title": "Eclipsed Engine",
+            "HtmlPage": "Projects/EclipsedEngine",
+            "Description": "<a class=\"a-href-style\" href=\"https://www.github.com/Eclipsed-Interactive/Eclipsed-Engine\">Eclipsed Engine</a> is a 2D game engine with an editor built with optimization in first hand. We are developing this game engine to make a small 2 player co-op game, code name Project Nova.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "OpenGL",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "ImGui",
+                    "Color": "rgb(150, 220, 220)"
+                },
+                {
+                    "Name": "CMake",
+                    "Color": "rgb(207, 190, 235)"
+                },
+                {
+                    "Name": "RTTI",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "FMOD",
+                    "Color": "rgb(171, 186, 241)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/TgaSpecialization.png",
+            "Title": "FABRIK Hand Animation",
+            "HtmlPage": "Projects/procedural-hand-animations",
+            "Description": "Recreating <a class=\"a-href-style\" href=\"https://youtu.be/dlQqiJYdyYM\">Uncharted 4's</a> procedural hand animations using FABRIK in my custom graphics engine, developed during my specialization at The Game Assembly.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "Custom Engine",
+                    "Color": "rgb(220, 220, 220)"
+                },
+                {
+                    "Name": "GitHub",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "Math",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "FABRIK",
+                    "Color": "rgb(171, 186, 241)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/IonInternshipGames.png",
+            "Title": "Game Ad Integration",
+            "HtmlPage": "Projects/TheBlackwoodProject",
+            "Description": "Added free-to-play monetization to four of ION's existing titles. Integrated Google AdMob for ads across all four games. Was supposed to migrate multiplayer from AWS to Firebase, but was movedto another project.",
+            "SystemsUsed": [
+                {
+                    "Name": "C#",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "AdMob",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "Firebase",
+                    "Color": "rgb(220, 220, 220)"
+                },
+                {
+                    "Name": "Unity",
+                    "Color": "rgb(171, 186, 241)"
+                }
+            ]
+        }
+    ]
+}

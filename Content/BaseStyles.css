@@ -1,0 +1,255 @@
+:root {
+    --accent-color: #FF6B6B;
+    --background-color: #191719;
+    --surface-color: #242024;
+    --surface-deep: #131113;
+    --surface-raised: #3A2E33;
+    --text-color: #F2EDEE;
+    --muted-color: #B8A9AE;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "JetBrains Mono", monospace;
+
+    scrollbar-color: var(--accent-color) var(--background-color);
+
+    display: grid;
+    justify-content: center;
+}
+
+::selection {
+    background: var(--accent-color);
+    color: var(--background-color);
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: var(--accent-color);
+    border-radius: 100px;
+}
+
+.accent-color {
+    color: var(--accent-color);
+}
+
+a {
+    color: inherit;
+}
+
+.a-href-style:link,
+.a-href-style:visited {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 3px dotted var(--accent-color);
+    background-color: transparent;
+
+    transition: color 400ms, background-color 400ms;
+
+    width: fit-content;
+}
+
+.a-href-style:hover {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+.breadcrumb-link {
+    font-size: 18px;
+
+    text-decoration: none;
+    transition: color 200ms;
+}
+
+.breadcrumb-link:hover {
+    color: var(--accent-color);
+}
+
+.breadcrumb-console-bar {
+    width: 80%;
+    justify-self: center;
+
+    font-size: 22px;
+
+    margin-top: 20px;
+    display: flex;
+}
+
+.breadcrumb-console-bar-cursor {
+    font-size: 18px;
+    margin-left: 2px;
+    margin-top: 5px;
+
+    animation: blink 1700ms infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.breadcrumb-console-bar-holder {
+    display: grid;
+
+    z-index: 9999;
+
+    position: fixed;
+    top: 0;
+    width: 98vw;
+    height: 90px;
+
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+
+    mask-image: linear-gradient(to bottom,
+            black 0%,
+            black 70px,
+            transparent 90px);
+    -webkit-mask-image: linear-gradient(to bottom,
+            black 0%,
+            black 70px,
+            transparent 90px);
+}
+
+.top-button-holder{
+    height: 30px;
+    display: flex;
+
+    margin-left: auto;
+
+    margin-right: -3vw;
+}
+
+.top-button{
+    width: 120px;
+    height: 30px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    padding-top: 5px;
+
+    transition: color 200ms, font-size 200ms, padding-top 200ms;
+    text-decoration: none;
+}
+
+.top-button:hover{
+    padding-top: 3.5px;
+    font-size: 20px;
+    color: var(--accent-color);
+}
+
+.FullscreenFade {
+    z-index: 9998;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    position: fixed;
+    top: 0px;
+}
+
+
+.hosted-where-text{
+    font-size: 14px;
+    margin-top: 12px;
+    justify-self: center;
+
+    margin-bottom: 32px;
+}
+
+.bottom-bar {
+    background-color: var(--surface-deep);
+    width: 75vw;
+    height: fit-content;
+
+    border-radius: 10px;
+
+    justify-self: center;
+    
+    margin-top: 100px;
+
+
+    display: flex;
+    justify-content: baseline;
+
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.24);
+}
+
+.bottombar-separator{
+    margin-top: 11px;
+    margin-bottom: 11px;
+
+    border-left: 1.5px solid var(--text-color);
+}
+
+.cpy-right {
+    height: 100%;
+
+    margin-left: 1.4%;
+}
+
+.bottom-all-icon-holder{
+    display: flex;
+    
+    align-self: center;
+}
+
+.bottom-icon {
+    width: 36px;
+    height: auto;
+
+    margin-top: 20%;
+    margin-left: -20%;
+
+
+}
+
+@media (max-width: 1100px) {
+    .cpy-right {
+        font-size: 20px;
+    }
+
+    .breadcrumb-console-bar {
+        font-size: 30px;
+    }
+
+    .breadcrumb-console-bar-cursor, .breadcrumb-link {
+        font-size: 22px;
+    }
+
+    .top-button-holder{
+        margin-right: 0px;
+    }
+
+    .top-button{
+        font-size: 24px;
+        padding-top: 5px;
+        transition: font-size 200ms, padding-top 200ms;
+    }
+
+    .top-button:hover{
+        padding-top: 2px;
+        font-size: 27px;
+    }
+}

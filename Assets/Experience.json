@@ -1,0 +1,43 @@
+{
+    "Work": [
+        {
+            "CompanyName": "ION Game Design",
+            "CompanyIcon": "Assets/Images/CompanyIcons/ion-logo-1024x1024.png",
+            "CompanyLink": "https://www.invisiblewalls.co/",
+            "Role": "Game Programmer (Intern)",
+            "TimeSpan": "October 2025 - May 2026",
+            "Info": [
+                "Worked across all of ION's released mobile games and implemented a free-to-play version.",
+                "Investigated if it where possible to migrate game multiplayer backend from AWS to Google Firebase.",
+                "Worked on a checkpoint system for their latest Unreal Engine 5 game."
+            ]
+        }
+    ],
+    "Education": [
+        {
+            "CompanyName": "The Game Assembly",
+            "CompanyIcon": "Assets/Images/CompanyIcons/tgalogowhite-small.svg",
+            "CompanyLink": "https://thegameassembly.com/se/",
+            "Role": "Higher Vocational Education - Game Programming",
+            "TimeSpan": "Aug 2023 - May 2026",
+            "BackgroundColor": "rgb(0, 0, 0)",
+            "Info": [
+                "Studied game programming in C++"
+            ],
+            "LinkButtons": []
+        },
+        {
+            "CompanyName": "Ljud & Bildskolan (LBS)",
+            "CompanyIcon": "Assets/Images/CompanyIcons/lbslogo.svg",
+            "CompanyLink": "https://lbs.se/boras/",
+            "Role": "Game Programming Student",
+            "TimeSpan": "Aug 2020 - Jun 2023",
+            "BackgroundColor": "rgb(0, 0, 0)",
+            "Info": [
+                "Studied C# and game development in Unity, including collaborative projects with artists.",
+                "Where awarded Game Developer of the year upon graduation."
+            ],
+            "LinkButtons": []
+        }
+    ]
+}

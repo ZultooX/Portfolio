@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                The Blackwood Project
+            </div>
+        </div>
+        <img class="thumbnail" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            The Blackwood Project was our last project at TGA and was an amazing game to work on.
+            It was extremely fun to work on this project all being together in one room and working for 9 weeks on fulltime.
+            The reference game was Mistery, a top down 3D zombie survival murder mystery shooter game. Too many genres for a game.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Lightup Visibility Mechanic
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            The main mechanic for our horror game was enemies and interactables become visible only in light.
+            To make things more interesting all kinds of lights will make things visible.
+            Point lights, Directional light and Spot lights.
+           
+            <br><br>
+
+
+            The first thing made was the Flashlight.
+            It used Spotlight and made anything in dark invisible by discarding pixels.
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/FlashlightProto.gif" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            After this we have to only affect Items and enemies by the lights.
+            The line was way too prominent so a gradient of opacity was inserted and it looked a lot like what we wanted for the game.
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/FinishedFlashlight.gif" class="content-image"/>
+        </div>
+       
+        <div class="project-text">
+            An issue with this whole thing was that when doing a top down game you want to pretend like the game is 2D because that's the only way you can shoot.
+            So now it's instead a slice of cake that gets lit up and looks way better.
+            <br><br>
+
+
+            By default this looked not quite right, it's still a hard cut with the blur and the same all the way.
+            What looked better was counting the color strength into the operation and made the switch more random and noisy.
+        </div>
+
+
+        <div class="project-text content-image-holder">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/EnemyVisibleInLight.gif" class="content-image"/>
+        </div>
+
+
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Pointlight and Spotlight shadows
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Now that all lights affect monsters if there is something blocking the enemy it will still be lit up.
+            Reason being, all of it is just a math operation checking if the pixel face is looking at the light.
+            Same goes with point lights that need to check for walls.
+            <br><br>
+            Spotlight shadows were the simplest being normal Directional shadows but as if it's captured from a camera with a lens.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/SpotLightShadowTexture.jpg" class="content-image"/>
+        </div>
+       
+        <div class="project-text content-image-holder" style="width: 50%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/SpotLightShadows.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            Point lights are different, they make light all around them.
+            This is accomplished by rendering a shadow map to 6 faces of a cube texture with a 90 degree FOV to capture everything around the light.
+            When rendering the light it checks all 6 sides of the map to see if the pixel is in shadow.
+            <br><br>
+            The below has only the sides showing for easier viewing, 4 images at 128px each.
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 90%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/PointLightShadowTexture.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 60%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/PointLightShadows.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Projected Decals
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            Before doing projected decals we had mesh planes on the ground as a replacement.
+            It worked for a while until we wanted bullet holes or blood splatters that conformed to the surface hit.
+            <br><br>
+            The problem at hand
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 40%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/PlaneAsDecal.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text">
+            It's fixed with projected decals, wrapping textures around an object instead of placing a new plane.
+            It was some work but always fun to learn new things.
+            They are made by translating the decal texture the decal cameras view and color it in the main albedo pass.
+            <br><br>
+            There is more logic to it but this is put very simply.
+        </div>
+
+
+        <!-- <div class="project-text content-image-holder" style="width: 40%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/PlaneAsDecal.jpg" class="content-image"/>
+        </div> -->
+
+
+        <div class="project-text">
+            The white spheres are the projection cameras that makes the decals
+        </div>
+
+
+        <div class="project-text content-image-holder" style="width: 40%;">
+            <img src="/Assets/Images/Projects/Content/TheBlackwoodProjects/BloodDecals.jpg" class="content-image"/>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Closing Thoughts
+            </h1>
+        </div>
+
+
+        <div class="project-text">
+            As the last and biggest project at TGA it was particularly fun to sit together like a small indie studio.
+            The work I did mainly with lights was very fun to do and I learned more about shader textures and buffers.
+            Again learning new things were amazing
+
+
+            <br><br>
+
+            
+            <iframe src="https://store.steampowered.com/widget/4566920/" style="justify-self: center; display: grid;" frameborder="0" width="100%" height="190"></iframe>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>
+
