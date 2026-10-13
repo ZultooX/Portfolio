@@ -31,4 +31,4 @@ jobs:
             --delay-updates \
             --chmod=D755,F644 \
             --exclude='.*' \
-            ./ /srv/www/mywebsite/html/
+            ./ /srv/websites/portfolio/
