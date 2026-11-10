@@ -1,0 +1,24 @@
+{
+    "Breakdowns": [
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
+            "Title": "C++ Runtime Reflection",
+            "HtmlPage": "TechBreakdowns/RuntimeReflection",
+            "Description": "How I replaced per-instance macro metadata with build-time code generation in Eclipsed Engine, removing hundreds of bytes of duplicated data per component.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "Code Generation",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "Eclipsed Engine",
+                    "Color": "rgb(171, 186, 241)"
+                }
+            ]
+        }
+    ]
+}

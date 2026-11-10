@@ -80,6 +80,31 @@
     cursor: zoom-in;
 }
 
+.code-block{
+    background-color: var(--surface-deep);
+    border-radius: 6px;
+    padding: 16px;
+    margin: 10px 0px;
+
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    white-space: pre;
+    tab-size: 4;
+    overflow-x: auto;
+}
+
+.inline-code{
+    background-color: var(--surface-deep);
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.step-list{
+    margin: 0px;
+    text-align: left;
+}
+
 .image-zoomin-bg{
     z-index: 99999999;
     top: 0;

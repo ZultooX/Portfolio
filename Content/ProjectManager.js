@@ -49,7 +49,7 @@ export function LoadFeaturedProjects(FeaturedProjectGrid) {
 
 
 
-function CreateProjectCard(ProjectJson, Grid, index, hidden) {
+export function CreateProjectCard(ProjectJson, Grid, index, hidden) {
     let Card = CreateBaseDiv(ProjectJson, Grid, index)
 
     if (hidden)

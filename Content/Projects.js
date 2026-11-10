@@ -9,7 +9,9 @@ if(LastIndex == -1)
 
 FileName = FileName.substring(FirstIndex + 1, LastIndex)
 
-document.getElementsByClassName("thumbnail")[0].src = "/Assets/Images/Projects/Thumbnails/" + FileName + ".jpg"
+const Thumbnail = document.getElementsByClassName("thumbnail")[0]
+if (!Thumbnail.getAttribute("src"))
+    Thumbnail.src = "/Assets/Images/Projects/Thumbnails/" + FileName + ".jpg"
 
 let ImageZoominbg = document.createElement("div");
 ImageZoominbg.className = "image-zoomin-bg"
