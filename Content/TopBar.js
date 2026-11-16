@@ -48,7 +48,7 @@ TopButtonHolder.className = "top-button-holder"
 breadCrumbBar.appendChild(TopButtonHolder)
 
 const buttonNames = ["Home", "Projects", "Breakdowns", "About"]
-const buttonLocations = ["/", "/Projects", "/TechBreakdowns", "/About"]
+const buttonLocations = ["/", "/Projects", "/TechBreakdowns", "/about"]
 
 for(let i = 0; i < buttonNames.length; i++)
 {

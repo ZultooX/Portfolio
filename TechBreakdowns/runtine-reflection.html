@@ -153,6 +153,18 @@ private:
 
                 <br><br>
 
+                Regex alone is not enough to read C++ though. Before matching, the tool blanks out all comments and
+                strings, so code that is commented out is not reflected by mistake. It also keeps track of the curly
+                brackets, so it knows where a class ends and doesn't pick up fields from a struct declared inside
+                another class.
+
+                <br><br>
+
+                A class has to opt in with <span class="inline-code">MAKE_REFLECTABLE</span>, and only the fields
+                that have an attribute are reflected. Everything else is left alone.
+
+                <br><br>
+
                 For each field it stores the name, the type, the size and the offset into the class. That is
                 everything the editor needs to find a field in any instance and read or write it.
 
@@ -235,7 +247,12 @@ private:
 
 inline ComponentsStaticInitiator __componentsStaticInititator = {};</code></pre>
 
-                <br>
+                The game project works a bit differently. It is a dynamic library that the editor loads, so instead
+                of a static object the tool generates an exported function called
+                <span class="inline-code">RegisterReflectedTypes</span>. The editor calls it right after it has
+                loaded the library.
+
+                <br><br>
 
                 With every type registered, reading and writing a field is simple. The engine looks up the field and
                 uses its offset to find the value inside the object. If the field has an
@@ -261,6 +278,83 @@ void* Get(const std::string&amp; typeName, const std::string&amp; fieldName, voi
 
                 This is what the editor uses to show and change values, without knowing anything about the class it is
                 editing.
+
+                <br><br>
+
+                Lists need a bit more. A <span class="inline-code">std::vector</span> can't be edited with just an
+                offset and a size, so when a field is a vector the system also stores a small set of functions for
+                it: get the size, get an element, resize and erase. With these the editor can show and edit a list
+                without knowing what is in it.
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Attributes
+                </h1>
+            </div>
+
+            <div class="project-text">
+                An attribute is just a struct. These are some of the ones the engine has today:
+
+                <pre class="code-block"><code class="language-cpp">struct SerializeField {};
+
+struct Range
+{
+    float min, max;
+};
+
+struct Step
+{
+    float step;
+};
+
+struct OnChange
+{
+    std::function&lt;void(void*)&gt; event;
+};</code></pre>
+
+                The tool doesn't need to know what an attribute means. It copies the name and the arguments straight
+                into the generated code, so
+                <span class="inline-code">[[SerializeField, Step(0.1f)]]</span> turns into this:
+
+                <pre class="code-block"><code class="language-cpp">entry.attributeContainer.Add&lt;SerializeField&gt;();
+entry.attributeContainer.Add&lt;Step&gt;(0.1f);</code></pre>
+
+                Every field has a container that stores its attributes by type, and anyone who has the field can ask
+                if it has a certain attribute. This is how the inspector finds out how much a value should change
+                when you drag it:
+
+                <pre class="code-block"><code class="language-cpp">const Step* stepAttr = attrs.TryGet&lt;Step&gt;();
+if (stepAttr) step = stepAttr-&gt;step;</code></pre>
+
+                So adding a new attribute is as simple as declaring a new struct and reading it where it is needed.
+                The reflection system itself doesn't have to change.
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    What it can't do
+                </h1>
+            </div>
+
+            <div class="project-text">
+                The system is not perfect, and there are things I know it can't handle:
+                <ul class="step-list">
+                    <li><b>It doesn't understand C++.</b> The tool matches patterns, it doesn't parse the language.
+                        Unusual declarations, like function pointers or C-style arrays, are not picked up.</li>
+                    <li><b>Types are found by name.</b> Two reflected classes with the same name in different
+                        namespaces would collide.</li>
+                    <li><b>Setting a value copies raw bytes.</b> That is fine for simple types like floats and
+                        vectors, but it is not safe for types that own memory.</li>
+                </ul>
             </div>
         </div>
 
@@ -283,6 +377,11 @@ void* Get(const std::string&amp; typeName, const std::string&amp; fieldName, voi
 
                 The reflected values are also not accessed through a wrapper type anymore. They are normal variables
                 that can be used directly.
+
+                <br><br>
+
+                The editor is not the only one using it either. The engine's serialization reads the same data to
+                save and load components as JSON.
 
                 <br><br>
 
