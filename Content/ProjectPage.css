@@ -86,18 +86,51 @@
     padding: 16px;
     margin: 10px 0px;
 
+    font-family: "Cascadia Code", Consolas, "Courier New", monospace;
     font-size: 16px;
     line-height: 24px;
+    word-spacing: normal;
     text-align: left;
     white-space: pre;
     tab-size: 4;
     overflow-x: auto;
 }
 
+.code-block code{
+    font-family: inherit;
+}
+
+.hljs-keyword,
+.hljs-literal{
+    color: var(--accent-color);
+}
+.hljs-type,
+.hljs-built_in{
+    color: #7FC8C0;
+}
+.hljs-title{
+    color: #8FB8F0;
+}
+.hljs-string{
+    color: #E5C07B;
+}
+.hljs-number{
+    color: #D19A66;
+}
+.hljs-comment,
+.hljs-meta{
+    color: var(--muted-color);
+}
+.hljs-comment{
+    font-style: italic;
+}
+
 .inline-code{
     background-color: var(--surface-deep);
     border-radius: 4px;
     padding: 2px 6px;
+    font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+    font-size: 0.9em;
 }
 
 .step-list{
