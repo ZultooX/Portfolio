@@ -17,14 +17,14 @@
                 C++ Runtime Reflection
             </div>
         </div>
-        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg" />
+        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg" alt="Eclipsed Engine" />
     </div>
 
 
     <div class="page-middle-offseter">
         <div class="project-text">
-            Inspect and manipulate values directly from
-            <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engines</a>
+            How I built the system that lets us inspect and edit values directly from
+            <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a>'s
             Unity-like editor.
         </div>
 
@@ -36,11 +36,11 @@
         </div>
 
         <div class="project-text">
-            Reflection can mean different things, from the reflection you see in the mirror to being able to reflect and
-            inspect values of types.
+            Reflection can mean different things, from the reflection you see in the mirror to a program being able to
+            inspect its own types.
             <br><br>
-            Using reflection we are able to inspect and set values to different types without being able to access the
-            type itself.
+            Using reflection we are able to read and set the fields of a type without knowing what the type is. The
+            C++ we use doesn't have this built in, so we had to build it ourselves.
         </div>
 
 
@@ -53,21 +53,14 @@
 
             <div class="project-text">
                 When starting development of <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a>
-                we knew that
-                a future issue that we where going to face where how we would manipulate positions and other values from
-                the editor.
+                we knew that a future issue we were going to face was how we would edit positions and other values
+                from the editor.
 
                 <br><br>
 
-                The first system I developed were that all values that we would access from the editor had to be its own
-                templated type.
-                I called it <span class="inline-code">SERIALIZED_FIELD</span> which I wrapped in macros to make it
-                easier
-                to use, but since I stored all of the meta data of the type and
-                the variable in the type itself meant that all instances of the class gained the same values. This meant
-                that every class
-                grew exponentially, the engines <span class="inline-code">SpriteRenderer2D</span> class grew to about
-                912 bytes per instance.
+                In the first system I developed, every value that we wanted to access from the editor had to be
+                wrapped in its own templated type. To make that easier to use I hid it behind a macro called
+                <span class="inline-code">SERIALIZED_FIELD</span>.
 
                 <pre class="code-block"><code class="language-cpp">class ObstacleSpawner : public Eclipse::Component
 {
@@ -81,8 +74,15 @@ private:
     float obstacleSpawnTimer = 0.f;
 };</code></pre>
 
-                We decided that this was a future issue, it worked and made it easy to continue and focus on other areas
-                of the engine. But as our needs grew, so did the class sizes.
+                The problem was that I stored all of the metadata of the type and the variable in the field itself.
+                That meant every instance of a class carried its own copy of the same data, and the class sizes
+                ballooned. The engine's <span class="inline-code">SpriteRenderer2D</span> class grew to about 912
+                bytes per instance.
+
+                <br><br>
+
+                We decided that this was a problem for later. It worked, and it made it easy to continue and focus on
+                other areas of the engine. But as our needs grew, so did the class sizes.
             </div>
         </div>
 
@@ -98,18 +98,20 @@ private:
                 <ul class="step-list">
                     <li><b>Metadata belongs to the type, not the instance.</b> A field's name and type are the same for
                         every instance, so they should be stored once.</li>
-                    <li><b>No macros.</b> A reflected field should look like any other member variable.</li>
-                    <li><b>It has to be extensible.</b> We wanted to mark fields for more than the editor.</li>
+                    <li><b>No wrapper types.</b> A reflected field should be a normal member variable, not something
+                        hidden behind the <span class="inline-code">SERIALIZED_FIELD</span> macro.</li>
+                    <li><b>It has to be extensible.</b> We wanted to mark fields for more than just showing them in
+                        the editor.</li>
                 </ul>
                 <br>
                 So I moved reflection out of the classes and into the build. Fields are marked with an attribute such as
-                <span class="inline-code">[[serializefield]]</span>, and before compiling, a tool scans every source
-                file and generates the metadata for each marked class. That metadata exists once per type, no matter how
-                many instances there are.
+                <span class="inline-code">[[SerializeField]]</span>, and before compiling, a tool scans the header
+                files and generates the metadata for each marked class. That metadata exists once per type, no matter
+                how many instances there are.
 
                 <br><br>
 
-                The generated file stored the field names, type names, field size and field offsets to the type.
+                The same component now looks like this:
                 <pre class="code-block"><code class="language-cpp">class ObstacleSpawner : public Eclipse::Component
 {
     MAKE_REFLECTABLE(ObstacleSpawner);
@@ -120,14 +122,18 @@ public:
     void Start() override;
     void Update() override;
 private:
-    [[SerializedField]]
+    [[SerializeField]]
     Eclipse::Assets::Prefab ObstaclePrefab;
 
-    [[SerializedField]]
+    [[SerializeField]]
     float ObstacleSpawnInterval = 2;
 
     float obstacleSpawnTimer = 0.f;
 };</code></pre>
+
+                I couldn't get around all of the macros, the class still needs a few to set itself up. But the fields
+                are plain variables again, and the reflected data is not bound to the
+                <span class="inline-code">SERIALIZED_FIELD</span> macro anymore.
             </div>
         </div>
 
@@ -141,84 +147,64 @@ private:
             </div>
 
             <div class="project-text">
-                A HeaderTool scans all of the header files at a location, and collects data on of the type using regex.
-                Then with the information it collected it then generates a header file and fills it with the types, the
-                attributes and all of the fields.
+                A tool I call <span class="inline-code">HeaderTool</span> scans all of the header files in a project
+                and collects data on the types using regex. With that information it generates a header file for
+                every reflected type and fills it with the type, its attributes and all of its fields.
 
                 <br><br>
 
-                This happens once.
+                For each field it stores the name, the type, the size and the offset into the class. That is
+                everything the editor needs to find a field in any instance and read or write it.
 
                 <br><br>
 
-                <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a> reflects
-                the Engine project when you rebuild the cmake project. And reflects the game project when
-                rebuilding the dynamic library.
+                This happens when building, not while the game is running.
+                <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a> reflects the engine
+                project when you rebuild the CMake project, and the game project when you rebuild the dynamic library.
 
-                <br>
+                <br><br>
 
-                This is the code that is generated per type.
-
-                <br>
+                This is the code that is generated for <span class="inline-code">ObstacleSpawner</span>:
 
                 <pre class="code-block"><code class="language-cpp">template&lt;&gt; struct ReflectionRegistrar&lt;ObstacleSpawner&gt;
 {
-	static inline void Register()
-	{
-		Reflection::ReflectionRegistry::RegisterType(
-			TypeEntry{
-				.name = "ObstacleSpawner", 
-				.size = sizeof(ObstacleSpawner),
-				.id = Type::GetTypeID&lt;ObstacleSpawner&gt;(),
-				.create = [](){ return reinterpret_cast&lt;void*&gt;(new ObstacleSpawner); },
-				.createAtAddress = [](unsigned char* addr){ return reinterpret_cast&lt;void*&gt;(new (addr)ObstacleSpawner); },
-				.destroy = [](void* data){ delete reinterpret_cast&lt;ObstacleSpawner*&gt;(data); },
-				.flag = static_cast&lt;Reflection::ReflectionFlags&gt;(1),
-				.fieldOrder = { "ObstaclePrefab", "ObstacleSpawnInterval" }
-			}
-		);
+    static inline void Register()
+    {
+        Reflection::ReflectionRegistry::RegisterType(
+            TypeEntry{
+                .name = "ObstacleSpawner",
+                .size = sizeof(ObstacleSpawner),
+                .id = Type::GetTypeID&lt;ObstacleSpawner&gt;(),
+                .create = [](){ return reinterpret_cast&lt;void*&gt;(new ObstacleSpawner); },
+                .createAtAddress = [](unsigned char* addr){ return reinterpret_cast&lt;void*&gt;(new (addr)ObstacleSpawner); },
+                .destroy = [](void* data){ delete reinterpret_cast&lt;ObstacleSpawner*&gt;(data); },
+                .flag = static_cast&lt;Reflection::ReflectionFlags&gt;(1),
+                .fieldOrder = { "ObstaclePrefab", "ObstacleSpawnInterval" }
+            }
+        );
 
-		{
-			FieldEntry entry =
-			{
-				.name = "ObstacleSpawnInterval",
-				.owner = "ObstacleSpawner",
-				.offset = offsetof(ObstacleSpawner, ObstacleSpawnInterval),
-				.size = sizeof(ObstacleSpawner::ObstacleSpawnInterval),
-				.type = Type::GetTypeID&lt;decltype(ObstacleSpawner::ObstacleSpawnInterval)&gt;()
-			};
+        {
+            FieldEntry entry =
+            {
+                .name = "ObstacleSpawnInterval",
+                .owner = "ObstacleSpawner",
+                .offset = offsetof(ObstacleSpawner, ObstacleSpawnInterval),
+                .size = sizeof(ObstacleSpawner::ObstacleSpawnInterval),
+                .type = Type::GetTypeID&lt;decltype(ObstacleSpawner::ObstacleSpawnInterval)&gt;()
+            };
 
-			Reflection::ReflectionRegistry::RegisterType&lt;decltype(ObstacleSpawner::ObstacleSpawnInterval)&gt;();
-			entry.attributeContainer.Add&lt;SerializeField&gt;();
+            Reflection::ReflectionRegistry::RegisterType&lt;decltype(ObstacleSpawner::ObstacleSpawnInterval)&gt;();
+            entry.attributeContainer.Add&lt;SerializeField&gt;();
 
-			Reflection::ReflectionRegistry::RegisterField(
-				"ObstacleSpawner",
-				entry
-			);
-		}
+            Reflection::ReflectionRegistry::RegisterField(
+                "ObstacleSpawner",
+                entry
+            );
+        }
 
-		{
-			FieldEntry entry =
-			{
-				.name = "ObstaclePrefab",
-				.owner = "ObstacleSpawner",
-				.offset = offsetof(ObstacleSpawner, ObstaclePrefab),
-				.size = sizeof(ObstacleSpawner::ObstaclePrefab),
-				.type = Type::GetTypeID&lt;decltype(ObstacleSpawner::ObstaclePrefab)&gt;()
-			};
-
-			Reflection::ReflectionRegistry::RegisterType&lt;decltype(ObstacleSpawner::ObstaclePrefab)&gt;();
-			entry.attributeContainer.Add&lt;SerializeField&gt;();
-
-			Reflection::ReflectionRegistry::RegisterField(
-				"ObstacleSpawner",
-				entry
-			);
-		}
-	}
+        // ...and one block like this for every other reflected field
+    }
 };</code></pre>
-
-                <br>
 
                 The tool then generates one more file that calls every reflected type's
                 <span class="inline-code">Register</span> method. It does this from the constructor of a static object.
@@ -228,28 +214,53 @@ private:
                 Why? A static object is constructed automatically when the program starts, before
                 <span class="inline-code">main()</span> runs. Nobody has to call an init function or remember to add
                 a new component to a list. If a component is reflected, it is registered.
-                <br>
 
                 <pre class="code-block"><code class="language-cpp">struct ComponentsStaticInitiator
 {
-	ComponentsStaticInitiator()
-	{
-		ReflectionRegistrar&lt;Canvas&gt;::Register();
-		ReflectionRegistrar&lt;SpotLight2D&gt;::Register();
-		ReflectionRegistrar&lt;AudioEmitter&gt;::Register();
-		ReflectionRegistrar&lt;Camera&gt;::Register();
-		ReflectionRegistrar&lt;RigidBody2D&gt;::Register();
-		ReflectionRegistrar&lt;AmbientLight2D&gt;::Register();
-		ReflectionRegistrar&lt;DirectionalLight2D&gt;::Register();
-		ReflectionRegistrar&lt;PointLight2D&gt;::Register();
-		ReflectionRegistrar&lt;ParticleSystem2D&gt;::Register();
-		ReflectionRegistrar&lt;Transform2D&gt;::Register();
-		ReflectionRegistrar&lt;SpriteRenderer2D&gt;::Register();
-
-	}
+    ComponentsStaticInitiator()
+    {
+        ReflectionRegistrar&lt;Canvas&gt;::Register();
+        ReflectionRegistrar&lt;SpotLight2D&gt;::Register();
+        ReflectionRegistrar&lt;AudioEmitter&gt;::Register();
+        ReflectionRegistrar&lt;Camera&gt;::Register();
+        ReflectionRegistrar&lt;RigidBody2D&gt;::Register();
+        ReflectionRegistrar&lt;AmbientLight2D&gt;::Register();
+        ReflectionRegistrar&lt;DirectionalLight2D&gt;::Register();
+        ReflectionRegistrar&lt;PointLight2D&gt;::Register();
+        ReflectionRegistrar&lt;ParticleSystem2D&gt;::Register();
+        ReflectionRegistrar&lt;Transform2D&gt;::Register();
+        ReflectionRegistrar&lt;SpriteRenderer2D&gt;::Register();
+    }
 };
 
 inline ComponentsStaticInitiator __componentsStaticInititator = {};</code></pre>
+
+                <br>
+
+                With every type registered, reading and writing a field is simple. The engine looks up the field and
+                uses its offset to find the value inside the object. If the field has an
+                <span class="inline-code">OnChange</span> attribute, its method is called after the value is set.
+
+                <pre class="code-block"><code class="language-cpp">void Set(const std::string&amp; typeName, const std::string&amp; fieldName, void* obj, const void* data)
+{
+    const FieldEntry&amp; field = ReflectionRegistry::GetField(typeName, fieldName);
+    ::memcpy(reinterpret_cast&lt;char*&gt;(obj) + field.offset, data, field.size);
+
+    const OnChange* onChange = field.attributeContainer.TryGet&lt;OnChange&gt;();
+    if (onChange)
+    {
+        onChange-&gt;event(obj);
+    }
+}
+
+void* Get(const std::string&amp; typeName, const std::string&amp; fieldName, void* obj)
+{
+    const FieldEntry&amp; field = ReflectionRegistry::GetField(typeName, fieldName);
+    return reinterpret_cast&lt;char*&gt;(obj) + field.offset;
+}</code></pre>
+
+                This is what the editor uses to show and change values, without knowing anything about the class it is
+                editing.
             </div>
         </div>
 
@@ -264,17 +275,26 @@ inline ComponentsStaticInitiator __componentsStaticInititator = {};</code></pre>
             </div>
 
             <div class="project-text">
-                With the new system, I was able to move all of the type data to a central location, and not tied to a
+                <span class="inline-code">SpriteRenderer2D</span> went from about 912 bytes per instance down to 272,
+                around 70% smaller. All of the type data now lives in one central place and is no longer tied to a
                 class instance.
-                And we could simply add an attribute to the variable to add a slider, or add a method it calls when changed.
-                
+
                 <br><br>
 
-                But most importantly the reflected values are not accessed through a container type, it can be accessed directly.
-                <br><br>
-                The class sizes also shrunk as a result of the centralized storage. <span class="inline-code">SpriteRenderer2D</span> shrunk down to 272 bytes.
+                The reflected values are also not accessed through a wrapper type anymore. They are normal variables
+                that can be used directly.
 
-                <br>
+                <br><br>
+
+                And adding more is simple. We can add an attribute to a variable to give it a slider, or to call a
+                method when it is changed, like
+                <span class="inline-code">[[SerializeField, OnChange(OnChangeSprite)]]</span>.
+
+                <br><br>
+
+                The source code for the reflection module is available on
+                <a href="https://github.com/Eclipsed-Interactive/Eclipsed-Engine/tree/main/Source/Modules/Reflection/Reflection"
+                    class="a-href-style" target="_blank" rel="noopener">GitHub</a>.
             </div>
         </div>
 
