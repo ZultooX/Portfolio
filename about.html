@@ -4,51 +4,103 @@
 
 <head>
     <title>About | Christopher Vedlund</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Content/BaseStyles.css">
-    <link rel="stylesheet" href="/Content/Projects.css">
-    <link rel="stylesheet" href="/Content/AllProjects.css">
     <link rel="stylesheet" href="/Content/About.css">
     <meta charset="utf-8">
 </head>
 
 
 <body hidden>
-    <div class="page-middle-offseter">
+    <main class="about-page">
+
+        <section class="about-hero">
+            <img class="about-photo" src="/Assets/Images/misc/profile.png" alt="Christopher Vedlund" />
+
+            <div class="about-hero-text">
+                <h1 class="about-name">Christopher Vedlund</h1>
+                <div class="about-role">Gameplay • Engine • Graphics • Tools Programmer</div>
+                <p class="about-tagline">
+                    Game programmer from Sweden who enjoys building systems from the ground up.
+                </p>
+
+                <div class="about-links">
+                    <a class="about-link-button" href="https://github.com/ZultooX" target="_blank"
+                        rel="noopener">GitHub</a>
+                    <a class="about-link-button" href="https://www.linkedin.com/in/christopher-vedlund"
+                        target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="about-link-button" href="mailto:vedlundchristopher@gmail.com">Email</a>
+                    <a class="about-link-button" href="https://zultoox.itch.io/" target="_blank"
+                        rel="noopener">itch.io</a>
+                </div>
+            </div>
+        </section>
 
 
-        <div class="about-title">
-            About ME
-        </div>
+        <section class="about-grid">
+            <div class="about-main">
+                <article class="about-card">
+                    <h2 class="about-card-title"><span class="about-card-number">01</span>How I like to develop</h2>
+                    <p>
+                        I'm a programmer focused on gameplay, engine, graphics and tools development. I enjoy
+                        understanding how the different parts of a game work together, and I like working close to
+                        the technology to see what happens beneath the surface.
+                    </p>
+                    <p>
+                        I'm especially interested in solving technical problems, experimenting with new ideas and
+                        building tools and systems that improve the development process. Whether it's gameplay,
+                        rendering or tools for other developers, I enjoy taking something from an idea to a working
+                        system.
+                    </p>
+                </article>
 
+                <article class="about-card">
+                    <h2 class="about-card-title"><span class="about-card-number">02</span>What I'm working on</h2>
+                    <p>
+                        My biggest project right now is
+                        <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a>, a custom C++
+                        game engine and editor I'm building with one other developer. I've written about three
+                        quarters of it, including the
+                        <a href="/TechBreakdowns/runtine-reflection" class="a-href-style">reflection system</a>,
+                        <a href="/TechBreakdowns/hot-swappable-game-dll" class="a-href-style">hot-reloadable game
+                            code</a>, the asset pipeline and most of the editor.
+                    </p>
+                </article>
 
-        <div class="about-holder">
-            <div class="about-image-holder">
-                <img class="about-image" src="Assets/Images/misc/profile.png" alt="Christopher Vedlund" />
+                <article class="about-card">
+                    <h2 class="about-card-title"><span class="about-card-number">03</span>Outside of development</h2>
+                    <p>
+                        I'm very interested in astronomy and love learning about the universe, from nearby planets
+                        and stars to distant galaxies. I also enjoy astrophotography, which combines that interest
+                        with the challenge of capturing and processing images of the night sky.
+                    </p>
+                </article>
             </div>
 
 
-            <div class="about-text">
-                <b>HI!</b> My name is Christopher Vedlund and I'm a programmer focused on gameplay, engine, graphics
-                and tools development. Beyond these areas, I always strive to learn new things and keep improving as
-                a developer.
+            <aside class="about-card about-facts">
+                <h2 class="about-card-title">Quick facts</h2>
 
-                <br><br><br>
-                I enjoy building systems from the ground up and understanding how different parts of a game work
-                together. I'm especially interested in solving technical problems, experimenting with new ideas and
-                creating tools and systems that improve the development process. Whether I'm implementing gameplay,
-                working on rendering or building tools for other developers, I enjoy taking something from an idea to
-                a working system.
+                <dl class="about-facts-list">
+                    <dt>Based in</dt>
+                    <dd>Sweden</dd>
 
-                <br><br><br>
-                My biggest project right now is <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed
-                    Engine</a>, a custom C++ game engine and editor I'm building with one other developer.
+                    <dt>Education</dt>
+                    <dd>Game Programming, The Game Assembly (2023 – 2026)</dd>
 
-                <br><br><br>
-                Outside of development I'm very interested in astronomy, from nearby planets and stars to distant
-                galaxies, and I enjoy astrophotography: capturing and processing images of objects in the night sky.
-            </div>
-        </div>
-    </div>
+                    <dt>Experience</dt>
+                    <dd>Game Programmer intern, ION Game Design (2025 – 2026)</dd>
+
+                    <dt>Languages</dt>
+                    <dd>C++, C#</dd>
+
+                    <dt>Engines</dt>
+                    <dd>Custom engines, Unity, Unreal Engine 5</dd>
+                </dl>
+            </aside>
+        </section>
+
+    </main>
 </body>
 
 
