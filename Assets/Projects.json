@@ -17,7 +17,7 @@
             "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
             "Title": "Eclipsed Engine",
             "HtmlPage": "Projects/EclipsedEngine",
-            "Description": "<a class=\"a-href-style\" href=\"https://www.github.com/Eclipsed-Interactive/Eclipsed-Engine\">Eclipsed Engine</a> is a 2D game engine with an editor built with optimization in first hand. We are developing this game engine to make a small 2 player co-op game, code name Project Nova.",
+            "Description": "<a class=\"a-href-style\" href=\"https://www.github.com/Eclipsed-Interactive/Eclipsed-Engine\">Eclipsed Engine</a> is a custom C++ 2D engine and editor I'm building with one other developer. I've written about three quarters of the codebase, including the reflection system, hot-reloadable game code, asset pipeline, editor tools and audio.",
             "SystemsUsed": [
                 {
                     "Name": "C++",
@@ -36,7 +36,7 @@
                     "Color": "rgb(207, 190, 235)"
                 },
                 {
-                    "Name": "RTTI",
+                    "Name": "Reflection",
                     "Color": "rgb(200, 200, 113)"
                 },
                 {
@@ -76,8 +76,8 @@
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/IonInternshipGames.png",
             "Title": "Game Ad Integration",
-            "HtmlPage": "Projects/TheBlackwoodProject",
-            "Description": "Added free-to-play monetization to four of ION's existing titles. Integrated Google AdMob for ads across all four games. Was supposed to migrate multiplayer from AWS to Firebase, but was movedto another project.",
+            "HtmlPage": "Projects/game-ad-integration",
+            "Description": "Added free-to-play monetization to four of ION Game Design's released titles with Google AdMob, and prototyped moving their online backend from AWS to Firebase.",
             "SystemsUsed": [
                 {
                     "Name": "C#",
@@ -94,6 +94,54 @@
                 {
                     "Name": "Unity",
                     "Color": "rgb(171, 186, 241)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/DinoDynastyEvolved.jpg",
+            "Title": "Dino Dynasty Evolved",
+            "HtmlPage": "Projects/dino-dynasty-evolved",
+            "Description": "A stylized 3D action-adventure released on Steam. As a gameplay programmer at ION Game Design I worked on checkpoints, on-hit combat VFX, bug fixes and optimization.",
+            "SystemsUsed": [
+                {
+                    "Name": "Unreal Engine 5",
+                    "Color": "rgb(220, 220, 220)"
+                },
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "Blueprints",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "Niagara",
+                    "Color": "rgb(207, 190, 235)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/GrappleAscent.jpg",
+            "Title": "Grapple Ascent",
+            "HtmlPage": "Projects/grapple-ascent",
+            "Description": "A GMTK Game Jam 2024 game about a yo-yo scaling an endless mountain. I built the procedural mountain generation, gameplay features and UI.",
+            "SystemsUsed": [
+                {
+                    "Name": "Unity",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "C#",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "Procedural Generation",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "Game Jam",
+                    "Color": "rgb(207, 190, 235)"
                 }
             ]
         }

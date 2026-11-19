@@ -22,9 +22,13 @@
 
     <div class="page-middle-offseter">
         <div class="project-text">
-            Eclipsed Engine is the most recent and biggest project that me and another developer has begun.
-            This is going to be a fully fledged out game engine with an editor that currently only 2D but will expand into 3D and more rendering api's like DirectX11 later on.
-            Eclipsed Engine is being used to make a game within our studio we code named, Project Nova.
+            Eclipsed Engine is a custom 2D game engine and editor written in C++. I've been building it with one
+            other developer since August 2025, and we're using it to make our co-op game, code-named Project Nova.
+            <br><br>
+            I've written about three quarters of the engine's current codebase. Below are the systems I own.
+            The source is on
+            <a href="https://github.com/Eclipsed-Interactive/Eclipsed-Engine" class="a-href-style" target="_blank"
+                rel="noopener">GitHub</a>.
         </div>
 
         <div class="project-text content-image-holder title-holder">
@@ -69,9 +73,9 @@
             <div class="contribution-card contribution-card-static">
                 <div class="contribution-title">Asset Pipeline</div>
                 <div class="contribution-desc">
-                    Imports, cooks and loads textures, materials, shaders, animations, audio and scenes.
-                    GUID-based meta files, reference counting with automatic cleanup, hot-reload through a
-                    file watcher, and asset bundles for game builds.
+                    GUID-based meta files and a typed importer for textures, materials, shaders, fonts, audio,
+                    scenes and prefabs. Reference-counted cache with a deferred deletion queue, hot-reload from a
+                    file watcher, and cooking of all assets into one binary bundle for game builds.
                 </div>
                 <div class="contribution-tags"><span>C++</span><span>Binary Formats</span></div>
             </div>
@@ -79,9 +83,9 @@
             <div class="contribution-card contribution-card-static">
                 <div class="contribution-title">Editor</div>
                 <div class="contribution-desc">
-                    Inspector, hierarchy, asset browser with drag and drop, and dockable layouts. Play mode
-                    with scene snapshots, a console that separates engine and game logs, and a Hub for
-                    picking projects.
+                    Inspector with reflection-driven field drawers, asset browser with drag and drop, and saved
+                    dockable layouts. Play mode with pause, step and scene snapshots, a console that separates
+                    engine and game logs, and settings panels.
                 </div>
                 <div class="contribution-tags"><span>ImGui</span><span>Tools</span></div>
             </div>
@@ -89,8 +93,8 @@
             <div class="contribution-card contribution-card-static">
                 <div class="contribution-title">2D Lighting &amp; Shadows</div>
                 <div class="contribution-desc">
-                    Point and spot lights with attenuation, shadows, and all light data combined into a
-                    single buffer.
+                    Point, spot, ambient and directional lights. Lights render to their own frame buffer and are
+                    composited with a separate shadow pass.
                 </div>
                 <div class="contribution-tags"><span>OpenGL</span><span>GLSL</span></div>
             </div>
@@ -98,37 +102,46 @@
             <div class="contribution-card contribution-card-static">
                 <div class="contribution-title">Audio</div>
                 <div class="contribution-desc">
-                    FMOD integration with audio emitters, 3D spatial audio, bus groups and FMOD Studio
-                    support. Loaded as a plugin.
+                    A plugin-based audio backend with an FMOD implementation. FMOD Studio banks and events, and
+                    audio emitters with volume and pan that pause and resume with play mode.
                 </div>
                 <div class="contribution-tags"><span>FMOD</span><span>C++</span></div>
             </div>
 
             <div class="contribution-card contribution-card-static">
-                <div class="contribution-title">Plugin System</div>
+                <div class="contribution-title">Plugin-Based Backends</div>
                 <div class="contribution-desc">
-                    Lets engine features like the renderer and audio be loaded as separate plugins, which
-                    keeps the core engine small and modular.
+                    The renderer and audio backends are separate DLLs loaded at startup, so the engine core
+                    doesn't depend on OpenGL or FMOD directly.
                 </div>
                 <div class="contribution-tags"><span>C++</span><span>Architecture</span></div>
             </div>
 
             <div class="contribution-card contribution-card-static">
-                <div class="contribution-title">Profiler</div>
+                <div class="contribution-title">Input System</div>
                 <div class="contribution-desc">
-                    Scoped CPU and memory profiling, graphed live in the editor, with a frame budget to spot
-                    slow frames.
+                    Named actions and axes mapped to keys, saved to and loaded from file, with an editor panel for
+                    rebinding keys and debugging input.
                 </div>
-                <div class="contribution-tags"><span>ImPlot</span><span>Performance</span></div>
+                <div class="contribution-tags"><span>C++</span><span>GLFW</span></div>
             </div>
 
             <div class="contribution-card contribution-card-static">
-                <div class="contribution-title">Engine Foundation</div>
+                <div class="contribution-title">Profiler</div>
                 <div class="contribution-desc">
-                    Modular CMake build with an optional editor, plus the settings, event, input and logging
-                    systems the rest of the engine uses.
+                    Scoped timing that builds a call tree for each engine phase, shown live in the editor with
+                    entries over the frame budget highlighted.
                 </div>
-                <div class="contribution-tags"><span>CMake</span><span>SDL3</span></div>
+                <div class="contribution-tags"><span>C++</span><span>Performance</span></div>
+            </div>
+
+            <div class="contribution-card contribution-card-static">
+                <div class="contribution-title">Core Library</div>
+                <div class="contribution-desc">
+                    File system utilities (file watcher, directory tree, memory-mapped files), an arena allocator,
+                    timers, process launching, logging, a settings registry and an event system.
+                </div>
+                <div class="contribution-tags"><span>C++</span><span>Win32</span></div>
             </div>
         </div>
 
