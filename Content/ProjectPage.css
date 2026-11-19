@@ -204,6 +204,10 @@
     transform: translateY(-3px);
     background-color: var(--surface-raised);
 }
+.contribution-card-static:hover{
+    transform: none;
+    background-color: var(--surface-color);
+}
 
 .contribution-title{
     font-size: 24px;

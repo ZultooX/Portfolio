@@ -23,43 +23,43 @@
 
     <div class="page-middle-offseter">
         <div class="project-text">
-            How I built the system that lets us inspect and edit values directly from
-            <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a>'s
-            Unity-like editor.
+            C++ can't look at its own types at runtime, but an editor needs to. I designed and built the reflection
+            system that lets <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a>'s editor
+            show, edit and save any component without knowing anything about it.
         </div>
 
 
         <div class="project-text content-image-holder title-holder">
             <h1 class="sub-title">
-                What is reflection?
+                At a glance
             </h1>
         </div>
 
         <div class="project-text">
-            Reflection can mean different things, from the reflection you see in the mirror to a program being able to
-            inspect its own types.
-            <br><br>
-            Using reflection we are able to read and set the fields of a type without knowing what the type is. The
-            C++ we use doesn't have this built in, so we had to build it ourselves.
+            <ul class="step-list">
+                <li><b>Problem:</b> my first version stored metadata inside every instance, so components grew far
+                    larger than they needed to be.</li>
+                <li><b>Solution:</b> a build step that scans the headers and generates the metadata once per type,
+                    registered automatically when the program starts.</li>
+                <li><b>Result:</b> <span class="inline-code">SpriteRenderer2D</span> went from 912 to 272 bytes per
+                    instance, about <b>70% smaller</b>. Reflected fields are plain member variables again.</li>
+                <li><b>Used by:</b> the editor's inspector, JSON scene serialization and loading the
+                    <a href="/TechBreakdowns/hot-swappable-game-dll" class="a-href-style">hot-swappable game DLL</a>.</li>
+                <li><b>Tech:</b> C++20, code generation, CMake.</li>
+            </ul>
         </div>
 
 
         <div>
             <div class="project-text content-image-holder title-holder">
                 <h1 class="sub-title">
-                    Where it all started
+                    Version 1: making it work
                 </h1>
             </div>
 
             <div class="project-text">
-                When starting development of <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a>
-                we knew that a future issue we were going to face was how we would edit positions and other values
-                from the editor.
-
-                <br><br>
-
-                In the first system I developed, every value that we wanted to access from the editor had to be
-                wrapped in its own templated type. To make that easier to use I hid it behind a macro called
+                Early on we knew we needed a way to edit positions and other values from the editor. In my first
+                system, every editable value was wrapped in its own templated type, hidden behind a macro called
                 <span class="inline-code">SERIALIZED_FIELD</span>.
 
                 <pre class="code-block"><code class="language-cpp">class ObstacleSpawner : public Eclipse::Component
@@ -74,40 +74,39 @@ private:
     float obstacleSpawnTimer = 0.f;
 };</code></pre>
 
-                The problem was that I stored all of the metadata of the type and the variable in the field itself.
-                That meant every instance of a class carried its own copy of the same data, and the class sizes
-                ballooned. The engine's <span class="inline-code">SpriteRenderer2D</span> class grew to about 912
-                bytes per instance.
+                It worked, and it let the team move on to other parts of the engine. The cost was that each field
+                stored its own copy of the type and variable metadata. Every instance of a class carried the same
+                data again and again, and <span class="inline-code">SpriteRenderer2D</span> grew to about 912 bytes
+                per instance.
 
                 <br><br>
 
-                We decided that this was a problem for later. It worked, and it made it easy to continue and focus on
-                other areas of the engine. But as our needs grew, so did the class sizes.
+                We accepted that trade-off at first. As the engine grew, so did the components, and it was time to
+                fix it properly.
             </div>
         </div>
+
 
         <div>
             <div class="project-text content-image-holder title-holder">
                 <h1 class="sub-title">
-                    Back to the drawing board
+                    Version 2: making it right
                 </h1>
             </div>
 
             <div class="project-text">
-                The first system taught me what I needed to get right:
+                Before rewriting anything I wrote down what the first version had taught me:
                 <ul class="step-list">
                     <li><b>Metadata belongs to the type, not the instance.</b> A field's name and type are the same for
                         every instance, so they should be stored once.</li>
-                    <li><b>No wrapper types.</b> A reflected field should be a normal member variable, not something
-                        hidden behind the <span class="inline-code">SERIALIZED_FIELD</span> macro.</li>
-                    <li><b>It has to be extensible.</b> We wanted to mark fields for more than just showing them in
-                        the editor.</li>
+                    <li><b>No wrapper types.</b> A reflected field should be a normal member variable.</li>
+                    <li><b>It has to be extensible.</b> We wanted to mark fields for more than just the editor.</li>
                 </ul>
                 <br>
-                So I moved reflection out of the classes and into the build. Fields are marked with an attribute such as
-                <span class="inline-code">[[SerializeField]]</span>, and before compiling, a tool scans the header
-                files and generates the metadata for each marked class. That metadata exists once per type, no matter
-                how many instances there are.
+                That led me to move reflection out of the classes and into the build. Fields are marked with an
+                attribute such as <span class="inline-code">[[SerializeField]]</span>, and before compiling, a tool
+                scans the headers and generates metadata for each marked class. That metadata exists once per type,
+                no matter how many instances there are.
 
                 <br><br>
 
@@ -131,52 +130,43 @@ private:
     float obstacleSpawnTimer = 0.f;
 };</code></pre>
 
-                I couldn't get around all of the macros, the class still needs a few to set itself up. But the fields
-                are plain variables again, and the reflected data is not bound to the
-                <span class="inline-code">SERIALIZED_FIELD</span> macro anymore.
+                The class still needs a couple of macros to set itself up, but the fields are plain variables again.
             </div>
         </div>
-
 
 
         <div>
             <div class="project-text content-image-holder title-holder">
                 <h1 class="sub-title">
-                    How it works
+                    Generating the metadata
                 </h1>
             </div>
 
             <div class="project-text">
-                A tool I call <span class="inline-code">HeaderTool</span> scans all of the header files in a project
-                and collects data on the types using regex. With that information it generates a header file for
-                every reflected type and fills it with the type, its attributes and all of its fields.
+                I wrote a tool called <span class="inline-code">HeaderTool</span> that scans every header in a
+                project and generates a registration file for each reflected type. For each field it records the
+                name, type, size and offset into the class. That is everything the editor needs to find a field in
+                any instance and read or write it.
 
                 <br><br>
 
-                Regex alone is not enough to read C++ though. Before matching, the tool blanks out all comments and
-                strings, so code that is commented out is not reflected by mistake. It also keeps track of the curly
-                brackets, so it knows where a class ends and doesn't pick up fields from a struct declared inside
-                another class.
+                Regex on its own can't read C++, so the tool does some work first:
+                <ul class="step-list">
+                    <li>It blanks out comments and strings, so commented-out code isn't reflected by mistake.</li>
+                    <li>It tracks curly brackets, so it knows where a class ends and ignores fields of nested
+                        structs.</li>
+                    <li>Classes opt in with <span class="inline-code">MAKE_REFLECTABLE</span>, and only fields with an
+                        attribute are reflected.</li>
+                </ul>
+
+                <br>
+
+                This runs at build time, never while the game is running. The engine is reflected when the CMake
+                project is rebuilt, and the game when its dynamic library is rebuilt.
 
                 <br><br>
 
-                A class has to opt in with <span class="inline-code">MAKE_REFLECTABLE</span>, and only the fields
-                that have an attribute are reflected. Everything else is left alone.
-
-                <br><br>
-
-                For each field it stores the name, the type, the size and the offset into the class. That is
-                everything the editor needs to find a field in any instance and read or write it.
-
-                <br><br>
-
-                This happens when building, not while the game is running.
-                <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a> reflects the engine
-                project when you rebuild the CMake project, and the game project when you rebuild the dynamic library.
-
-                <br><br>
-
-                This is the code that is generated for <span class="inline-code">ObstacleSpawner</span>:
+                This is the code generated for <span class="inline-code">ObstacleSpawner</span>:
 
                 <pre class="code-block"><code class="language-cpp">template&lt;&gt; struct ReflectionRegistrar&lt;ObstacleSpawner&gt;
 {
@@ -218,14 +208,26 @@ private:
     }
 };</code></pre>
 
-                The tool then generates one more file that calls every reflected type's
-                <span class="inline-code">Register</span> method. It does this from the constructor of a static object.
+                Because the generated code uses <span class="inline-code">sizeof</span>,
+                <span class="inline-code">offsetof</span> and <span class="inline-code">decltype</span>, the
+                compiler fills in the real layout. The tool only has to find names. It never has to work out sizes or
+                offsets itself.
+            </div>
+        </div>
 
-                <br><br>
 
-                Why? A static object is constructed automatically when the program starts, before
-                <span class="inline-code">main()</span> runs. Nobody has to call an init function or remember to add
-                a new component to a list. If a component is reflected, it is registered.
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Registering without anyone remembering to
+                </h1>
+            </div>
+
+            <div class="project-text">
+                The tool also generates one file that calls every type's <span class="inline-code">Register</span>
+                method from the constructor of a static object. Static objects are constructed before
+                <span class="inline-code">main()</span> runs, so nobody has to call an init function or add a new
+                component to a list. If a component is reflected, it is registered.
 
                 <pre class="code-block"><code class="language-cpp">struct ComponentsStaticInitiator
 {
@@ -247,16 +249,23 @@ private:
 
 inline ComponentsStaticInitiator __componentsStaticInititator = {};</code></pre>
 
-                The game project works a bit differently. It is a dynamic library that the editor loads, so instead
-                of a static object the tool generates an exported function called
-                <span class="inline-code">RegisterReflectedTypes</span>. The editor calls it right after it has
-                loaded the library.
+                The game is a dynamic library that the editor loads, so it works a little differently. There the
+                tool generates an exported <span class="inline-code">RegisterReflectedTypes</span> function, which the
+                editor calls right after loading the library.
+            </div>
+        </div>
 
-                <br><br>
 
-                With every type registered, reading and writing a field is simple. The engine looks up the field and
-                uses its offset to find the value inside the object. If the field has an
-                <span class="inline-code">OnChange</span> attribute, its method is called after the value is set.
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Reading and writing fields
+                </h1>
+            </div>
+
+            <div class="project-text">
+                Once every type is registered, accessing a field takes a lookup and an offset. If the field has an
+                <span class="inline-code">OnChange</span> attribute, its callback runs after the value is set.
 
                 <pre class="code-block"><code class="language-cpp">void Set(const std::string&amp; typeName, const std::string&amp; fieldName, void* obj, const void* data)
 {
@@ -276,24 +285,22 @@ void* Get(const std::string&amp; typeName, const std::string&amp; fieldName, voi
     return reinterpret_cast&lt;char*&gt;(obj) + field.offset;
 }</code></pre>
 
-                This is what the editor uses to show and change values, without knowing anything about the class it is
-                editing.
+                This is all the editor needs to show and change a value without knowing the class it is editing.
 
                 <br><br>
 
                 Lists need a bit more. A <span class="inline-code">std::vector</span> can't be edited with just an
-                offset and a size, so when a field is a vector the system also stores a small set of functions for
-                it: get the size, get an element, resize and erase. With these the editor can show and edit a list
-                without knowing what is in it.
+                offset and a size, so for vector fields the system also stores a small set of functions: get size,
+                get element, resize and erase. With those the editor can edit any list without knowing what is in
+                it.
             </div>
         </div>
-
 
 
         <div>
             <div class="project-text content-image-holder title-holder">
                 <h1 class="sub-title">
-                    Attributes
+                    Extending it with attributes
                 </h1>
             </div>
 
@@ -317,48 +324,22 @@ struct OnChange
     std::function&lt;void(void*)&gt; event;
 };</code></pre>
 
-                The tool doesn't need to know what an attribute means. It copies the name and the arguments straight
-                into the generated code, so
-                <span class="inline-code">[[SerializeField, Step(0.1f)]]</span> turns into this:
+                The tool doesn't need to know what an attribute means. It copies the name and arguments straight into
+                the generated code, so <span class="inline-code">[[SerializeField, Step(0.1f)]]</span> becomes:
 
                 <pre class="code-block"><code class="language-cpp">entry.attributeContainer.Add&lt;SerializeField&gt;();
 entry.attributeContainer.Add&lt;Step&gt;(0.1f);</code></pre>
 
-                Every field has a container that stores its attributes by type, and anyone who has the field can ask
-                if it has a certain attribute. This is how the inspector finds out how much a value should change
-                when you drag it:
+                Each field stores its attributes by type, and any system can ask whether a field has one. This is how
+                the inspector decides how much a value changes when you drag it:
 
                 <pre class="code-block"><code class="language-cpp">const Step* stepAttr = attrs.TryGet&lt;Step&gt;();
 if (stepAttr) step = stepAttr-&gt;step;</code></pre>
 
-                So adding a new attribute is as simple as declaring a new struct and reading it where it is needed.
-                The reflection system itself doesn't have to change.
+                Adding a new attribute means declaring a struct and reading it where it's needed. The reflection
+                system itself never has to change. That was the extensibility goal from version 2.
             </div>
         </div>
-
-
-
-        <div>
-            <div class="project-text content-image-holder title-holder">
-                <h1 class="sub-title">
-                    What it can't do
-                </h1>
-            </div>
-
-            <div class="project-text">
-                The system is not perfect, and there are things I know it can't handle:
-                <ul class="step-list">
-                    <li><b>It doesn't understand C++.</b> The tool matches patterns, it doesn't parse the language.
-                        Unusual declarations, like function pointers or C-style arrays, are not picked up.</li>
-                    <li><b>Types are found by name.</b> Two reflected classes with the same name in different
-                        namespaces would collide.</li>
-                    <li><b>Setting a value copies raw bytes.</b> That is fine for simple types like floats and
-                        vectors, but it is not safe for types that own memory.</li>
-                </ul>
-            </div>
-        </div>
-
-
 
 
         <div>
@@ -369,29 +350,44 @@ if (stepAttr) step = stepAttr-&gt;step;</code></pre>
             </div>
 
             <div class="project-text">
-                <span class="inline-code">SpriteRenderer2D</span> went from about 912 bytes per instance down to 272,
-                around 70% smaller. All of the type data now lives in one central place and is no longer tied to a
-                class instance.
+                <ul class="step-list">
+                    <li><b>About 70% smaller components.</b> <span class="inline-code">SpriteRenderer2D</span> went from
+                        about 912 bytes per instance to 272. Type data now lives in one central registry.</li>
+                    <li><b>Plain variables.</b> Reflected fields are normal members, used directly in gameplay code.</li>
+                    <li><b>One system, many users.</b> The inspector, JSON serialization and game DLL loading all read
+                        the same metadata.</li>
+                    <li><b>Easy to extend.</b> A slider or a change callback is one attribute away, like
+                        <span class="inline-code">[[SerializeField, OnChange(OnChangeSprite)]]</span>.</li>
+                </ul>
+            </div>
+        </div>
 
-                <br><br>
 
-                The reflected values are also not accessed through a wrapper type anymore. They are normal variables
-                that can be used directly.
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Trade-offs and next steps
+                </h1>
+            </div>
 
-                <br><br>
+            <div class="project-text">
+                I chose a pattern-matching tool over a full C++ parser to keep the build simple and fast. That
+                choice has known limits, and this is how I would address them:
+                <ul class="step-list">
+                    <li><b>It doesn't fully parse C++.</b> Unusual declarations like function pointers or C-style
+                        arrays aren't picked up. Moving <span class="inline-code">HeaderTool</span> to libclang would
+                        give it a real syntax tree.</li>
+                    <li><b>Types are looked up by name.</b> Two reflected classes with the same name in different
+                        namespaces would collide. Registering by fully qualified name or by type ID would fix
+                        that.</li>
+                    <li><b>Setting a value copies raw bytes.</b> That is fine for floats and vectors, but not for
+                        types that own memory. Generating a typed copy function per field, like the vector helpers,
+                        would make it safe.</li>
+                </ul>
 
-                The editor is not the only one using it either. The engine's serialization reads the same data to
-                save and load components as JSON.
+                <br>
 
-                <br><br>
-
-                And adding more is simple. We can add an attribute to a variable to give it a slider, or to call a
-                method when it is changed, like
-                <span class="inline-code">[[SerializeField, OnChange(OnChangeSprite)]]</span>.
-
-                <br><br>
-
-                The source code for the reflection module is available on
+                The source code for the reflection module is on
                 <a href="https://github.com/Eclipsed-Interactive/Eclipsed-Engine/tree/main/Source/Modules/Reflection/Reflection"
                     class="a-href-style" target="_blank" rel="noopener">GitHub</a>.
             </div>
