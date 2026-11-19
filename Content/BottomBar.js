@@ -1,7 +1,7 @@
 let IconHrefs = [
-    "https://www.linkedin.com/in/simon-henriksson-473612216/",
-    "https://github.com/8nooThing8",
-    "https://noothing.itch.io/"
+    "https://www.linkedin.com/in/christopher-vedlund",
+    "https://github.com/ZultooX",
+    "https://zultoox.itch.io/"
 ]
 
 let IconImgs = [
@@ -19,7 +19,7 @@ Copyright.className = "cpy-right"
 BottomBar.appendChild(Copyright)
 
 let CopyRightText = document.createElement("p")
-CopyRightText.innerHTML = "© Simon Henriksson 2026"
+CopyRightText.innerHTML = "© Christopher Vedlund 2026"
 Copyright.appendChild(CopyRightText)
 
 // let Separator = document.createElement("div")
@@ -30,7 +30,7 @@ Copyright.appendChild(CopyRightText)
 let mail = document.createElement("p")
 mail.style.marginRight = "15px"
 mail.style.marginLeft = "auto"
-mail.innerHTML = "<a href=\"mailto:simon@pixi.nu\" class=\"a-href-style\">Simon@pixi.nu</a>"
+mail.innerHTML = "<a href=\"mailto:vedlundchristopher@gmail.com\" class=\"a-href-style\">vedlundchristopher@gmail.com</a>"
 BottomBar.appendChild(mail)
 
 let Separator2 = document.createElement("div")
