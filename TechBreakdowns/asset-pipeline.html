@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How Eclipsed Engine imports, caches, reference-counts and hot-reloads assets with a file watcher thread and deferred deletion.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Asset Pipeline | Christopher Vedlund">
+    <meta property="og:description" content="How Eclipsed Engine imports, caches, reference-counts and hot-reloads assets with a file watcher thread and deferred deletion.">
+    <meta property="og:image" content="https://christopher-vedlund.se/Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg">
+    <meta property="og:url" content="https://christopher-vedlund.se/TechBreakdowns/asset-pipeline">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Asset Pipeline | Christopher Vedlund</title>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Asset Pipeline
+            </div>
+        </div>
+        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg" alt="Eclipsed Engine" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Every texture, shader, sound and scene in
+            <a href="/Projects/EclipsedEngine" class="a-href-style">Eclipsed Engine</a> goes through the asset
+            pipeline I built. In the editor it imports source files, keeps them up to date as you edit them, and
+            frees them when nothing uses them. I've also written the format for cooking everything into one file for
+            game builds.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                At a glance
+            </h1>
+        </div>
+
+        <div class="project-text">
+            <ul class="step-list">
+                <li><b>Problem:</b> the engine and editor need to load many kinds of files quickly, refer to them in a
+                    way that survives renames, and pick up changes without restarting.</li>
+                <li><b>Solution:</b> every asset gets a GUID stored in a meta file. Source files are imported once
+                    into an engine-ready binary format, cached in memory with reference counting, and reloaded when a
+                    file watcher sees a change.</li>
+                <li><b>Builds (in progress):</b> a bundle format with a header table, so a game build can seek
+                    straight to any asset in one file.</li>
+                <li><b>Supports:</b> textures, materials, vertex and pixel shaders, fonts, audio, scenes and
+                    prefabs.</li>
+                <li><b>Tech:</b> C++20, std::filesystem, stb_image, cereal.</li>
+            </ul>
+        </div>
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    GUIDs instead of paths
+                </h1>
+            </div>
+
+            <div class="project-text">
+                If a scene refers to a texture by its path, renaming or moving the file breaks the scene. So every
+                asset gets a 128-bit GUID the first time the engine sees it, saved in a
+                <span class="inline-code">.meta</span> file next to the source. Scenes, materials and prefabs only
+                store GUIDs.
+
+                <br><br>
+
+                The meta file also holds per-asset settings, like the sprite rectangles for a sprite sheet. The
+                imported binary is written to an artifacts folder named after the GUID, split by its first two
+                characters so no single folder gets too large:
+
+                <pre class="code-block"><code class="language-cpp">AssetMeta MetaSerializer::LoadOrCreateMeta(const std::filesystem::path&amp; assetPath)
+{
+    AssetMeta meta;
+
+    if (MetaFileExists(assetPath)) meta = LoadMeta(assetPath);
+    else meta = CreateMeta(assetPath);
+
+    std::filesystem::path path = PathManager::GetArtifactsPath();
+
+    std::string guidStr = meta.guid.ToString();
+    path /= guidStr.substr(0, 2);
+    path /= guidStr;
+
+    meta.exportedPath = path;
+    return meta;
+}</code></pre>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    One interface per asset type
+                </h1>
+            </div>
+
+            <div class="project-text">
+                Every asset type implements the same small interface. Importing reads the source file, an optional
+                processing step transforms it, and serializing writes the engine-ready binary. Loading reads that
+                binary back into memory.
+
+                <pre class="code-block"><code class="language-cpp">class IAssetType
+{
+public:
+    virtual ImportedData Import(const AssetMeta&amp; file) = 0;
+    virtual ProcessedData Process(const ImportedData&amp; file) { return file; }
+    virtual void Serialize(BinaryWriter&amp; writer, const ProcessedData&amp; data) = 0;
+
+    virtual void Load(BinaryReader&amp; reader, const AssetMeta&amp; meta, AssetData* data) = 0;
+    virtual void LoadFromBinary(BinaryReader&amp; reader, const AssetMeta&amp; meta, AssetData* data) {}
+
+    virtual bool NeedsProcessing() const { return false; }
+};</code></pre>
+
+                For a texture, <span class="inline-code">Import</span> decodes the image with stb_image and
+                <span class="inline-code">Serialize</span> writes the width, height, channel count, raw pixels and
+                sprite rectangles. At load time the pixels go straight to the GPU, with no image decoding at runtime.
+
+                <br><br>
+
+                The importer skips any file whose binary is already newer than the source, so opening the editor
+                only re-imports what actually changed:
+
+                <pre class="code-block"><code class="language-cpp">if (std::filesystem::exists(meta.exportedPath) &amp;&amp;
+    std::filesystem::last_write_time(meta.fullPath) &lt; std::filesystem::last_write_time(meta.exportedPath))
+    return;
+
+ImportedData imported = type-&gt;Import(meta);
+BinaryWriter writer(meta.guid);
+
+if (type-&gt;NeedsProcessing())
+    type-&gt;Serialize(writer, type-&gt;Process(imported));
+else
+    type-&gt;Serialize(writer, imported);</code></pre>
+
+                Adding a new kind of asset means writing one class and registering it. The rest of the pipeline
+                doesn't change.
+            </div>
+        </div>
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Reference counting and deferred deletion
+                </h1>
+            </div>
+
+            <div class="project-text">
+                Game code never holds raw asset data. It holds a small handle, like
+                <span class="inline-code">Texture</span> or <span class="inline-code">AudioClip</span>, that points
+                into a shared cache. Copying a handle increases the reference count, destroying one decreases it, and
+                moving one just transfers the pointer.
+
+                <br><br>
+
+                Loading checks the cache first, so any number of components can use the same texture while it's
+                only loaded once:
+
+                <pre class="code-block"><code class="language-cpp">AssetData* data = AssetCache::Get(guid);
+if (data == nullptr)
+{
+    BinaryReader reader(guid);
+    const AssetMeta&amp; meta = database.GetProcessedFile(guid);
+
+    data = AssetCache::Store(guid, T::CreateNewData());
+    AssetTypeRegistry::GetType(meta.type)-&gt;Load(reader, meta, data);
+}
+return data;</code></pre>
+
+                When the count reaches zero, the asset isn't deleted right away. It's put in a queue that is
+                processed at the end of the frame, and only assets that are <i>still</i> unused get freed. If a
+                scene drops a texture and picks it up again in the same frame, which happens a lot when objects are
+                destroyed and recreated, the texture stays in memory and isn't loaded twice.
+
+                <pre class="code-block"><code class="language-cpp">void AssetDeletionQueue::ProcessPendingForDelete()
+{
+    for (GUID&amp; guid : pendingForDelete)
+    {
+        AssetData* data = AssetCache::Get(guid);
+        if (data == nullptr) continue;
+
+        if (data-&gt;refCount &lt;= 0)
+            AssetCache::Delete(guid);
+    }
+    pendingForDelete.clear();
+}</code></pre>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Hot-reloading assets
+                </h1>
+            </div>
+
+            <div class="project-text">
+                In the editor, a file watcher runs on its own thread and reports every change in the project's
+                folders. That thread must not touch the asset cache, since the main thread is using it to render. So
+                it only pushes events into a list guarded by a mutex:
+
+                <pre class="code-block"><code class="language-cpp">void AssetManager::AddFileChanged(const Editor::FileWatcherEvent&amp; e)
+{
+    std::lock_guard&lt;std::mutex&gt; lock(fileChangesMutex);
+    fileChanges.push_back(e);
+}</code></pre>
+
+                At the end of each frame the main thread takes the whole list in one short lock and processes it
+                with the lock released, so the watcher thread is never blocked while files are re-imported:
+
+                <pre class="code-block"><code class="language-cpp">std::vector&lt;Editor::FileWatcherEvent&gt; localChanges;
+{
+    std::lock_guard&lt;std::mutex&gt; lock(fileChangesMutex);
+    localChanges = std::move(fileChanges);
+    fileChanges.clear();
+}
+
+for (auto&amp; e : localChanges)
+{
+    const AssetMeta&amp; meta = database.ProcessFile(e.path, e.root);
+    AssetImporter::ImportFile(meta);
+    AssetCache::MarkForReload(meta.guid);
+}</code></pre>
+
+                The reload writes the new data <i>into the existing cache entry</i> instead of creating a new one.
+                Every handle already points at that entry, so every sprite, material and sound using the asset shows
+                the new version immediately, without anyone having to look it up again.
+            </div>
+        </div>
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Cooking for game builds (in progress)
+                </h1>
+            </div>
+
+            <div class="project-text">
+                A shipped game shouldn't carry thousands of loose files. So I've written a cooking step that packs
+                every imported asset into a single bundle: first the number of assets, then a table of fixed-size
+                headers, then all the asset data back to back. Hooking it into the editor's build process is the next
+                step.
+
+                <pre class="code-block"><code class="language-cpp">struct Header {
+    Assets::GUID guid;
+    size_t size;
+    size_t offset;
+    AssetType type;
+    char name[32];
+};</code></pre>
+
+                The game only needs to read the header table into its asset database at startup. When an asset is
+                needed, the reader jumps straight to that asset's offset in the bundle, using the same load code the
+                editor uses:
+
+                <pre class="code-block"><code class="language-cpp">void TextureAssetType::LoadFromBinary(BinaryReader&amp; reader, const AssetMeta&amp; meta, AssetData* data)
+{
+    reader.SetRead(meta.offset);
+    Load(reader, meta, data);
+}</code></pre>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="project-text content-image-holder title-holder">
+                <h1 class="sub-title">
+                    Trade-offs and next steps
+                </h1>
+            </div>
+
+            <div class="project-text">
+                <ul class="step-list">
+                    <li><b>Bundles aren't part of the build yet.</b> The cooking and bundle-reading code exists, but
+                        the game build still needs to call it and agree on the bundle's file name.</li>
+                    <li><b>Meta file edits don't trigger a re-import.</b> The file watcher ignores
+                        <span class="inline-code">.meta</span> files, so changing an asset's settings needs the source
+                        file to be touched too.</li>
+                    <li><b>The bundle format isn't versioned.</b> Headers are written straight from memory, so the
+                        layout depends on the compiler and platform. A version number and explicit field-by-field
+                        writing would make bundles portable and safe to change.</li>
+                    <li><b>Nothing is compressed.</b> Textures are stored as raw pixels. Compressing the bundle, or
+                        using GPU texture formats, would make builds much smaller.</li>
+                    <li><b>Loading is synchronous.</b> Assets load on the main thread the first time they're asked
+                        for. Loading on a worker thread, with a placeholder until it's done, would remove hitches when
+                        a scene opens.</li>
+                </ul>
+
+                <br>
+
+                The source code for the asset module is on
+                <a href="https://github.com/Eclipsed-Interactive/Eclipsed-Engine/tree/main/Source/Modules/Assets/Assets"
+                    class="a-href-style" target="_blank" rel="noopener">GitHub</a>.
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>

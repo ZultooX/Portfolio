@@ -14,27 +14,43 @@ export function GetJsonObject() {
 }
 
 export function LoadAllProjects(FeaturedProjectGrid) {
-    let index = 0
     const CameFromHomeBool = JSON.parse(localStorage.getItem("CameFromHome"))
     const FeaturedCount = localStorage.getItem("FeaturedCount")
-    
-    JsonObj.Projects.forEach(Project => {
-        let hidden = false
-        
-        if (CameFromHomeBool) {
-            for (let i = 0; i < FeaturedCount; i++) {
-                const Project = JsonObj.FeaturedProjects[i];
-                
-                if (Project == index) {
-                    hidden = true
-                    continue
-                }
-            }
+
+    const IsHiddenFeatured = (index) => {
+        if (!CameFromHomeBool)
+            return false
+
+        for (let i = 0; i < FeaturedCount; i++) {
+            if (JsonObj.FeaturedProjects[i] == index)
+                return true
+        }
+        return false
+    }
+
+    // Projects are shown grouped under their category heading. Each card keeps its
+    // original index so the home page -> projects page animation still finds it.
+    const Categories = JsonObj.Categories ?? [undefined]
+
+    Categories.forEach(Category => {
+        const InCategory = JsonObj.Projects
+            .map((Project, index) => ({ Project, index }))
+            .filter(({ Project }) => Category === undefined || Project.Category === Category)
+
+        if (InCategory.length === 0)
+            return
+
+        if (Category !== undefined) {
+            const Heading = document.createElement("h2")
+            Heading.className = "project-category-title"
+            Heading.textContent = Category
+            FeaturedProjectGrid.appendChild(Heading)
         }
 
-        CreateProjectCard(Project, FeaturedProjectGrid, index, hidden)
-        index++
-    });
+        InCategory.forEach(({ Project, index }) => {
+            CreateProjectCard(Project, FeaturedProjectGrid, index, IsHiddenFeatured(index))
+        })
+    })
 }
 
 export function LoadFeaturedProjects(FeaturedProjectGrid) {

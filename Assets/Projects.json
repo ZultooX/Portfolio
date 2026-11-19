@@ -1,11 +1,9 @@
 {
-    "SolidColors": [
-        "Faded orange:  rgb(197, 167, 162)",
-        "Faded Blue:    rgb(171, 186, 241)",
-        "Faded Yellow:  rgb(230, 213, 118)",
-        "Faded Red:     rgb(207, 103, 80)",
-        "Faded Pink:    rgb(207, 190, 235)",
-        "Faded Green:   rgb(200, 200, 113)"
+    "Categories": [
+        "Professional",
+        "Engine & Tech",
+        "TGA Group Projects",
+        "Game Jams"
     ],
     "FeaturedProjects": [
         0,
@@ -43,7 +41,8 @@
                     "Name": "FMOD",
                     "Color": "rgb(171, 186, 241)"
                 }
-            ]
+            ],
+            "Category": "Engine & Tech"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/TgaSpecialization.png",
@@ -71,7 +70,8 @@
                     "Name": "FABRIK",
                     "Color": "rgb(171, 186, 241)"
                 }
-            ]
+            ],
+            "Category": "Engine & Tech"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/IonInternshipGames.png",
@@ -95,7 +95,8 @@
                     "Name": "Unity",
                     "Color": "rgb(171, 186, 241)"
                 }
-            ]
+            ],
+            "Category": "Professional"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/DinoDynastyEvolved.jpg",
@@ -119,7 +120,8 @@
                     "Name": "Niagara",
                     "Color": "rgb(207, 190, 235)"
                 }
-            ]
+            ],
+            "Category": "Professional"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/GrappleAscent.jpg",
@@ -143,7 +145,8 @@
                     "Name": "Game Jam",
                     "Color": "rgb(207, 190, 235)"
                 }
-            ]
+            ],
+            "Category": "Game Jams"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/Zengine.jpg",
@@ -167,7 +170,8 @@
                     "Name": "Custom Engine",
                     "Color": "rgb(220, 220, 220)"
                 }
-            ]
+            ],
+            "Category": "Engine & Tech"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/SpiteDecrepitDepths.jpg",
@@ -191,7 +195,8 @@
                     "Name": "Custom Engine",
                     "Color": "rgb(220, 220, 220)"
                 }
-            ]
+            ],
+            "Category": "TGA Group Projects"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/BOOM.jpg",
@@ -211,7 +216,8 @@
                     "Name": "Physics",
                     "Color": "rgb(207, 190, 235)"
                 }
-            ]
+            ],
+            "Category": "TGA Group Projects"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/GhostInTheShield.jpg",
@@ -231,7 +237,8 @@
                     "Name": "Physics",
                     "Color": "rgb(207, 190, 235)"
                 }
-            ]
+            ],
+            "Category": "TGA Group Projects"
         },
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/FindersKeepers.jpg",
@@ -251,7 +258,8 @@
                     "Name": "Gameplay",
                     "Color": "rgb(200, 200, 113)"
                 }
-            ]
+            ],
+            "Category": "TGA Group Projects"
         }
     ]
 }

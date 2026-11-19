@@ -10,6 +10,19 @@
     width: inherit;
 }
 
+.project-category-title {
+    grid-column: 1 / -1;
+
+    margin: 30px 0px 0px 0px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--surface-raised);
+
+    font-size: 26px;
+}
+.project-category-title:first-child {
+    margin-top: 0px;
+}
+
 
 .featured-text-holder {
     display: flex;

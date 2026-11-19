@@ -47,8 +47,8 @@ const TopButtonHolder = document.createElement("div")
 TopButtonHolder.className = "top-button-holder"
 breadCrumbBar.appendChild(TopButtonHolder)
 
-const buttonNames = ["Home", "Projects", "Breakdowns", "About"]
-const buttonLocations = ["/", "/Projects", "/TechBreakdowns", "/about"]
+const buttonNames = ["Home", "Projects", "Breakdowns", "About", "CV"]
+const buttonLocations = ["/", "/Projects", "/TechBreakdowns", "/about", "/downloads/Christopher-Vedlund-CV.pdf"]
 
 for(let i = 0; i < buttonNames.length; i++)
 {
@@ -56,6 +56,13 @@ for(let i = 0; i < buttonNames.length; i++)
     Button.className = "top-button"
     Button.innerText = buttonNames[i]
     Button.href = buttonLocations[i]
+
+    if (buttonLocations[i].endsWith(".pdf")) {
+        Button.classList.add("top-button-cv")
+        Button.target = "_blank"
+        Button.rel = "noopener"
+    }
+
     TopButtonHolder.appendChild(Button)
 }
 

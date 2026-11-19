@@ -160,6 +160,11 @@ a {
     color: var(--accent-color);
 }
 
+.top-button-cv{
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
 .FullscreenFade {
     z-index: 9998;
     width: 100vw;
@@ -252,4 +257,28 @@ a {
         padding-top: 2px;
         font-size: 27px;
     }
+}
+
+/* Phones: five 120px buttons don't fit, so let them shrink to their text. */
+@media (max-width: 760px) {
+    .top-button{
+        width: auto;
+        padding: 5px 8px 0px 8px;
+        font-size: 15px;
+    }
+
+    .top-button:hover{
+        padding-top: 5px;
+        font-size: 15px;
+    }
+
+    .breadcrumb-base{
+        display: none;
+    }
+}
+/* Plain list of links shown only when JavaScript is disabled. */
+.noscript-list {
+    grid-column: 1 / -1;
+    font-size: 20px;
+    line-height: 2;
 }

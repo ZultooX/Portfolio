@@ -3,10 +3,19 @@
 
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How Eclipsed Engine&#x27;s editor recompiles and reloads game code with one click, without restarting.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hot-Swappable Game DLL | Christopher Vedlund">
+    <meta property="og:description" content="How Eclipsed Engine&#x27;s editor recompiles and reloads game code with one click, without restarting.">
+    <meta property="og:image" content="https://christopher-vedlund.se/Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg">
+    <meta property="og:url" content="https://christopher-vedlund.se/TechBreakdowns/hot-swappable-game-dll">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Hot-Swappable Game DLL | Christopher Vedlund</title>
     <link rel="stylesheet" href="/Content/BaseStyles.css">
     <link rel="stylesheet" href="/Content/ProjectPage.css">
-    <meta charset="utf-8">
 </head>
 
 
@@ -42,7 +51,7 @@
                     again on demand.</li>
                 <li><b>Result:</b> one-click recompile from inside the editor. Unchanged projects skip the build
                     entirely, and the editor survives compile errors instead of crashing.</li>
-                <li><b>Builds on:</b> my <a href="/TechBreakdowns/runtine-reflection" class="a-href-style">runtime
+                <li><b>Builds on:</b> my <a href="/TechBreakdowns/runtime-reflection" class="a-href-style">runtime
                     reflection system</a>, which lets the editor use game components without including any game
                     headers.</li>
                 <li><b>Tech:</b> C++, Win32 API, CMake, code generation.</li>
@@ -98,7 +107,7 @@
 }</code></pre>
 
                 Nobody writes that function by hand. My
-                <a href="/TechBreakdowns/runtine-reflection" class="a-href-style">reflection system</a> generates
+                <a href="/TechBreakdowns/runtime-reflection" class="a-href-style">reflection system</a> generates
                 it, and it registers every component in the game. Once it has run, the editor can create the game's
                 components, show them in the inspector and save them, all without including a single game header.
                 This keeps the boundary between editor and game clean.

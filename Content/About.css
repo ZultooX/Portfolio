@@ -80,6 +80,13 @@
 
     transition: background-color 200ms, color 200ms, border-color 200ms;
 }
+.about-link-primary{
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--background-color);
+    font-weight: bold;
+}
+
 .about-link-button:hover{
     background-color: var(--accent-color);
     border-color: var(--accent-color);

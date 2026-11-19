@@ -3,7 +3,7 @@
         {
             "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
             "Title": "C++ Runtime Reflection",
-            "HtmlPage": "TechBreakdowns/runtine-reflection",
+            "HtmlPage": "TechBreakdowns/runtime-reflection",
             "Description": "How I replaced per-instance macro metadata with build-time code generation in Eclipsed Engine, making components about 70% smaller.",
             "SystemsUsed": [
                 {
@@ -33,6 +33,26 @@
                 {
                     "Name": "Win32",
                     "Color": "rgb(207, 190, 235)"
+                },
+                {
+                    "Name": "Eclipsed Engine",
+                    "Color": "rgb(171, 186, 241)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg",
+            "Title": "Asset Pipeline",
+            "HtmlPage": "TechBreakdowns/asset-pipeline",
+            "Description": "How Eclipsed Engine imports, caches, reference-counts and hot-reloads every asset, with a file watcher thread and deferred deletion.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "Binary Formats",
+                    "Color": "rgb(200, 200, 113)"
                 },
                 {
                     "Name": "Eclipsed Engine",

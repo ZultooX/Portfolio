@@ -3,10 +3,19 @@
 
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eclipsed Engine, a custom C++ 2D engine and editor. I wrote about three quarters of it: reflection, hot-reloadable game code, asset pipeline, editor, audio and more.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Eclipsed Engine | Christopher Vedlund">
+    <meta property="og:description" content="Eclipsed Engine, a custom C++ 2D engine and editor. I wrote about three quarters of it: reflection, hot-reloadable game code, asset pipeline, editor, audio and more.">
+    <meta property="og:image" content="https://christopher-vedlund.se/Assets/Images/Projects/Thumbnails/EclipsedEngine.jpg">
+    <meta property="og:url" content="https://christopher-vedlund.se/Projects/EclipsedEngine">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Eclipsed Engine | Christopher Vedlund</title>
     <link rel="stylesheet" href="/Content/BaseStyles.css">
     <link rel="stylesheet" href="/Content/ProjectPage.css">
-    <meta charset="utf-8">
 </head>
 
 
@@ -43,7 +52,7 @@
         </div>
 
         <div class="contribution-grid">
-            <a href="/TechBreakdowns/runtine-reflection" class="contribution-card">
+            <a href="/TechBreakdowns/runtime-reflection" class="contribution-card">
                 <div class="contribution-title">Runtime Reflection</div>
                 <div class="contribution-desc">
                     Generates type metadata at build time, so component values can be viewed
@@ -71,15 +80,16 @@
         </div>
 
         <div class="contribution-grid">
-            <div class="contribution-card contribution-card-static">
+            <a href="/TechBreakdowns/asset-pipeline" class="contribution-card">
                 <div class="contribution-title">Asset Pipeline</div>
                 <div class="contribution-desc">
                     GUID-based meta files and a typed importer for textures, materials, shaders, fonts, audio,
-                    scenes and prefabs. Reference-counted cache with a deferred deletion queue, hot-reload from a
-                    file watcher, and cooking of all assets into one binary bundle for game builds.
+                    scenes and prefabs. Reference-counted cache with a deferred deletion queue, and hot-reload from
+                    a file watcher thread.
                 </div>
                 <div class="contribution-tags"><span>C++</span><span>Binary Formats</span></div>
-            </div>
+                <div class="contribution-link">Read the breakdown →</div>
+            </a>
 
             <div class="contribution-card contribution-card-static">
                 <div class="contribution-title">Editor</div>
