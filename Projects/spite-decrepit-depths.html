@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Spite: Decrepit Depths | Christopher Vedlund</title>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Spite: Decrepit Depths
+            </div>
+        </div>
+        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/SpiteDecrepitDepths.jpg" alt="Spite: Decrepit Depths" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Play as a capable but underestimated spellcasting scholar who will stop at nothing in her pursuit of
+            knowledge, no matter if the undead await in the Decrepit Depths.
+            <br><br>
+            For this project my group built our own custom C++ engine with DirectX 11, which came with both pros and
+            cons.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                At a glance
+            </h1>
+        </div>
+
+        <div class="project-text">
+            <ul class="step-list">
+                <li><b>Team:</b> 18</li>
+                <li><b>Reference:</b> Diablo 3</li>
+                <li><b>Duration:</b> 9 weeks at 50% pace (group projects 5 and 6)</li>
+                <li><b>Engine:</b> Our own C++ / DirectX 11 engine</li>
+                <li><b>My contributions:</b> collision system, debug drawer, navmesh implementation, animation
+                    manager and PBR</li>
+            </ul>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Animation manager
+            </h1>
+        </div>
+
+        <div class="project-text">
+            To make it easier for my group to add animations, I created a stack-based animation system. Animations are
+            pushed onto the stack and popped when their conditions are met.
+            <br><br>
+            For example, an idle animation is pushed first and stays indefinitely. When the player starts walking, a
+            walking animation is pushed on top and overrides the idle. When movement stops, the walking animation is
+            popped, and the idle animation shows again.
+            <br><br>
+            This keeps transitions smooth and makes animations simple and flexible to manage. The feedback I got on
+            it from the team was great.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Collision system
+            </h1>
+        </div>
+
+        <div class="project-text">
+            We needed to check things like whether projectiles hit their target and whether the player was inside
+            specific regions. I implemented oriented bounding box (OBB) collisions, which are more accurate than
+            axis-aligned boxes for rotated objects.
+            <br><br>
+            I used matrix transformations for OBB vs. OBB and OBB vs. sphere checks, with the separating axis theorem
+            (SAT) for precise results. The system ended up being crucial for bullets and event triggers.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                PBR
+            </h1>
+        </div>
+
+        <div class="project-text">
+            I wanted to learn more about the physics of light and how it interacts with materials, so I worked on
+            physically based rendering. Even early iterations showed key parts of PBR like Fresnel reflections and
+            roughness-based light scattering, and the foundation for realistic lighting was already taking shape.
+        </div>
+
+
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>

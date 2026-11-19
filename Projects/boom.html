@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>B.O.O.M | Christopher Vedlund</title>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                B.O.O.M
+            </div>
+        </div>
+        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/BOOM.jpg" alt="B.O.O.M" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Clear the bio-nuclear research facility overtaken by robot scientists. Gun them down before they launch a
+            ballistic missile that will exterminate all of humanity.
+            <br><br>
+            In this project we had to implement physics using a physics library. I chose NVIDIA PhysX for its
+            efficiency and robust simulation features. It let me handle collisions, gravity and object interactions
+            smoothly, which made the gameplay feel more realistic and responsive.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                At a glance
+            </h1>
+        </div>
+
+        <div class="project-text">
+            <ul class="step-list">
+                <li><b>Team:</b> 15</li>
+                <li><b>Reference:</b> DOOM</li>
+                <li><b>Duration:</b> 16 weeks at 50% pace</li>
+                <li><b>My contributions:</b> the physics engine using PhysX, and animations</li>
+            </ul>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Physics engine using PhysX
+            </h1>
+        </div>
+
+        <div class="project-text">
+            This took up most of my time on the project. I wanted the engine to be easy for the rest of the team to
+            use, so they had to do as little work as possible on their own.
+            <br><br>
+            The first iteration already supported creating and deleting multiple actors at runtime, with a working
+            cleanup process for proper memory management. It was a crucial milestone in making the game world more
+            dynamic and interactive.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Reworking the physics engine
+            </h1>
+        </div>
+
+        <div class="project-text">
+            As I learned more about PhysX and how it works, I reworked the engine twice to improve performance. The
+            first rework optimized physics calculations and collision detection. The second improved scalability and
+            made it interact more smoothly with other game systems. Each iteration made the engine more efficient and
+            responsive.
+            <br><br>
+            I later brought this physics engine into my own engine for my
+            <a href="/Projects/procedural-hand-animations" class="a-href-style">FABRIK specialization</a>.
+        </div>
+
+
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>

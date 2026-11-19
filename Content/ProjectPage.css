@@ -80,6 +80,14 @@
     cursor: zoom-in;
 }
 
+.video-embed{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 6px;
+}
+
 .code-block{
     background-color: var(--surface-deep);
     border-radius: 6px;

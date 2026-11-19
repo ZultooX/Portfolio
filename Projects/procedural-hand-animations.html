@@ -23,10 +23,15 @@
 
     <div class="page-middle-offseter">
         <div class="project-text">
-            For my specialization course at The Game Assembly, I recreated
-            <a href="https://youtu.be/dlQqiJYdyYM" class="a-href-style" target="_blank" rel="noopener">Uncharted 4's</a>
-            procedural hand animations in my own custom graphics engine, using the FABRIK inverse kinematics
-            algorithm.
+            During the second year at The Game Assembly we have a specialization course that lets us dive deeper
+            into a topic of our choice. I chose to explore how procedural animation can make gameplay more
+            immersive.
+            <br><br>
+            I implemented inverse kinematics with the FABRIK algorithm and used it to animate a skeleton. My goal was
+            to recreate the subtle hand animations in
+            <a href="https://youtu.be/dlQqiJYdyYM" class="a-href-style" target="_blank" rel="noopener">Uncharted 4:
+                A Thief's End</a>, the small movements that add realism and presence. The whole project was built in
+            my own C++ engine, <a href="/Projects/zengine" class="a-href-style">Zengine</a>, using DirectX 11.
         </div>
 
 
@@ -39,10 +44,118 @@
         <div class="project-text">
             <ul class="step-list">
                 <li><b>Team:</b> Solo</li>
-                <li><b>Period:</b> February 2025 – April 2025</li>
-                <li><b>Engine:</b> My own custom DirectX 11 engine</li>
+                <li><b>Reference:</b> Uncharted 4</li>
+                <li><b>Duration:</b> 8 weeks at 50% pace (February – April 2025)</li>
+                <li><b>Engine:</b> My own engine, Zengine (DirectX 11)</li>
                 <li><b>Tech:</b> C++, FABRIK, DirectX 11, ImGui, Premake, nlohmann/json</li>
             </ul>
+        </div>
+
+        <div class="project-text">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/0eaVrAHqGgs" title="FABRIK hand animation"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Why FABRIK?
+            </h1>
+        </div>
+
+        <div class="project-text">
+            FABRIK is well suited to games. Compared to other inverse kinematics methods it balances efficiency and
+            accuracy, which makes it a good fit for real-time use where performance matters.
+            <br><br>
+            It has one big limitation: it only works with positions, so rotations have to be handled separately.
+            That adds complexity for 3D skeletal animation, where orientation matters.
+            <br><br>
+            Despite that, FABRIK is one of the simplest IK methods to implement, which made it a practical choice for
+            a short course.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Solving positions
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Solving positions is straightforward: run the two passes for a number of iterations. One iteration was
+            enough for my joint chain, but longer chains needed more. Each chain also has a flag that decides whether
+            the target is in the chain's local space or in world space using the model's transform.
+            <ul class="step-list">
+                <li><b>Backward pass:</b> starts at the end effector and moves toward the root, so the end effector
+                    reaches the target while segment lengths stay the same.</li>
+                <li><b>Forward pass:</b> moves from the root back out, repositioning joints with the root fixed in
+                    place, which restores the structure while keeping the target alignment.</li>
+            </ul>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Solving rotations
+            </h1>
+        </div>
+
+        <div class="project-text">
+            This was the hardest part. I struggled with which space the positions should be calculated in, and which
+            space would make the rotation math easier.
+            <br><br>
+            The solution was a SolveRotation step that runs after the positions are updated. It goes through each
+            joint except the last and rotates it to point at the next joint in the chain. For the last joint, the
+            chain stores a parameter where you can set the rotation yourself with Euler angles.
+            <br><br>
+            The rotations use quaternions, which keeps them smooth and avoids gimbal lock, so the joints end up with
+            both correct positions and natural orientations.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Procedural animation
+            </h1>
+        </div>
+
+        <div class="project-text">
+            I brought the physics engine I made in
+            <a href="/Projects/boom" class="a-href-style">Project 7</a> into my own engine. A raycast is cast from the
+            lower right side of the body, and the IK target is set to wherever the ray hits.
+        </div>
+
+        <div class="project-text content-image-holder" style="width: 80%;">
+            <img src="/Assets/Images/Projects/Content/FABRIK/OldThumbnail.jpg" class="content-image"
+                alt="FABRIK hand animation in Zengine" />
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Improvements
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Right now the ray moves at a fixed distance from the body, which makes the animation feel unnatural.
+            Instead, I want the ray's origin to follow at a fixed distance and gradually correct itself toward the
+            center of the body over time. That would prevent sudden movements and make transitions more fluid.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Conclusion
+            </h1>
+        </div>
+
+        <div class="project-text">
+            Working with FABRIK was a fun and rewarding challenge. It gave the character life and added the extra
+            polish that makes animation feel natural and responsive. Some parts were tricky, like figuring out
+            rotations and getting everything into the right space, but seeing the joints move naturally in real time
+            made it worth it. I still want to make the raycasting behave more naturally, but overall I'm really happy
+            with how it turned out.
         </div>
 
 

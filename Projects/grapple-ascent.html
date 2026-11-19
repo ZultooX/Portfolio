@@ -27,6 +27,9 @@
             mountain. Grapple Ascent was made in a team of five for the GMTK Game Jam 2024. You can play it on
             <a href="https://zultoox.itch.io/grapple-ascent-gmtk2024" class="a-href-style" target="_blank"
                 rel="noopener">itch.io</a>.
+            <br><br>
+            The jam's theme was "Built to Scale". My team interpreted it as a yo-yo built to scale a mountain, and
+            since a finite mountain is no fun, we made it infinite.
         </div>
 
 
@@ -39,11 +42,18 @@
         <div class="project-text">
             <ul class="step-list">
                 <li><b>Role:</b> Gameplay Programmer</li>
-                <li><b>Event:</b> GMTK Game Jam 2024</li>
+                <li><b>Event:</b> GMTK Game Jam 2024, theme "Built to Scale"</li>
                 <li><b>Team:</b> 5</li>
+                <li><b>Reference:</b> Getting Over It</li>
+                <li><b>Duration:</b> 3 days</li>
                 <li><b>Engine:</b> Unity 2022</li>
                 <li><b>Tech:</b> C#, procedural generation, Git</li>
             </ul>
+        </div>
+
+        <div class="project-text">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/Dod657eCWag" title="Grapple Ascent"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
 
@@ -55,10 +65,29 @@
 
         <div class="project-text">
             <ul class="step-list">
-                <li><b>Procedural mountain generation:</b> generated the mountain the yo-yo climbs.</li>
+                <li><b>Procedural tower generation:</b> generated the endless mountain the yo-yo climbs.</li>
                 <li><b>Gameplay features:</b> implemented gameplay features.</li>
                 <li><b>UI:</b> built the game's user interface.</li>
             </ul>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Tower generation
+            </h1>
+        </div>
+
+        <div class="project-text">
+            The tower generation is simple but dynamic. It starts by creating the main tower piece with a random
+            orientation, within a min-max range set by the biome, so every tower feels unique.
+            <br><br>
+            Then flying boulders and stones are placed around the mountain, forming natural climbing paths. They make
+            the terrain more engaging and give the player strategic routes up the tower.
+            <br><br>
+            The generation doesn't check whether stones end up too close together, which could in theory create an
+            impassable section. After many players tried the game on itch.io, we concluded the chance was small
+            enough not to noticeably affect the experience.
         </div>
 
 

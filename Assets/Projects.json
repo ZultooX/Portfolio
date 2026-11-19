@@ -144,6 +144,114 @@
                     "Color": "rgb(207, 190, 235)"
                 }
             ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/Zengine.jpg",
+            "Title": "Zengine",
+            "HtmlPage": "Projects/zengine",
+            "Description": "My own C++ game engine on DirectX 11, started in a TGA graphics course and continued on my own. ImGui editor, ECS, shader reflection and asset management.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "DirectX 11",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "ImGui",
+                    "Color": "rgb(150, 220, 220)"
+                },
+                {
+                    "Name": "Custom Engine",
+                    "Color": "rgb(220, 220, 220)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/SpiteDecrepitDepths.jpg",
+            "Title": "Spite: Decrepit Depths",
+            "HtmlPage": "Projects/spite-decrepit-depths",
+            "Description": "A Diablo 3-inspired action game in our team's own DirectX 11 engine. I built the collision system, animation manager, navmesh, debug drawer and PBR.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "DirectX 11",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "PBR",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "Custom Engine",
+                    "Color": "rgb(220, 220, 220)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/BOOM.jpg",
+            "Title": "B.O.O.M",
+            "HtmlPage": "Projects/boom",
+            "Description": "A DOOM-inspired shooter where I built the team's physics engine on NVIDIA PhysX and reworked it twice for performance.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "PhysX",
+                    "Color": "rgb(200, 200, 113)"
+                },
+                {
+                    "Name": "Physics",
+                    "Color": "rgb(207, 190, 235)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/GhostInTheShield.jpg",
+            "Title": "Ghost in the Shield",
+            "HtmlPage": "Projects/ghost-in-the-shield",
+            "Description": "A platformer in TGA's C++ engine. I built the collision system, a force-based physics engine, player movement and the player state stack.",
+            "SystemsUsed": [
+                {
+                    "Name": "C++",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "TGE",
+                    "Color": "rgb(220, 220, 220)"
+                },
+                {
+                    "Name": "Physics",
+                    "Color": "rgb(207, 190, 235)"
+                }
+            ]
+        },
+        {
+            "Thumbnail": "Assets/Images/Projects/Thumbnails/FindersKeepers.jpg",
+            "Title": "Finders Keepers",
+            "HtmlPage": "Projects/finders-keepers",
+            "Description": "An infinite runner, my first group project at TGA. I made player movement, animations, and the portal and time travel mechanics.",
+            "SystemsUsed": [
+                {
+                    "Name": "Unity",
+                    "Color": "rgb(171, 186, 241)"
+                },
+                {
+                    "Name": "C#",
+                    "Color": "rgb(210, 167, 162)"
+                },
+                {
+                    "Name": "Gameplay",
+                    "Color": "rgb(200, 200, 113)"
+                }
+            ]
         }
     ]
 }

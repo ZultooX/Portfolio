@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Zengine | Christopher Vedlund</title>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Zengine
+            </div>
+        </div>
+        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/Zengine.jpg" alt="Zengine" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Zengine is my own C++ game engine built on DirectX 11. It began in the Applied Graphics Programming course
+            at The Game Assembly, and I kept developing it on my own afterwards. Everything listed here is work I did
+            on my own, outside the course.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                At a glance
+            </h1>
+        </div>
+
+        <div class="project-text">
+            <ul class="step-list">
+                <li><b>Team:</b> Solo</li>
+                <li><b>Tech:</b> C++, DirectX 11, ImGui</li>
+                <li><b>What I built:</b> an ImGui editor, an ECS, shader compilation with reflection, asset management,
+                    and the inverse kinematics for my
+                    <a href="/Projects/procedural-hand-animations" class="a-href-style">FABRIK specialization</a></li>
+            </ul>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                ImGui editor
+            </h1>
+        </div>
+
+        <div class="project-text">
+            During the course I wanted to test values like lighting and camera settings without rebuilding the engine
+            every time. So I integrated ImGui and added sliders, buttons and input fields for adjusting things like
+            light intensity and camera position while the engine was running. Seeing changes instantly, without
+            stopping or recompiling, made testing much faster and cut down a lot of waiting.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                ECS
+            </h1>
+        </div>
+
+        <div class="project-text">
+            After a presentation about entity component systems I wanted to learn how they work. I store components in
+            pools so components of the same type sit next to each other in memory, which lowers the chance of cache
+            misses. Logic lives in systems, which share an <span class="inline-code">ISystem</span> interface so they
+            can be stored together.
+            <br><br>
+            Building it taught me a lot about working with entities instead of game objects. In the end I prefer
+            component systems where the logic lives inside the components. In my implementation the logic for several
+            components often ended up in the same system, which made the code harder to follow.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Shader compiling
+            </h1>
+        </div>
+
+        <div class="project-text">
+            I wanted an easier way to give shaders textures and variables without writing a custom buffer for each
+            one. DirectX 11 has shader reflection, which lets you read every texture and buffer bound to a shader
+            program.
+            <br><br>
+            One catch is that variables have to be inside a constant buffer to be reflected. So the engine looks for a
+            buffer named <span class="inline-code">PublicContainer</span> in each shader and reads the variables from
+            it.
+            <br><br>
+            To avoid reflecting the shader every time it loads, the reflected textures, variables and buffers are
+            saved to a material file. On later loads the engine just reads the material file and reapplies the
+            values, which saves redundant work and makes shader management more flexible.
+        </div>
+
+
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>

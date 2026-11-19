@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Ghost in the Shield | Christopher Vedlund</title>
+    <link rel="stylesheet" href="/Content/BaseStyles.css">
+    <link rel="stylesheet" href="/Content/ProjectPage.css">
+    <meta charset="utf-8">
+</head>
+
+
+<body hidden>
+    <div class="text-thumbnail-container">
+        <div class="title-text-holder">
+            <div class="title-text">
+                Ghost in the Shield
+            </div>
+        </div>
+        <img class="thumbnail" src="/Assets/Images/Projects/Thumbnails/GhostInTheShield.jpg" alt="Ghost in the Shield" />
+    </div>
+
+
+    <div class="page-middle-offseter">
+        <div class="project-text">
+            Pursued and dismembered by the corrupt police force, you find a talking prosthetic shield-arm and forge a
+            symbiotic alliance to topple your dystopian city from the ground up, deflecting, attacking and navigating
+            platforms all the way to the top.
+            <br><br>
+            This project quickly became one of my favorites, because it marked the move from Unity to The Game
+            Assembly's own C++ engine, TGE. TGE has very few built-in systems, so we had to build many features from
+            the ground up, including collisions and physics.
+            <br><br>
+            Working that close to the metal was challenging but rewarding. It forced me to understand how game
+            systems work under the hood and to solve problems I would normally rely on an engine for. It gave me a
+            much stronger grasp of both C++ and engine architecture.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                At a glance
+            </h1>
+        </div>
+
+        <div class="project-text">
+            <ul class="step-list">
+                <li><b>Team:</b> 14</li>
+                <li><b>Reference:</b> Katana Zero and Metroid Dread</li>
+                <li><b>Duration:</b> 11 weeks at 50% pace</li>
+                <li><b>Engine:</b> TGE, The Game Assembly's C++ engine</li>
+                <li><b>My contributions:</b> collision system, force engine, player movement and the player state
+                    stack</li>
+            </ul>
+        </div>
+
+        <div class="project-text">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/Xii4a4BIEeE" title="Ghost in the Shield"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Collision system
+            </h1>
+        </div>
+
+        <div class="project-text">
+            My goal was a collision system that was easy for the rest of the team to use. I could reach that goal by
+            building it on top of ES, our component system.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Force engine
+            </h1>
+        </div>
+
+        <div class="project-text">
+            I wanted a character controller that felt good and natural, so I wanted it to be physics based. TGE has
+            no physics engine, so I wrote one that only applies forces to objects, hence the name Force Engine.
+            <br><br>
+            The force engine also made it easy to separate overlapping colliders: just apply a force that pushes them
+            apart.
+        </div>
+
+
+        <div class="project-text content-image-holder title-holder">
+            <h1 class="sub-title">
+                Player movement
+            </h1>
+        </div>
+
+        <div class="project-text">
+            I wanted movement where the player accelerates smoothly in the direction of input up to a maximum speed.
+            It should feel responsive but natural, with a little inertia when changing direction. When there is no
+            input, the player gradually slows down instead of stopping abruptly, which makes the movement feel fluid
+            and dynamic.
+        </div>
+
+
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+
+<script src="/Content/ScreenManager.js" defer></script>
+<script src="/Content/Projects.js"></script>
+<script src="/Content/TopBar.js" defer></script>
+<script src="/Content/BottomBar.js" defer></script>
