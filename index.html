@@ -67,38 +67,16 @@
         </div>
 
 
-        <div class="experience-tab">
-            <div class="type-title-grid">
-                <div class="type-title-box" draggable="false">
-                    <div class="type-title">
-                        Work
-                    </div>
-                </div>
-                <div class="type-title-box" draggable="false">
-                    <div class="type-title">
-                        Education
-                    </div>
-                </div>
+        <section class="experience-tab">
+            <div class="experience-tabs" role="tablist">
+                <span class="experience-tab-highlight"></span>
+                <button class="experience-tab-button active" role="tab" data-panel="work-experience">Work</button>
+                <button class="experience-tab-button" role="tab" data-panel="education-experience">Education</button>
             </div>
-            <div class="experience-content-holder">
-                <div class="experience" id="work-experience-holder">
-                    <div class="experience-company-text-content">
-                        <div class="experience-company-text-content-grid" id="work-experience">
-                            <div class="experience-timeline"></div>
-                        </div>
-                    </div>
-                </div>
 
-
-                <div class="experience" id="education-experience-holder">
-                    <div class="experience-company-text-content" id="education-experience-holder">
-                        <div class="experience-company-text-content-grid" id="education-experience">
-                            <div class="experience-timeline"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="experience-panel active" id="work-experience" role="tabpanel"></div>
+            <div class="experience-panel" id="education-experience" role="tabpanel"></div>
+        </section>
     </div>
 </body>
 

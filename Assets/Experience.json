@@ -4,12 +4,22 @@
             "CompanyName": "ION Game Design",
             "CompanyIcon": "Assets/Images/CompanyIcons/ion-logo-1024x1024.png",
             "CompanyLink": "https://iongamedesign.com/",
-            "Role": "Game Programmer (Intern)",
-            "TimeSpan": "October 2025 - May 2026",
+            "Role": "Game Programmer Intern",
+            "TimeSpan": "Oct 2025 – May 2026",
             "Info": [
-                "Worked across all of ION's released mobile games and implemented a free-to-play version.",
-                "Investigated if it where possible to migrate game multiplayer backend from AWS to Google Firebase.",
-                "Worked on a checkpoint system for their latest Unreal Engine 5 game."
+                "Adapted four released Unity games (Neanderthal, Greenland, High Frontier 4 All and Pax Viking Junior) into free-to-play versions with Google AdMob.",
+                "Prototyped moving the games' online backend from AWS to Firebase.",
+                "Worked on checkpoints and on-hit combat VFX for <i>Dino Dynasty Evolved</i> in Unreal Engine 5."
+            ],
+            "LinkButtons": [
+                {
+                    "Title": "Game Ad Integration",
+                    "Link": "/Projects/game-ad-integration"
+                },
+                {
+                    "Title": "Dino Dynasty Evolved",
+                    "Link": "/Projects/dino-dynasty-evolved"
+                }
             ]
         }
     ],
@@ -18,24 +28,39 @@
             "CompanyName": "The Game Assembly",
             "CompanyIcon": "Assets/Images/CompanyIcons/tgalogowhite-small.svg",
             "CompanyLink": "https://thegameassembly.com/se/",
-            "Role": "Higher Vocational Education - Game Programming",
-            "TimeSpan": "Aug 2023 - May 2026",
+            "Role": "Higher Vocational Education – Game Programming",
+            "TimeSpan": "Aug 2023 – May 2026",
             "BackgroundColor": "rgb(0, 0, 0)",
             "Info": [
-                "Studied game programming in C++"
+                "Studied C++ game programming, from gameplay to graphics and engine architecture.",
+                "Made 7 group games with designers and artists, including Ghost in the Shield, Spite: Decrepit Depths and B.O.O.M.",
+                "Specialization: procedural hand animation with FABRIK in my own engine."
             ],
-            "LinkButtons": []
+            "LinkButtons": [
+                {
+                    "Title": "FABRIK",
+                    "Link": "/Projects/procedural-hand-animations"
+                },
+                {
+                    "Title": "Spite: Decrepit Depths",
+                    "Link": "/Projects/spite-decrepit-depths"
+                },
+                {
+                    "Title": "B.O.O.M",
+                    "Link": "/Projects/boom"
+                }
+            ]
         },
         {
             "CompanyName": "Ljud & Bildskolan (LBS)",
             "CompanyIcon": "Assets/Images/CompanyIcons/lbslogo.svg",
             "CompanyLink": "https://lbs.se/boras/",
             "Role": "Game Programming Student",
-            "TimeSpan": "Aug 2020 - Jun 2023",
+            "TimeSpan": "Aug 2020 – Jun 2023",
             "BackgroundColor": "rgb(0, 0, 0)",
             "Info": [
-                "Studied C# and game development in Unity, including collaborative projects with artists.",
-                "Where awarded Game Developer of the year upon graduation."
+                "Studied C# and Unity game development, including projects with artists.",
+                "Awarded Game Developer of the Year at graduation."
             ],
             "LinkButtons": []
         }
