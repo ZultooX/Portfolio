@@ -39,6 +39,8 @@ function SmoothPositionSwap() {
         Featured.className = "project-card"
         Featured.style.position = "absolute"
         Featured.style.width = "550px"
+        // Cards fill their grid row (height: 100%); this floating copy has no row, so size it to its content.
+        Featured.style.height = "auto"
         Featured.style.left = FromPosX + "px"
         Featured.style.top = FromPosY + "px"
 

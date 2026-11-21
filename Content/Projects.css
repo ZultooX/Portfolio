@@ -8,13 +8,17 @@
 
     height: 30px;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .project-card {
     cursor: pointer;
     overflow: hidden;
 
-    height: fit-content;
+    /* Fill the grid row so every card in a row is the same height. */
+    height: 100%;
+    box-sizing: border-box;
 
     border-radius: 15px;
 
@@ -30,6 +34,12 @@
 
     transition: border-color 150ms;
 
+    display: grid;
+    /* image, title, description (takes the spare space), tags pinned to the bottom */
+    grid-template-rows: auto auto 1fr auto;
+}
+
+.project-card-link {
     display: grid;
 }
 
@@ -55,6 +65,9 @@
 
     width: 87%;
     height: auto;
+    /* Same shape for every thumbnail, whatever the source image's size. */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.363);
     border-radius: 6px;
@@ -63,28 +76,40 @@
 .project-description {
     font-size: 16px;
     font-weight: lighter;
+    line-height: 1.4;
     margin: 0px;
 
     justify-self: center;
+
+    /* Cut cleanly after four lines with an ellipsis instead of mid-line. */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .project-description-holder {
     width: 85%;
-    height: 100px;
 
     justify-self: center;
-
-    overflow: hidden;
 }
 
 .project-all-tags-holder {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: center;
+    row-gap: 8px;
+
+    margin-top: 16px;
+    /* Padding on both sides so wrapped rows line up with the first one. */
+    padding: 0px 18px;
 }
 
 .project-tag-name {
     font-size: 14px;
-    margin-right: 10px;
+    margin: 0px 8px 0px 0px;
 
     padding-top: 4px;
     padding-bottom: 5px;
@@ -99,7 +124,6 @@
 }
 
 .project-tag-icon {
-    margin-left: 18px;
     margin-right: 12px;
 
     width: 20px;

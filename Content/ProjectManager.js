@@ -79,6 +79,7 @@ export function CreateProjectCard(ProjectJson, Grid, index, hidden) {
 
 function CreateBaseDiv(ProjectJson, BaseGrid, index) {
     let CardLink = document.createElement("a")
+    CardLink.className = "project-card-link"
     CardLink.href = ProjectJson.HtmlPage
     CardLink.style.textDecoration = "none"
     CardLink.style.color = "inherit"
